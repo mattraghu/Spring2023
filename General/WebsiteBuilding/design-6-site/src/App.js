@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import LandingPage from "./pages/Landing/Landing";
+import NavBar from "./components/NavBar";
+// import Layout from "./layout/Layout";
 
+const sections = [
+	{ text: "Home", url: "#" },
+	{ text: "About", url: "#" },
+	{ text: "Services", url: "#" },
+	{ text: "Contact", url: "#" },
+];
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<main>
+			<section className="bg-slate-700 min-h-screen">
+				<NavBar sections={sections} />
+				<LandingPage />
+			</section>
+		</main>
+	);
 }
 
 export default App;
