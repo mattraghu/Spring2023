@@ -11,7 +11,7 @@ const sections = [
 function App() {
 	return (
 		<main>
-			<section className="bg-slate-700 min-h-screen">
+			<section className="bg-slate-700 min-h-screen min-w-full">
 				<NavBar sections={sections} />
 				<LandingPage />
 			</section>
