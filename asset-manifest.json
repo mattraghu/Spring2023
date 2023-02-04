@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Spring2023/static/css/main.6b0efcb4.css",
-    "main.js": "/Spring2023/static/js/main.f1b2e2a0.js",
+    "main.css": "/Spring2023/static/css/main.1cfeb5b6.css",
+    "main.js": "/Spring2023/static/js/main.f3f582cc.js",
     "static/media/Burtons.otf": "/Spring2023/static/media/Burtons.c46a2405716f236c4a9a.otf",
     "index.html": "/Spring2023/index.html",
-    "main.6b0efcb4.css.map": "/Spring2023/static/css/main.6b0efcb4.css.map",
-    "main.f1b2e2a0.js.map": "/Spring2023/static/js/main.f1b2e2a0.js.map"
+    "main.1cfeb5b6.css.map": "/Spring2023/static/css/main.1cfeb5b6.css.map",
+    "main.f3f582cc.js.map": "/Spring2023/static/js/main.f3f582cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b0efcb4.css",
-    "static/js/main.f1b2e2a0.js"
+    "static/css/main.1cfeb5b6.css",
+    "static/js/main.f3f582cc.js"
   ]
 }
