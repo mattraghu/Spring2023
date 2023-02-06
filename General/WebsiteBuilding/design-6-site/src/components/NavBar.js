@@ -11,9 +11,9 @@ function NavBar(props) {
 	}
 
 	return (
-		<ul className="px-10 py-10 flex justify-contet space-x-8">
+		<ul className="px-10 py-10 flex justify-contet gap-x-8">
 			{/* Website Logo */}
-			<li className="mr-96">Design 6 Project</li>
+			<li className="mr-96 text-2xl font-bold ">Design 6 Project</li>
 			{props.sections.map((item) => {
 				return NavBarElement(item);
 			})}
