@@ -11,6 +11,37 @@
     color: #fff;
 }
 
+/* Remove Marker from List */
+ul {
+  list-style: none;
+}
+
+/* Landing Background Image */
+.landing {
+  /* background-image: url("https://media.discordapp.net/attachments/1018300243512664155/1070936467716702308/SunsetBackground.png?width=1569&height=657"); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  background-image: url("https://media.discordapp.net/attachments/1018300243512664155/1070936467716702308/SunsetBackground.png?width=1569&height=657");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+/* ScaletoFitImage */
+.scaletofit {
+  object-fit: cover; 
+  width: 100%;
+  object-position: top;
+  /* height: 100%; */
+}
+
 /* Font */
 @font-face {
   font-family: "burtons";
