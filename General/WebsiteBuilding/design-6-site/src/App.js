@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 
 import { Route, Routes } from "react-router-dom";
 
+import { useEffect } from "react";
+
 const sections = [
 	{ text: "Home", url: "/", page: LandingPage },
 	{ text: "About Us", url: "/About", page: AboutUsPage },
@@ -12,6 +14,12 @@ const sections = [
 	// { text: "Contact", url: "#" },
 ];
 function App() {
+	useEffect(() => {
+		// Redirect the user after the component mounts
+		window.location.href =
+			"https://sites.google.com/stevens.edu/design6project/home";
+	}, []);
+
 	return (
 		<section className="bg-slate-700 min-h-screen min-w-full">
 			<NavBar sections={sections} />
