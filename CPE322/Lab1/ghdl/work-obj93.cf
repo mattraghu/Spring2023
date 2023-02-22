@@ -1,4 +1,10 @@
 v 4
-file . "hello.vhdl" "f20c08aa91f756553b774929fdcf19d1d14dbbd1" "20230222162533.087":
-  entity hello_world at 3( 93) + 0 on 11;
-  architecture behaviour of hello_world at 9( 242) + 0 on 12;
+file . "ha_tb.vhdl" "e0f7bf0b83b29cbd88923a960268986abf4c5ee8" "20230222172256.564":
+  entity ha_tb at 4( 97) + 0 on 21;
+  architecture test of ha_tb at 10( 169) + 0 on 22;
+file . "hello.vhdl" "f20c08aa91f756553b774929fdcf19d1d14dbbd1" "20230222162659.195":
+  entity hello_world at 3( 93) + 0 on 13;
+  architecture behaviour of hello_world at 9( 242) + 0 on 14;
+file . "ha.vhdl" "95a4805bcf52f89b63338c8884dbaf1fcc77065b" "20230222172244.227":
+  entity ha at 4( 88) + 0 on 19;
+  architecture behave of ha at 17( 425) + 0 on 20;
