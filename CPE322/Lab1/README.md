@@ -79,6 +79,17 @@ Note: The --vcd=ha.vcd saves the output to a file called 'ha.vcd' which is used 
 After zoom fitting the plot it looks like this:
 ![Half Adder](Screenshots/HalfAdder.png)
 
-```bash
+So orginally, I had no idea what a half adder was, but after asking ChatGPT and looking at the code, I understand it.
 
+In simplest terms:
+**S = A XOR B** and
+**C = A AND B**
+
+This is proved in the code with the following lines in ha.vhdl:
+
+```vhdl
+    s <= a xor b;
+    c <= a and b;
 ```
+
+The ha_tb.vhdl simply goes through all possible combinations of A and B.
