@@ -10,7 +10,7 @@ I followed the instructions on the [Chat GPT API](https://platform.openai.com/do
 $ pip install openai
 ```
 
-After creating a folder called 'OPENAI_API_KEY.txt' in my Documents folder, I was able to link the API to my python script with the following commands.
+After creating a file called 'OPENAI_API_KEY.txt' in my Documents folder with my API key, I was able to link the API to my python script with the following commands.
 
 ```python
 # Set up the Open AI API
