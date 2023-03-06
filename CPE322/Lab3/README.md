@@ -547,30 +547,18 @@ for i in range(10):
 
 To retrieve the CPU utilization as a percentage for each CPU, we use the `cpu_percent` method which returns a list of floats representing the utilization as a percentage for each CPU. We pass two arguments: `interval` (in seconds) which specifies the time to wait before returning the CPU utilization and `percpu` which is set to `True` to get the utilization for each CPU separately. We run this command inside a loop of 10 times to print the CPU utilization every second.
 
-After running the script, we get the following output:
-
-```bash
-The number of physical cores =  8
-The number of logical CPUs =  16
-The utilization per second as a percentage for each CPU
-[7.0, 0.0, 31.0, 0.0, 1.0, 2.0, 0.0, 1.0]
-[3.0, 0.0, 9.0, 0.0, 1.0, 2.0, 0.0, 1.0]
-[4.0, 0.0, 10.0, 0.0, 1.0, 4.0, 0.0, 1.0]
-[5.0, 0.0, 7.0, 0.0, 1.0, 2.0, 0.0, 1.0]
-[5.0, 0.0, 7.0, 0.0, 1.0, 2.0, 0.0, 1.0]
-[8.0, 0.0, 9.0, 0.0, 1.0, 2.0, 0.0, 1.0]
-[4.0, 0.0, 7.0, 0.0, 1.0, 4.0, 0.0, 0.0]
-[4.0, 0.0, 7.0, 0.0, 1.0, 2.0, 0.0, 1.0]
-[8.0, 0.0, 7.0, 0.0, 1.0, 2.0, 0.0, 1.0]
-[4.0, 0.0, 7.0, 0.0, 1.0, 2.0, 0.0, 1.0]
-```
-
-This output shows the CPU utilization as a percentage for each core every second for a total of 10 times.
-
 #### Execution:
 
 ```bash
-Error: Command did not execute successfully.
+The number of physical cores =  8
+The number of logical CPUs =  8
+The utilization per second as a percentage for each CPU
+[29.3, 26.0, 12.0, 5.0, 3.0, 2.0, 2.0, 2.0]
+[40.2, 35.0, 9.9, 4.0, 2.0, 2.0, 0.0, 0.0]
+[39.4, 37.3, 5.9, 3.0, 2.0, 0.0, 1.0, 1.0]
+[25.0, 22.0, 10.1, 9.0, 3.0, 2.9, 1.0, 1.0]
+[17.8, 15.8, 3.0, 2.0, 1.0, 0.0, 1.0, 0.0]
+[34.0, 31.0, 9.8, 4.0, 3.0, 2.0, 0.0, 1.0]
 ```
 
 ### Script Information for `lesson3/battery.py`
