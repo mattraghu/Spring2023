@@ -1,0 +1,231 @@
+### Command Information for `hostname`
+The `hostname` command is a simple way to obtain the hostname of the current machine. Running `hostname` without any arguments will return the current hostname of the system. This command can be useful when trying to identify the name of a machine on a network or when working with multiple machines. You can also use the `hostname` command to set the hostname of the machine, but this requires elevated privileges.
+
+Executing command: hostname
+
+Output: 
+```bash
+Matthews-MacBook-Pro.local
+
+```
+
+### Command Information for `env`
+The "env" command in the terminal stands for "environment". It's used to display the current environment variables, which are values that are set and stored by the system or user, that determine certain behaviors or settings. It enables the user to see the current settings of environment variables such as PATH, HOME, SHELL, and many others. It's also used to run a specific command within a custom environment by supplying key-value pairs that replace the default values of environment variables for that command.
+
+Executing command: env
+
+Output: 
+```bash
+MANPATH=/opt/local/share/man:/opt/homebrew/share/man::
+TERM=xterm-color
+SHELL=/bin/zsh
+CLICOLOR=1
+HOMEBREW_REPOSITORY=/opt/homebrew
+TMPDIR=/var/folders/lq/8dq9nc0x3xv1j6hzt_zbrbhh0000gn/T/
+LIBRARY_PATH=/usr/local/lib
+PYTHONUNBUFFERED=1
+SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+MallocNanoZone=0
+PYTHONIOENCODING=utf-8
+USER=mattraghu
+COMMAND_MODE=unix2003
+CPATH=/usr/local/include
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.dYM7BV3UvQ/Listeners
+__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+JPY_PARENT_PID=32807
+PAGER=cat
+VSCODE_AMD_ENTRYPOINT=vs/workbench/api/node/extensionHostProcess
+ELECTRON_RUN_AS_NODE=1
+JUPYTER_PATH=/Users/mattraghu/.vscode/extensions/ms-toolsai.jupyter-2022.6.1201981810/temp/jupyter
+PATH=/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+LaunchInstanceID=8423E27D-B923-4125-9D5A-6B9DA6A75CFF
+_=/usr/bin/env
+__CFBundleIdentifier=com.microsoft.VSCode
+PWD=/Users/mattraghu/Documents/Projects/Spring2023/CPE322/Lab2
+VSCODE_HANDLES_UNCAUGHT_ERRORS=true
+MPLBACKEND=module://matplotlib_inline.backend_inline
+XPC_FLAGS=0x0
+XPC_SERVICE_NAME=0
+SHLVL=1
+HOME=/Users/mattraghu
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL=1
+VSCODE_NLS_CONFIG={"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+HOMEBREW_PREFIX=/opt/homebrew
+PYTHONPATH=/Users/mattraghu/.vscode/extensions/ms-toolsai.jupyter-2022.6.1201981810/pythonFiles:/Users/mattraghu/.vscode/extensions/ms-toolsai.jupyter-2022.6.1201981810/pythonFiles/lib/python
+LOGNAME=mattraghu
+LC_CTYPE=UTF-8
+VSCODE_IPC_HOOK=/Users/mattraghu/Library/Application Support/Code/1.69.2-main.sock
+VSCODE_CODE_CACHE_PATH=/Users/mattraghu/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_PID=12572
+INFOPATH=/opt/homebrew/share/info:
+HOMEBREW_CELLAR=/opt/homebrew/Cellar
+GIT_PAGER=cat
+SECURITYSESSIONID=186b1
+VSCODE_CWD=/
+
+```
+
+### Command Information for `ps`
+The `ps` command stands for "process status" and is used to display information about currently running processes on a system. By default, it shows a list of all the processes running in the terminal session in which it was called. Some common options used with `ps` include:
+
+- `ps aux`: Shows a list of all the running processes in the system, with detailed information such as the user that started the process, the processor and memory usage, and the command that launched the process.
+- `ps -ef`: Similar to `ps aux`, but the output format may be slightly different depending on the system.
+- `ps -e`: Shows a list of all the processes running on the system, without the detailed information.
+
+You can also use filters with `ps` to show processes that match specific criteria. For example, `ps -u someusername` shows all processes that were started by a user called "someusername". Additionally, you can use `grep` to filter the output further. For example, `ps aux | grep someprocessname` shows all running processes that contain the string "someprocessname" in their name or command line arguments.
+
+Executing command: ps
+
+Output: 
+```bash
+  PID TTY           TIME CMD
+32500 ttys000    0:00.02 /bin/zsh -l
+33078 ttys001    0:00.13 -zsh
+34315 ttys001    0:00.06 /Library/Frameworks/Python.framework/Versions/3.10/Resources/Python.app/Contents/MacOS/Python
+
+```
+
+### Command Information for `pwd`
+`pwd` stands for "print working directory". When you type `pwd` in the terminal and press enter, the command will print the absolute path of the current working directory you are in.
+
+Executing command: pwd
+
+Output: 
+```bash
+/Users/mattraghu/Documents/Projects/Spring2023/CPE322/Lab2
+
+```
+
+### Command Information for `git clone https://github.com/kevinwlu/iot.git`
+This command is used to create a copy of a remote Git repository on your local machine. The syntax is "git clone [URL of remote repository]". In this particular case, it is cloning the "iot" repository from the GitHub account "kevinwlu" to your local machine. Once you run this command, you will have a full copy of the repository with all its files and commit history stored on your local machine, allowing you to work on it locally and make changes.
+
+Executing command: git clone https://github.com/kevinwlu/iot.git
+
+Output: 
+```bash
+Error: Command did not execute successfully.
+```
+
+### Command Information for `cd iot`
+The "cd iot" command is used in the terminal to change the current directory to a directory called "iot". This may be useful if you want to navigate to a specific directory to work on a project or access certain files.
+
+Executing command: cd iot
+
+Output: 
+```bash
+
+```
+
+### Command Information for `ls`
+The `ls` command stands for "list" and it's used to list the files and directories in the current directory. When you type `ls` on the terminal, it will display a list of all the files and directories in the current directory. Depending on your operating system and configuration, it may also include additional information such as file permissions, ownership, size, and the timestamp of when the file or directory was last modified.
+
+Executing command: ls
+
+Output: 
+```bash
+Lab2.ipynb
+README.md
+demo
+iot
+output.md
+output.txt
+
+```
+
+### Command Information for `cd df`
+`cd` and `df` are two separate commands. 
+
+`cd` (short for "change directory") is used to change the current working directory in the terminal. For example, to change the current working directory to "Documents", you can type `cd Documents` in the terminal. 
+
+`df` (short for "disk free") is used to display the amount of disk space available for your file systems. It shows the sizes of the available file systems and how much space is used and free on each file system.
+
+Executing command: cd df
+
+Output: 
+```bash
+Error: Command did not execute successfully.
+```
+
+### Command Information for `mkdir demo`
+The command `mkdir demo` creates a new directory named "demo" in the current working directory. "mkdir" stands for "make directory". It is a basic command used to create a new directory or folder. The syntax is simple: `mkdir directory_name`.
+
+Executing command: mkdir demo
+
+Output: 
+```bash
+Error: Command did not execute successfully.
+```
+
+### Command Information for `cd demo`
+The `cd` command is used to change the current working directory in the terminal. In this example, `cd demo` means that the current working directory will be changed to a directory named "demo".
+
+Executing command: cd demo
+
+Output: 
+```bash
+
+```
+
+### Command Information for `nano file`
+The `nano` command is a terminal text editor that allows you to create and edit text files in the terminal. When you run the command `nano file`, you open the `nano` editor with a new or existing file named `file`. If `file` already exists, `nano` will open it for editing. If `file` does not exist, `nano` will create it for you.
+
+Once you have opened the file in `nano`, you can make changes to the text using the keyboard. You can use the arrow keys to move the cursor around, and you can type new text or delete existing text. When you are finished editing the file, you can save it by pressing `ctrl`+`o` and then exiting `nano` by pressing `ctrl`+`x`.
+
+Executing command: nano file
+
+Output: 
+```bash
+Error: Command did not execute successfully.
+```
+
+### Command Information for `cat file`
+The command `cat file` is used to display the contents of a file on the terminal. The word "cat" is short for "concatenate," which refers to the action of joining multiple files together. But when used with a single file, it simply outputs the content of the file on the terminal.
+
+Executing command: cat file
+
+Output: 
+```bash
+Error: Command did not execute successfully.
+```
+
+### Command Information for `cp file file1`
+This command is used to make a duplicate copy of a file. In this case, the file named "file" is being copied to a new file named "file1". The original file will remain unchanged, but you will now have a new file with the content of the original. If the file "file1" already exists, it will be overwritten without any warning.
+
+Executing command: cp file file1
+
+Output: 
+```bash
+Error: Command did not execute successfully.
+```
+
+### Command Information for `mv file file2`
+The `mv` command is used to move or rename files and directories. In this case, `file` is being renamed to `file2`. If `file2` already exists in the same location, it will replace it with the contents of `file`. If `file2` does not exist, `file` will be renamed to `file2`.
+
+Executing command: mv file file2
+
+Output: 
+```bash
+Error: Command did not execute successfully.
+```
+
+### Command Information for `rm file2`
+The "rm" command in the terminal is used to remove or delete a file. In this specific command "file2" is the name of the file that will be deleted. Once the command is executed, the file will be removed from the system and cannot be retrieved unless backed up previously. It is important to be cautious when using the "rm" command as it permanently removes files from your system.
+
+Executing command: rm file2
+
+Output: 
+```bash
+Error: Command did not execute successfully.
+```
+
+### Command Information for `clear`
+The `clear` command is used in the terminal to clear the screen of all the previous commands and output that were displayed. It essentially creates a blank slate for you to start fresh with your new set of commands. After you enter the `clear` command and press enter, you will not be able to see the previous commands and outputs that were displayed before. It does not delete or modify any files or data, it simply clears the screen.
+
+Executing command: clear
+
+Output: 
+```bash
+[H[2J
+```
+
