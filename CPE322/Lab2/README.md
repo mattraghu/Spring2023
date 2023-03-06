@@ -21,7 +21,7 @@ with open(os.path.expanduser("~/Documents/OPENAI_API_KEY.txt")) as f:
 
 
 #Set up the Organization
-openai.organization = "Raghunandan"
+openai.organization = "org-9rUnSTHOfxLvlgIoNDRgEDoZ" #My organization ID
 ```
 
 I was able to test the API by running the following code:
@@ -404,3 +404,7 @@ Executing command: clear
 Output:
 
 Cleared the console
+
+## Conclusion
+
+The goal of this lab familiarize myself with the ChatGPT API, while also executing several commands in the terminal. Ultimately, I was able to accomplish this, and I have learned alot about the ChatGPT API as well as some terminal commands that I have never seen before.
