@@ -68,7 +68,7 @@ def getCommandInfo(command):
 
 ## Part 2: Running the commands
 
-I set up a table with the given commands and looped through them, using os.system(commandName) to get the terminal output for each command.
+I set up a table with the given commands and looped through them, using subprocess.check_output() to get the terminal output for each command.
 
 ````python
 commands = [
@@ -113,7 +113,7 @@ outputFile.write(outputText)
 
 ````
 
-The Content of output.txt is as follows:
+The Content of output.md is as follows:
 
 ### Command Information for `hostname`
 
