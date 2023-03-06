@@ -21,7 +21,7 @@ with open(os.path.expanduser("~/Documents/OPENAI_API_KEY.txt")) as f:
 
 
 #Set up the Organization
-openai.organization
+openai.organization = "Raghunandan"
 ```
 
 I was able to test the API by running the following code:
