@@ -70,9 +70,48 @@ def getCommandInfo(command):
 
 I set up a table with the given commands and looped through them, using os.system(commandName) to get the terminal output for each command.
 
-```
+````python
+commands = [
+    "hostname",
+    "env",
+    "ps",
+    "pwd",
+    "git clone https://github.com/kevinwlu/iot.git",
+    "cd iot",
+    "ls",
+    "cd",
+    "df",
+    "mkdir demo",
+    "cd demo",
+    "nano file",
+    "cat file",
+    "cp file file1",
+    "mv file file2",
+    "rm file2",
 
-```
+    "clear",
+
+]
+
+outputFile = open("output.md", "w")
+outputText = ""
+for command in commands:
+    outputText += str("### Command Information for `" + command + "`")
+    outputText += "\n" + str(getCommandInfo(command))
+    outputText += "\n\n" + str("Executing command: " + command)
+    outputText += "\n\n" + str("Output: ")
+    outputText += "\n" + "```bash"
+    try:
+        outputText += "\n" + str(subprocess.check_output(command, shell=True).decode("utf-8"))
+    except:
+        outputText += "\n" + "Error: Command did not execute successfully."
+    outputText += "\n" + "```" + "\n\n"
+
+
+outputFile.write(outputText)
+
+
+````
 
 The Content of output.txt is as follows:
 
