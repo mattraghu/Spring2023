@@ -1,6 +1,6 @@
 # Lab 3 : Automated Python Script Explainer
 
-For this lab, we were tasked with simply installing Python and executing a few scripts. Instead, I built a program in python that goes through each python script and explains it using the [Chat GPT API](https://platform.openai.com/docs/guides/chat/introduction).
+For this lab, we were tasked with simply installing Python and executing a few scripts. I already have python installed so instead, I built a program in python that goes through each python script and explains it using the [Chat GPT API](https://platform.openai.com/docs/guides/chat/introduction).
 
 ## Part 1: Installation
 
