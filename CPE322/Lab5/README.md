@@ -48,3 +48,7 @@ The **pubcpu.py** program publishes the CPU usage of the machine. The program us
 
 The program is demonstrated below:
 ![Publish CPU Usage](./Media/SubPubCPU.gif)
+
+## Conclusion
+
+The Paho library seems to be an easy to use tool for python to connect to an MQTT broker and publish and subscribe to topics. If I ever need a way to transport data from one machine to another, I will definitely consider using MQTT and Paho.
