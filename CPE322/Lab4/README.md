@@ -129,3 +129,7 @@ python3 hello_world.py
 This started a server at the following URL: http://127.0.0.1:5000/
 
 ![Webpage](./Screenshots/FlaskWebpage.png)
+
+## Conclusion
+
+Django and Flask seems like very powerful methods for creating web applications. Django may be a bit more complicated to use than Flask, but it seems to have more features. Flask seems to be more lightweight and easier to use. If I ever need to create a web application, I will consider using either depending on the complexity of the project.
