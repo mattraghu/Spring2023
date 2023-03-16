@@ -12,11 +12,9 @@ $ sudo mv ghdl-0.37-macosx-mcode /usr/local
 $ sudo mv gtkwave.app /Applications
 ```
 
-````
-
 ```bash
 $ vim /etc/paths
-````
+```
 
 Then I added the following lines to the end of the file:
 
@@ -47,7 +45,7 @@ The following commands were used to execute the Hello World program:
 
 ![Hello World](Screenshots/Hello_world.png)
 
-Looking at the file 'hello.vhdl', some important that I've noted are as follows:
+Looking at the file 'hello.vhdl', some important lines that I've noted are as follows:
 
 ```vhdl
 variable l : line
