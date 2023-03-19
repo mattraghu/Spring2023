@@ -1,4 +1,4 @@
-# Lab 7 : ThingSpeak and Google Sheets
+# Lab 7 : ThingSpeak and Google Sheets API (w/ Chat GPT API )
 
 ## Part 1 : ThingSpeak
 
