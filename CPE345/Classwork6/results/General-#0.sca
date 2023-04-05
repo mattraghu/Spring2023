@@ -1,0 +1,46 @@
+version 3
+run General-0-20230404-21:02:52-55881
+attr configname General
+attr datetime 20230404-21:02:52
+attr datetimef 20230404-210252
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Classwork
+attr processid 55881
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Classwork
+
+par Classwork.node1.out.channel typename "\"ned.DelayChannel\""
+par Classwork.node1.out.channel disabled false
+attr mutable ""
+par Classwork.node1.out.channel delay 0.1s
+attr mutable ""
+attr unit s
+par Classwork.node2.out.channel typename "\"Classwork.C\""
+par Classwork.node2.out.channel disabled false
+attr mutable ""
+par Classwork.node2.out.channel delay 0.05s
+attr mutable ""
+attr unit s
+par Classwork.node3.out.channel typename "\"Classwork.C\""
+par Classwork.node3.out.channel disabled false
+attr mutable ""
+par Classwork.node3.out.channel delay 0.05s
+attr mutable ""
+attr unit s
+par Classwork.node1 typename "\"Node3\""
+par Classwork.node1 num_msgs 10
+par Classwork.node2 typename "\"Node3\""
+par Classwork.node2 num_msgs 10
+par Classwork.node3 typename "\"Node3\""
+par Classwork.node3 num_msgs 10
+par Classwork typename "\"Classwork\""
+

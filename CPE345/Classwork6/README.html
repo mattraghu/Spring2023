@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="classwork-6">Classwork 6</h1>
+<p>For this project we were tasked with creating a simple program in Omnett. Basically one node sends and initial message it is passed to another node which then sends it to another node and so on, until it reaches the last node which then sends it back to the first node and the cycle repeats.</p>
+<h2 id="part-1---structure">Part 1 - Structure</h2>
+<p>The structure of the nodes and their connections is shown below:</p>
+<p><img src="Screenshots/NodeStructure.png" alt="Node Structure"></p>
+<p>This was achieved with the following code in the <em>Classwork.ned</em> file:</p>
+<pre class="hljs"><code><div>simple Node3
+{
+    parameters:
+        @<span class="hljs-built_in">display</span>(<span class="hljs-string">"i=block/routing"</span>); <span class="hljs-comment">// add a default icon</span>
+        <span class="hljs-keyword">int</span> num_msgs = <span class="hljs-number">10</span>;
+    gates:
+        input in;
+        output out;
+}
+
+
+
+
+
+network Classwork
+{
+    @<span class="hljs-built_in">display</span>(<span class="hljs-string">"bgb=342,184"</span>);
+
+    types:
+        channel C extends ned.DelayChannel {
+            parameters:
+                @<span class="hljs-built_in">display</span>(<span class="hljs-string">"i=block/clock"</span>);
+                <span class="hljs-built_in">delay</span> = <span class="hljs-number">50</span>ms;
+        }
+    submodules:
+        node1: Node3 {
+            parameters:
+                @<span class="hljs-built_in">display</span>(<span class="hljs-string">"i=,cyan;p=38,69"</span>); <span class="hljs-comment">// do not change the icon (first arg of i=) just colorize it</span>
+        }
+
+        node2: Node3 {
+            parameters:
+                @<span class="hljs-built_in">display</span>(<span class="hljs-string">"i=,gold;p=154,69"</span>); <span class="hljs-comment">// here too</span>
+        }
+        node3: Node3 {
+            parameters:
+                @<span class="hljs-built_in">display</span>(<span class="hljs-string">"i=,red;p=154,143"</span>); <span class="hljs-comment">// here too</span>
+        }
+    connections:
+        <span class="hljs-comment">//Add a 100ms delay to the connection between node1 and node2</span>
+        node1.out --&gt; {<span class="hljs-built_in">delay</span> = <span class="hljs-number">100</span>ms;} --&gt; node2.in;
+        node2.out --&gt; C --&gt; node3.in;
+        node3.out --&gt; C --&gt; node1.in;
+}
+</div></code></pre>
+<h2 id="part-2---node3cc">Part 2 - Node3.cc</h2>
+<p>Now the Node class is defined in the <em>Node3.cc</em> file:</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;omnetpp.h&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> omnetpp;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node3</span> :</span> <span class="hljs-keyword">public</span> cSimpleModule
+{
+<span class="hljs-keyword">protected</span>:
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initialize</span><span class="hljs-params">()</span> <span class="hljs-keyword">override</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleMessage</span><span class="hljs-params">(cMessage *msg)</span> <span class="hljs-keyword">override</span></span>;
+};
+
+Define_Module(Node3);
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Node3::initialize</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// Module initialization code here</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(<span class="hljs-string">"node1"</span>, getName()) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-comment">// create and send first message on gate "out". "tictocMsg" is an</span>
+        <span class="hljs-comment">// arbitrary string which will be the name of the message object.</span>
+        cMessage *msg = <span class="hljs-keyword">new</span> cMessage(<span class="hljs-string">"tictocMsg"</span>);
+        send(msg, <span class="hljs-string">"out"</span>);
+    }
+}
+
+<span class="hljs-comment">// Handle messages arriving on gate "in"</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Node3::handleMessage</span><span class="hljs-params">(cMessage *msg)</span>
+</span>{
+    <span class="hljs-comment">// Message processing code here</span>
+    send(msg, <span class="hljs-string">"out"</span>);
+}
+</div></code></pre>
+<h2 id="part-3---running-the-program">Part 3 - Running the program</h2>
+<p>Now the program is run and the results are shown below:
+<img src="Screenshots/Output1.png" alt="Output1"></p>
+<p>As you can see there is a delay of 100ms between node1 and node2 and a delay of 50ms between node2 and node3 and between node3 and node1.
+This is done by using the delay method of channels in the <em>Classwork.ned</em> file.</p>
+<p>A finish function was also added to the <em>Node3.cc</em> file to print a final message when the simulation is finished:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Finish function</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Node3::finish</span><span class="hljs-params">()</span>
+</span>{
+    EV &lt;&lt; <span class="hljs-string">"Node3: "</span> &lt;&lt; getName() &lt;&lt; <span class="hljs-string">" finished"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</div></code></pre>
+<p>The output of this is shown below:
+<img src="Screenshots/Finish.png" alt="Output2"></p>
+<p>The activity function was not used as according to the documentation it states:</p>
+<blockquote>
+<p><strong>virtual void cSimpleModule::activity() [protected, virtual]</strong>
+Should be redefined to contain the module activity function. For several good reasons, you should prefer handleMessage() to activity(). This default implementation issues an error message (throws cRuntimeError).</p>
+</blockquote>
+
+</body>
+</html>
