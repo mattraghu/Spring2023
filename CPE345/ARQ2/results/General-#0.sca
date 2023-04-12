@@ -1,8 +1,8 @@
 version 3
-run General-0-20230412-12:57:18-84570
+run General-0-20230412-13:25:26-85680
 attr configname General
-attr datetime 20230412-12:57:18
-attr datetimef 20230412-125718
+attr datetime 20230412-13:25:26
+attr datetimef 20230412-132526
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ARQ_Network
-attr processid 84570
+attr processid 85680
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -32,18 +32,26 @@ attr mutable ""
 par ARQ_Network.source.out.channel per 0
 attr mutable ""
 par ARQ_Network.source typename "\"Source\""
-par ARQ_Network.source limit 10000
+par ARQ_Network.source limit 1000000
 par ARQ_Network.destination typename "\"Destination\""
-statistic ARQ_Network.destination (unnamed)
-field count 9583653
-field mean 0.10668277046172
-field stddev 0.34195855937862
+statistic ARQ_Network.destination delayStats
+field count 1000000
+field mean 0.1066550000005
+field stddev 0.34185982191555
 field min 0.001
 field max 6.001
-field sum 1022410.6531838
-field sqrsum 1229744.2377116
+field sum 106655.0000005
+field sqrsum 128243.3099971
+statistic ARQ_Network.destination delayHistogram
+field count 1000000
+field mean 0.1066550000005
+field stddev 0.34185982191555
+field min 0.001
+field max 6.001
+field sum 106655.0000005
+field sqrsum 128243.3099971
 bin	-inf	0
-bin	0	8667797
+bin	0	904407
 bin	0.08	0
 bin	0.16	0
 bin	0.24	0
@@ -55,7 +63,7 @@ bin	0.64	0
 bin	0.72	0
 bin	0.8	0
 bin	0.88	0
-bin	0.96	828302
+bin	0.96	86537
 bin	1.04	0
 bin	1.12	0
 bin	1.2	0
@@ -68,7 +76,7 @@ bin	1.68	0
 bin	1.76	0
 bin	1.84	0
 bin	1.92	0
-bin	2	79093
+bin	2	8160
 bin	2.08	0
 bin	2.16	0
 bin	2.24	0
@@ -80,7 +88,7 @@ bin	2.64	0
 bin	2.72	0
 bin	2.8	0
 bin	2.88	0
-bin	2.96	7592
+bin	2.96	795
 bin	3.04	0
 bin	3.12	0
 bin	3.2	0
@@ -93,7 +101,7 @@ bin	3.68	0
 bin	3.76	0
 bin	3.84	0
 bin	3.92	0
-bin	4	792
+bin	4	93
 bin	4.08	0
 bin	4.16	0
 bin	4.24	0
@@ -105,7 +113,7 @@ bin	4.64	0
 bin	4.72	0
 bin	4.8	0
 bin	4.88	0
-bin	4.96	67
+bin	4.96	7
 bin	5.04	0
 bin	5.12	0
 bin	5.2	0
@@ -118,7 +126,7 @@ bin	5.68	0
 bin	5.76	0
 bin	5.84	0
 bin	5.92	0
-bin	6	10
+bin	6	1
 bin	6.08	0
 par ARQ_Network typename "\"ARQ_Network\""
 

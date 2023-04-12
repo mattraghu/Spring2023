@@ -28,9 +28,11 @@ class Source : public cSimpleModule
 protected:
   virtual void initialize() override;
   virtual void handleMessage(cMessage *msg) override;
+  virtual void CreateAndSendPacket();
   cMessage *timeoutEvent;
   cPacket *pkt;
   double timeout;
+  int packetsSent;
 
 public:
   Source();

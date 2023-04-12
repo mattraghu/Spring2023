@@ -29,18 +29,32 @@ Source::~Source() // Called when the object is destroyed
     delete pkt;
 }
 
+void Source::CreateAndSendPacket()
+{
+
+    if (packetsSent == par("limit").intValue())
+    {
+        EV << "Limit reached, stopping simulation" << endl;
+        endSimulation();
+    }
+
+    pkt = new cPacket("packet");
+    pkt->setBitLength(10);
+    send(pkt->dup(), "out");
+
+    // Increment the number of packets sent
+    packetsSent++;
+
+    // Schedule the timeout event
+    scheduleAt(simTime() + timeout, timeoutEvent);
+}
+
 void Source::initialize()
 {
     timeout = 1.0;
     timeoutEvent = new cMessage("timeoutEvent");
     EV << "Sending Initial Message" << endl;
-    pkt = new cPacket("packet");
-    pkt->setBitLength(10);
-    // Duplicate the packet and send it to the destination
-    send(pkt->dup(), "out");
-
-    // Schedule the timeout event
-    scheduleAt(simTime() + timeout, timeoutEvent);
+    CreateAndSendPacket();
 }
 
 void Source::handleMessage(cMessage *msg)
@@ -50,6 +64,9 @@ void Source::handleMessage(cMessage *msg)
     {
         EV << "Timeout expired, sending back message" << endl;
         send(pkt->dup(), "out");
+
+        // Reschedule the timeout event
+        scheduleAt(simTime() + timeout, timeoutEvent);
     }
     else
     {
@@ -61,10 +78,6 @@ void Source::handleMessage(cMessage *msg)
         delete pkt;
 
         // Create and send a new packet
-        pkt = new cPacket("packet");
-        pkt->setBitLength(10);
-        send(pkt->dup(), "out");
+        CreateAndSendPacket();
     }
-    // Reschedule the timeout event
-    scheduleAt(simTime() + timeout, timeoutEvent);
 }

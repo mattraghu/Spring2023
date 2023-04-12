@@ -18,6 +18,8 @@ protected:
 public:
   // Histogram
   cHistogram delayHistogram;
+  // Statistics
+  cStdDev delayStats;
 };
 
 #endif

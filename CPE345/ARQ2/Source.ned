@@ -3,7 +3,7 @@ simple Source
 {
     parameters:
         @display("i=block/source");
-        int limit = default(10000);
+        int limit = default(1000000);
     gates:
         input in;
         output out;
