@@ -1,0 +1,63 @@
+version 3
+run General-0-20230419-11:29:01-45217
+attr configname General
+attr datetime 20230419-11:29:01
+attr datetimef 20230419-112901
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network PQ_Network
+attr processid 45217
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network PQ_Network
+config **.source1.interArrivalTime exponential(1.0s)
+config **.source2.interArrivalTime exponential(1.0s)
+config **.server.serviceTime exponential(0.3s)
+config **.source1.numJobs 1000000
+config **.source2.numJobs 1000000
+config **.source1.jobName "\"high priority\""
+config **.source2.jobName "\"low priority\""
+config **.source1.jobType 0
+config **.source2.jobType 1
+
+vector 0 PQ_Network.queue1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 PQ_Network.queue2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+0	0	0	0
+1	0	0	0
+1	7	0.898560388484	1
+1	8	1.353755768188	0
+vector 2 PQ_Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+2	9	1.353755768188	0.557881263622
+1	13	1.821783519955	1
+1	14	1.939219368953	0
+2	15	1.939219368953	1.040658980469
+0	19	2.051805262613	1
+0	20	2.502908585214	0
+2	21	2.502908585214	0.681125065259
+0	25	2.602853749283	1
+1	28	2.608984659937	1
+0	29	2.796010513132	0
+2	30	2.796010513132	0.744205250519
+1	32	2.968666272197	0
+2	33	2.968666272197	0.365812522914
+2	36	3.074614013938	0.465629354001
+2	42	3.111628224387	0.017515400728
+2	48	3.7365198922	0.095506842253
+
