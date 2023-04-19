@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/mattraghu/Documents/Projects/Spring2023/CPE462/Homework6/HW6 -B /Users/mattraghu/Documents/Projects/Spring2023/CPE462/Homework6/HW6/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/mattraghu/Documents/Projects/Spring2023/CPE462/Homework6/HW6/cmake-build-debug
