@@ -1,0 +1,32 @@
+version 3
+run General-0-20230419-11:04:41-44352
+attr configname General
+attr datetime 20230419-11:04:41
+attr datetimef 20230419-110441
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MM3_Network
+attr processid 44352
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network MM3_Network
+config **.server1.serviceTime exponential(2.5s)
+config **.server2.serviceTime exponential(2.5s)
+config **.server3.serviceTime exponential(2.5s)
+config **.source.interArrivalTime exponential(1s)
+config **.source.numJobs 10000000
+config **.source.jobName "\"customer\""
+
+vector 0 MM3_Network.passiveQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+0	0	0	0
+
