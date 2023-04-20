@@ -1,8 +1,8 @@
 version 3
-run MD1-0-20230419-11:06:15-44393
+run MD1-0-20230420-11:48:33-58408
 attr configname MD1
-attr datetime 20230419-11:06:15
-attr datetimef 20230419-110615
+attr datetime 20230420-11:48:33
+attr datetimef 20230420-114833
 attr experiment MD1
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network MX1_Network
-attr processid 44393
+attr processid 58408
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -27,11 +27,11 @@ par MX1_Network.server fetchingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,longestQueue
 par MX1_Network.server serviceTime 0.75s
 attr unit s
-scalar MX1_Network.server busy:timeavg 0.75448911214158
+scalar MX1_Network.server busy:timeavg 0.75358736946906
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "server busy state, timeavg"
-par MX1_Network.sink typename "\"org.omnetpp.queueing.Sink\""
+par MX1_Network.sink typename "\"My_Sink_ext\""
 par MX1_Network.sink keepJobs false
 scalar MX1_Network.sink generation:mean 0
 attr interpolationmode none
@@ -49,7 +49,7 @@ scalar MX1_Network.sink delaysVisited:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total number of delays visited by arrived jobs, max"
-scalar MX1_Network.sink queuesVisited:mean 1.50584
+scalar MX1_Network.sink queuesVisited:mean 1.5083618469109
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total number of queues visited by arrived jobs, mean"
@@ -77,22 +77,22 @@ attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in delay nodes by arrived jobs, max"
 attr unit s
-scalar MX1_Network.sink totalQueueingTime:mean 1.1284999132225
+scalar MX1_Network.sink totalQueueingTime:mean 1.1216478643471
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent in queues by arrived jobs, mean"
 attr unit s
-scalar MX1_Network.sink totalQueueingTime:max 14.419289609623
+scalar MX1_Network.sink totalQueueingTime:max 9.757848813469
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in queues by arrived jobs, max"
 attr unit s
-scalar MX1_Network.sink lifeTime:mean 1.8784999132225
+scalar MX1_Network.sink lifeTime:mean 1.8716478643471
 attr interpolationmode none
 attr recordingmode mean
 attr title "lifetime of arrived jobs, mean"
 attr unit s
-scalar MX1_Network.sink lifeTime:max 15.169289609623
+scalar MX1_Network.sink lifeTime:max 10.507848813469
 attr interpolationmode none
 attr recordingmode max
 attr title "lifetime of arrived jobs, max"
@@ -102,21 +102,21 @@ par MX1_Network.passiveQueue capacity -1
 par MX1_Network.passiveQueue fifo true
 par MX1_Network.passiveQueue sendingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,minDelay
-scalar MX1_Network.passiveQueue queueingTime:mean 1.4988311018734
+scalar MX1_Network.passiveQueue queueingTime:mean 1.4875044417627
 attr interpolationmode none
 attr recordingmode mean
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar MX1_Network.passiveQueue queueingTime:max 14.419289609623
+scalar MX1_Network.passiveQueue queueingTime:max 9.757848813469
 attr interpolationmode none
 attr recordingmode max
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar MX1_Network.passiveQueue queueLength:timeavg 1.1352545301055
+scalar MX1_Network.passiveQueue queueLength:timeavg 1.1276656121601
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "queue length, timeavg"
-scalar MX1_Network.passiveQueue queueLength:max 20
+scalar MX1_Network.passiveQueue queueLength:max 14
 attr interpolationmode sample-hold
 attr recordingmode max
 attr title "queue length, max"
@@ -135,7 +135,7 @@ par MX1_Network.source startTime 0.795875s
 attr unit s
 par MX1_Network.source stopTime -1s
 attr unit s
-scalar MX1_Network.source created:last 100000
+scalar MX1_Network.source created:last 26018
 attr interpolationmode none
 attr recordingmode last
 attr title "the number of jobs created, last"
