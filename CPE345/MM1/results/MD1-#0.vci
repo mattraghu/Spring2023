@@ -1,9 +1,9 @@
-file 2139971 1682005744                                         
+file 726 1682011312                                             
 version 3
-run MD1-0-20230420-11:48:33-58408
+run MD1-0-20230420-13:21:51-59668
 attr configname MD1
-attr datetime 20230420-11:48:33
-attr datetimef 20230420-114833
+attr datetime 20230420-13:21:51
+attr datetimef 20230420-132151
 attr experiment MD1
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network MX1_Network
-attr processid 58408
+attr processid 59668
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -28,18 +28,4 @@ attr interpolationmode sample-hold
 attr recordingmode vector
 attr title "queue length"
 0	717 8 0 0 0 0 1 0 0 0 0
-vector 1 MX1_Network.sink lifeTime:vector ETV
-attr interpolationmode none
-attr recordingmode vector
-attr title "lifetime of arrived jobs"
-attr unit s
-1	875 24 5 5 1.545874504566 1.545874504566 1 0.75 0.75 0.75 0.5625
-1	899 24 10 10 2.44443489305 2.44443489305 1 0.75 0.75 0.75 0.5625
-1	923 25 15 15 3.700365651097 3.700365651097 1 0.75 0.75 0.75 0.5625
-1	948 25 20 20 5.559969863172 5.559969863172 1 0.75 0.75 0.75 0.5625
-1	973 25 25 25 6.483192994643 6.483192994643 1 0.75 0.75 0.75 0.5625
-1	998 25 30 30 8.434738330527 8.434738330527 1 0.75 0.75 0.75 0.5625
-0	1023 929408 40 108591 10.901952011382 21554.574787829153 32768 0 14 64416 234888
-0	930431 193607 108620 130071 21565.924714126604 25888.172745975208 6475 0 12 13534 53606
-1	1124038 1015932 35 130069 9.221939470509 25887.422745975208 26005 0.75 10.507848813469 48678.932599533 136078.37676286
 

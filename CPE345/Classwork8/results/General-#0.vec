@@ -1,0 +1,32 @@
+version 3
+run General-0-20230420-13:45:05-60742
+attr configname General
+attr datetime 20230420-13:45:05
+attr datetimef 20230420-134505
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network NetworkOfQueues
+attr processid 60742
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network NetworkOfQueues
+config **.source1.interArrivalTime 1.0s
+config **.source1.numJobs 100000
+config **.source2.interArrivalTime 1.0s
+config **.source2.numJobs 100000
+
+vector 0 NetworkOfQueues.sink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+0	5	1	0
+0	8	1	0
+

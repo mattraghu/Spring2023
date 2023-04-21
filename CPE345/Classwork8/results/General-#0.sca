@@ -1,0 +1,138 @@
+version 3
+run General-0-20230420-13:45:05-60742
+attr configname General
+attr datetime 20230420-13:45:05
+attr datetimef 20230420-134505
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network NetworkOfQueues
+attr processid 60742
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network NetworkOfQueues
+config **.source1.interArrivalTime 1.0s
+config **.source1.numJobs 100000
+config **.source2.interArrivalTime 1.0s
+config **.source2.numJobs 100000
+
+par NetworkOfQueues.source1 typename "\"org.omnetpp.queueing.Source\""
+par NetworkOfQueues.source1 numJobs 100000
+par NetworkOfQueues.source1 interArrivalTime 1s
+attr unit s
+par NetworkOfQueues.source1 jobName "\"job\""
+par NetworkOfQueues.source1 jobType 0
+par NetworkOfQueues.source1 jobPriority 0
+par NetworkOfQueues.source1 startTime 1s
+attr unit s
+par NetworkOfQueues.source1 stopTime -1s
+attr unit s
+scalar NetworkOfQueues.source1 created:last 2
+attr interpolationmode none
+attr recordingmode last
+attr title "the number of jobs created, last"
+par NetworkOfQueues.source2 typename "\"org.omnetpp.queueing.Source\""
+par NetworkOfQueues.source2 numJobs 100000
+par NetworkOfQueues.source2 interArrivalTime 1s
+attr unit s
+par NetworkOfQueues.source2 jobName "\"job\""
+par NetworkOfQueues.source2 jobType 0
+par NetworkOfQueues.source2 jobPriority 0
+par NetworkOfQueues.source2 startTime 1s
+attr unit s
+par NetworkOfQueues.source2 stopTime -1s
+attr unit s
+scalar NetworkOfQueues.source2 created:last 2
+attr interpolationmode none
+attr recordingmode last
+attr title "the number of jobs created, last"
+par NetworkOfQueues.router1 typename "\"CustomerRouter\""
+par NetworkOfQueues.router1 routingAlgorithm "\"random\""
+attr enum random,roundRobin,shortestQueue,minDelay
+par NetworkOfQueues.router1 randomGateIndex "intuniform(0, sizeof(out)-1)"
+par NetworkOfQueues.router2 typename "\"CustomerRouter\""
+par NetworkOfQueues.router2 routingAlgorithm "\"random\""
+attr enum random,roundRobin,shortestQueue,minDelay
+par NetworkOfQueues.router2 randomGateIndex "intuniform(0, sizeof(out)-1)"
+par NetworkOfQueues.router3 typename "\"CustomerRouter\""
+par NetworkOfQueues.router3 routingAlgorithm "\"random\""
+attr enum random,roundRobin,shortestQueue,minDelay
+par NetworkOfQueues.router3 randomGateIndex "intuniform(0, sizeof(out)-1)"
+par NetworkOfQueues.sink typename "\"org.omnetpp.queueing.Sink\""
+par NetworkOfQueues.sink keepJobs false
+scalar NetworkOfQueues.sink generation:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the generation of the arrived jobs, mean"
+scalar NetworkOfQueues.sink generation:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the generation of the arrived jobs, max"
+scalar NetworkOfQueues.sink delaysVisited:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of delays visited by arrived jobs, mean"
+scalar NetworkOfQueues.sink delaysVisited:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of delays visited by arrived jobs, max"
+scalar NetworkOfQueues.sink queuesVisited:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of queues visited by arrived jobs, mean"
+scalar NetworkOfQueues.sink queuesVisited:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of queues visited by arrived jobs, max"
+scalar NetworkOfQueues.sink totalServiceTime:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent  by arrived jobs, mean"
+attr unit s
+scalar NetworkOfQueues.sink totalServiceTime:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent  by arrived jobs, max"
+attr unit s
+scalar NetworkOfQueues.sink totalDelayTime:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in delay nodes by arrived jobs, mean"
+attr unit s
+scalar NetworkOfQueues.sink totalDelayTime:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in delay nodes by arrived jobs, max"
+attr unit s
+scalar NetworkOfQueues.sink totalQueueingTime:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in queues by arrived jobs, mean"
+attr unit s
+scalar NetworkOfQueues.sink totalQueueingTime:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in queues by arrived jobs, max"
+attr unit s
+scalar NetworkOfQueues.sink lifeTime:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "lifetime of arrived jobs, mean"
+attr unit s
+scalar NetworkOfQueues.sink lifeTime:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "lifetime of arrived jobs, max"
+attr unit s
+par NetworkOfQueues.source2Router typename "\"org.omnetpp.queueing.Router\""
+par NetworkOfQueues.source2Router routingAlgorithm "\"random\""
+attr enum random,roundRobin,shortestQueue,minDelay
+par NetworkOfQueues.source2Router randomGateIndex "intuniform(0, sizeof(out)-1)"
+par NetworkOfQueues typename "\"NetworkOfQueues\""
+
