@@ -433,7 +433,6 @@ class ImageProcessorApp(tk.Tk):
 ```
 
 The result of this code is a GUI that looks like this:
-
 ![GUI](Media/GUI.png)
 
 # Conclusion
