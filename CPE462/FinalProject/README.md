@@ -1,4 +1,41 @@
-# Image Enchancement Algorithms
+<h1 style="text-align:center;">
+    Image Enchancement Algorithms
+</h1>
+
+<div style="text-align:center;">
+<img src="Media/SIT.png" alt="Logo" style="width:25%;">
+</div>
+
+<div >
+<h2 style="text-align:center;">
+    CPE 462 Final Project
+</h2>
+
+<h3 style="text-align:center;">
+    Author:
+    <br> Matthew Raghunandan </br>
+    <br> 4/25/2023 </br>
+</h3>
+
+<div style="text-align:center;">
+I pledge my Honor that I have abided by the Stevens Honor System.
+</div>
+
+# Introduction
+
+## Abstract
+
+This project explores various method of image enhancement. Specifically, three algorithms: Gaussian Blur, Additive White Gaussian Noise, and Speckle Noise are implemented and tested. It also features the development of a GUI that allows the user to apply these algorithms in a user-friendly way. The results show that the algorithms are effective in enhancing images, with various execution times and efficiency.
+
+## Background
+
+Image enhancement is a crucial aspect of digital image processing, aiming to improve the visual quality of images captured by various imaging devices. In the digital era, with the rise of social media and the increasing use of imaging devices for various applications, the need for efficient and effective image enhancement techniques has become more significant than ever. Consequently, researchers and practitioners have developed numerous image enhancement algorithms over the years to address this need.
+
+## Problem Statement
+
+The goal of this project is to implement and test various image enhancement algorithms. The algorithms that will be implemented are Gaussian Blur, Additive White Gaussian Noise, and Speckle Noise. The algorithms will be tested on various images to determine their effectiveness. The results will be compared to the original images to determine the effectiveness of the algorithms.
+
+# Image Enhancement Algorithms
 
 ## Gaussian Blur
 
@@ -202,3 +239,209 @@ We tested the algorithm by giving it an input image (shown below) and applying t
 ### Comments
 
 For the 2419 × 1814 image, the algorithm took less than **0.1s** to execute. The algorithm was able to effectively add speckle noise to the input image.
+
+## GUI
+
+The GUI is developed using the python library Tkinter.
+
+We define a table of options as follows:
+
+```python
+options = [
+    {
+        "name" : "Gaussian Blur",
+        "function" : blur_image,
+        "parameters" : ["ksize", "sigma"]
+    },
+    {
+        "name" : "Gaussian Noise",
+        "function" : apply_noise,
+        "parameters" : ["noise_level"]
+    },
+    {
+        "name" : "Speckle Noise",
+        "function" : add_speckle_noise,
+        "parameters" : ["mean", "variance"]
+    }
+]
+```
+
+Each options has a name, a function, and a list of parameters. The name is used to display the option in the GUI. The function is the function that will be called when the option is selected. The parameters are the parameters that will be passed to the function when it is called.
+
+The GUI is then created with the following script:
+
+```python
+class ImageProcessorApp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title("Image Processor App")
+
+        # Create the input image frame
+        input_frame = tk.Frame(self)
+        input_frame.pack(side=tk.LEFT, padx=10, pady=10, anchor='n')
+
+        # Create the input image label
+        self.input_label = tk.Label(input_frame, text="Input Image")
+        self.input_label.pack(pady=5)
+
+        # Create the load image button
+        load_image_button = tk.Button(input_frame, text="Load Image", command=self.load_input_image)
+        load_image_button.pack(pady=5)
+
+        # Create the input image canvas
+        self.input_canvas = tk.Canvas(input_frame, width=256, height=256)
+        self.input_canvas.pack()
+
+        # Create the output image frame
+        output_frame = tk.Frame(self)
+        output_frame.pack(side=tk.LEFT, padx=10, pady=10, anchor='n')
+
+        # Create the output image label
+        self.output_label = tk.Label(output_frame, text="Output Image")
+        self.output_label.pack(pady=5)
+
+        # Add an empty label with the same pady value as the "Load Image" button
+        tk.Label(output_frame, text="").pack(pady=8)
+
+
+        # Create the output image canvas
+        self.output_canvas = tk.Canvas(output_frame, width=256, height=256)
+        self.output_canvas.pack()
+
+        # Create the options frame
+        options_frame = tk.Frame(self)
+        options_frame.pack(side=tk.LEFT, padx=10, pady=10)
+
+        # Create the options label
+        options_label = tk.Label(options_frame, text="Options")
+        options_label.pack()
+
+        # Create the options menu
+        self.options_var = tk.StringVar()
+        # self.options_var.set(options[0]["name"])
+        self.options_menu = tk.OptionMenu(options_frame, self.options_var, * [option["name"] for option in options], command=self.update_parameters)
+        self.options_menu.pack(pady=5)
+
+
+
+        # Create the parameters frame
+        self.parameters_frame = tk.Frame(options_frame)
+        self.parameters_frame.pack()
+
+
+        # Create the process button
+        process_button = tk.Button(self, text="Process", command=self.process_image)
+        process_button.pack(pady=10)
+
+        # Set the minimum size of the window
+        self.minsize(800, 400)
+
+        # Initialize the input and output images
+        self.input_image = None
+        self.output_image = None
+
+    def create_parameter_entries(self, parameter_names):
+        # Create the parameters labels and entry fields
+        self.parameter_entries = {}
+        for parameter_name in parameter_names:
+            parameter_label = tk.Label(self.parameters_frame, text=parameter_name.capitalize())
+            parameter_label.pack(pady=5)
+            parameter_entry = tk.Entry(self.parameters_frame)
+            parameter_entry.pack()
+            self.parameter_entries[parameter_name] = parameter_entry
+
+    def update_parameters(self, selected_option_name):
+
+        print("Selected option: ", selected_option_name)
+        # Find the selected option in the options list
+        selected_option = next((option for option in options if option["name"] == selected_option_name), None)
+
+        if selected_option:
+            # Remove the existing parameter entries
+            for child in self.parameters_frame.winfo_children():
+                child.destroy()
+
+            # Create the new parameter entries based on the selected option
+            self.create_parameter_entries(selected_option["parameters"])
+        else:
+            print("Selected option not found in options list")
+
+
+
+    def load_input_image(self):
+        # Ask the user to select an image file
+        file_path = filedialog.askopenfilename()
+
+        if file_path:
+            # Load the image using PIL and convert it to grayscale
+            pil_image = Image.open(file_path).convert("L")
+
+            # Convert the PIL image to a NumPy array
+            np_image = np.array(pil_image)
+
+            # Store the NumPy array as the input image
+            self.input_image = np_image
+
+            # Resize the input image to fit in the input canvas
+            resized_image = pil_image.resize((256, 256), Image.ANTIALIAS)
+
+            # Convert the resized image to a PhotoImage object and display it in the input canvas
+            self.input_photo_image = ImageTk.PhotoImage(resized_image)
+            self.input_canvas.create_image(0, 0, anchor=tk.NW, image=self.input_photo_image)
+
+    def process_image(self):
+        # Get the selected option
+        selected_option_name = self.options_var.get()
+
+        # Find the selected option in the options list
+        selected_option = next((option for option in options if option["name"] == selected_option_name), None)
+
+        if selected_option:
+            # Get the parameter values from the entry fields
+            parameter_values = {}
+            for parameter_name in selected_option["parameters"]:
+                parameter_entry = self.parameter_entries[parameter_name]
+                parameter_value = parameter_entry.get()
+
+                # Try to convert the parameter value to a float
+                try:
+                    parameter_value = float(parameter_value)
+                except ValueError:
+                    # If the parameter value cannot be converted to a float, set it to zero
+                    parameter_value = 0.0
+
+                parameter_values[parameter_name] = parameter_value
+
+            # Apply the selected option to the input image
+            output_image = selected_option["function"](self.input_image, **parameter_values)
+
+            # Store the output image
+            self.output_image = output_image
+
+            # Convert the output image to a PIL image
+            output_pil_image = Image.fromarray(output_image)
+
+            # Resize the output image to fit in the output canvas
+            resized_image = output_pil_image.resize((256, 256), Image.ANTIALIAS)
+
+            # Convert the resized image to a PhotoImage object and display it in the output canvas
+            self.output_photo_image = ImageTk.PhotoImage(resized_image)
+            self.output_canvas.create_image(0, 0, anchor=tk.NW, image=self.output_photo_image)
+        else:
+            print("Selected option not found in options list")
+```
+
+The result of this code is a GUI that looks like this:
+
+![GUI](Media/GUI.png)
+
+# Conclusion
+
+Our algorithms were successful in applying the different filters onto each image. Each algorithm was created to show the mathematical concepts behind each filter, rather than for speed. As such, our run times are not optimal. However, the results are still accurate, and are a testament to the power of image processing.
+
+Additionally, the images are not in color, as the algorithms were created to work with grayscale images. However, the algorithms can be easily modified to work with color images as well by applying the filters to each color channel individually.
+
+## Github Repository
+
+The full code for this project can be found on my Github repository [here](https://github.com/mattraghu/Spring2023/tree/master/CPE462/FinalProject)

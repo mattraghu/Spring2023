@@ -1,0 +1,2819 @@
+<article class="markdown-body entry-content container-lg" itemprop="text">
+	<h1 dir="auto">
+		<a
+			id="user-content-image-enchancement-algorithms"
+			class="anchor"
+			aria-hidden="true"
+			href="#image-enchancement-algorithms"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Image Enchancement Algorithms
+	</h1>
+	<h2 dir="auto">
+		<a
+			id="user-content-gaussian-blur"
+			class="anchor"
+			aria-hidden="true"
+			href="#gaussian-blur"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Gaussian Blur
+	</h2>
+	<h3 dir="auto">
+		<a
+			id="user-content-description"
+			class="anchor"
+			aria-hidden="true"
+			href="#description"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Description
+	</h3>
+	<h4 dir="auto">
+		<a
+			id="user-content-mathematical-description"
+			class="anchor"
+			aria-hidden="true"
+			href="#mathematical-description"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Mathematical Description
+	</h4>
+	<p dir="auto">
+		Gaussian blur is a simple and effective image enhancement algorithm. It is a
+		linear filter that is used to blur an image. It is a convolution of the
+		image with a Gaussian function. The Gaussian function is a bell-shaped curve
+		that is used to model the distribution of a variable. The Gaussian function
+		is defined as:
+	</p>
+	<p dir="auto">
+		<math-renderer
+			class="js-display-math"
+			style="display: block"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="28"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D43A TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo
+					><mjx-mi space="2" class="mjx-i"
+						><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+					><mjx-mo space="4" class="mjx-n"
+						><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+					><mjx-mfrac space="4"
+						><mjx-frac
+							><mjx-num
+								><mjx-nstrut></mjx-nstrut
+								><mjx-mn class="mjx-n"
+									><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+							><mjx-dbox
+								><mjx-dtable
+									><mjx-line></mjx-line
+									><mjx-row
+										><mjx-den
+											><mjx-dstrut></mjx-dstrut
+											><mjx-mrow
+												><mjx-mn class="mjx-n"
+													><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi
+												><mjx-msup
+													><mjx-mi class="mjx-i"
+														><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi
+													><mjx-script style="vertical-align: 0.289em"
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c
+																class="mjx-c32"
+															></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+					><mjx-msup
+						><mjx-mi class="mjx-i"
+							><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+						><mjx-script style="vertical-align: 0.48em"
+							><mjx-texatom size="s"
+								><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+								><mjx-mfrac
+									><mjx-frac
+										><mjx-num
+											><mjx-nstrut></mjx-nstrut
+											><mjx-mrow size="s"
+												><mjx-msup
+													><mjx-mi class="mjx-i"
+														><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+													><mjx-script style="vertical-align: 0.363em"
+														><mjx-mn class="mjx-n"
+															><mjx-c
+																class="mjx-c32"
+															></mjx-c></mjx-mn></mjx-script></mjx-msup
+												><mjx-mo class="mjx-n"
+													><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+												><mjx-msup
+													><mjx-mi class="mjx-i"
+														><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi
+													><mjx-script style="vertical-align: 0.363em"
+														><mjx-mn class="mjx-n"
+															><mjx-c
+																class="mjx-c32"
+															></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+										><mjx-dbox
+											><mjx-dtable
+												><mjx-line></mjx-line
+												><mjx-row
+													><mjx-den
+														><mjx-dstrut></mjx-dstrut
+														><mjx-mrow size="s"
+															><mjx-mn class="mjx-n"
+																><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+															><mjx-msup
+																><mjx-mi class="mjx-i"
+																	><mjx-c
+																		class="mjx-c1D70E TEX-I"
+																	></mjx-c></mjx-mi
+																><mjx-script style="vertical-align: 0.289em"
+																	><mjx-mn class="mjx-n"
+																		><mjx-c
+																			class="mjx-c32"
+																		></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>G</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi
+						><mo stretchy="false">)</mo><mo>=</mo
+						><mfrac
+							><mn>1</mn
+							><mrow
+								><mn>2</mn><mi>π</mi><msup><mi>σ</mi><mn>2</mn></msup></mrow
+							></mfrac
+						><msup
+							><mi>e</mi
+							><mrow data-mjx-texclass="ORD"
+								><mo>−</mo
+								><mfrac
+									><mrow
+										><msup><mi>x</mi><mn>2</mn></msup
+										><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow
+									><mrow
+										><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+									></mfrac
+								></mrow
+							></msup
+						></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+	</p>
+	<p dir="auto">
+		where
+		<math-renderer
+			class="js-inline-math"
+			style="display: inline"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="29"
+				><mjx-math aria-hidden="true" class="MJX-TEX"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi></mjx-math
+				><mjx-assistive-mml display="inline" unselectable="on"
+					><math xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>σ</mi></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+		is the standard deviation of the Gaussian function.
+	</p>
+	<p dir="auto">
+		The
+		<math-renderer
+			class="js-inline-math"
+			style="display: inline"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="30"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mfrac
+						><mjx-frac
+							><mjx-num
+								><mjx-nstrut></mjx-nstrut
+								><mjx-mn class="mjx-n"
+									><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+							><mjx-dbox
+								><mjx-dtable
+									><mjx-line></mjx-line
+									><mjx-row
+										><mjx-den
+											><mjx-dstrut></mjx-dstrut
+											><mjx-mrow
+												><mjx-mn class="mjx-n"
+													><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi
+												><mjx-msup
+													><mjx-mi class="mjx-i"
+														><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi
+													><mjx-script style="vertical-align: 0.289em"
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c
+																class="mjx-c32"
+															></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mfrac
+							><mn>1</mn
+							><mrow
+								><mn>2</mn><mi>π</mi><msup><mi>σ</mi><mn>2</mn></msup></mrow
+							></mfrac
+						></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+		term is a normalization factor that ensures that the Gaussian function
+		integrates to 1.
+	</p>
+	<h4 dir="auto">
+		<a
+			id="user-content-creating-the-gaussian-kernel"
+			class="anchor"
+			aria-hidden="true"
+			href="#creating-the-gaussian-kernel"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Creating the Gaussian Kernel
+	</h4>
+	<p dir="auto">In code, this can be represented as</p>
+	<div
+		class="highlight highlight-source-python notranslate position-relative overflow-auto"
+		dir="auto"
+	>
+		<pre><span class="pl-c"># Function to create a Gaussian kernel given the kernel size and standard deviation (sigma)</span>
+    <span class="pl-k">def</span> <span class="pl-en">create_gaussian_kernel</span>(<span class="pl-s1">ksize</span>, <span class="pl-s1">sigma</span>):
+        <span class="pl-c"># Create a 1D array of coordinates centered at zero</span>
+        <span class="pl-s1">ax</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">arange</span>(<span class="pl-c1">-</span><span class="pl-s1">ksize</span> <span class="pl-c1">//</span> <span class="pl-c1">2</span> <span class="pl-c1">+</span> <span class="pl-c1">1.</span>, <span class="pl-s1">ksize</span> <span class="pl-c1">//</span> <span class="pl-c1">2</span> <span class="pl-c1">+</span> <span class="pl-c1">1.</span>)
+    
+        <span class="pl-c"># Create a 2D meshgrid from the 1D array</span>
+        <span class="pl-s1">xx</span>, <span class="pl-s1">yy</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">meshgrid</span>(<span class="pl-s1">ax</span>, <span class="pl-s1">ax</span>)
+    
+        <span class="pl-c"># Compute the Gaussian kernel using the meshgrid</span>
+        <span class="pl-s1">kernel</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">exp</span>(<span class="pl-c1">-</span>(<span class="pl-s1">xx</span><span class="pl-c1">**</span><span class="pl-c1">2</span> <span class="pl-c1">+</span> <span class="pl-s1">yy</span><span class="pl-c1">**</span><span class="pl-c1">2</span>) <span class="pl-c1">/</span> (<span class="pl-c1">2.</span> <span class="pl-c1">*</span> <span class="pl-s1">sigma</span><span class="pl-c1">**</span><span class="pl-c1">2</span>))
+    
+        <span class="pl-c"># Normalize the kernel so that it sums to 1</span>
+        <span class="pl-k">return</span> <span class="pl-s1">kernel</span> <span class="pl-c1">/</span> <span class="pl-s1">kernel</span>.<span class="pl-en">sum</span>()</pre>
+		<div class="zeroclipboard-container position-absolute right-0 top-0">
+			<clipboard-copy
+				aria-label="Copy"
+				class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+				data-copy-feedback="Copied!"
+				data-tooltip-direction="w"
+				value="# Function to create a Gaussian kernel given the kernel size and standard deviation (sigma)
+    def create_gaussian_kernel(ksize, sigma):
+        # Create a 1D array of coordinates centered at zero
+        ax = np.arange(-ksize // 2 + 1., ksize // 2 + 1.)
+    
+        # Create a 2D meshgrid from the 1D array
+        xx, yy = np.meshgrid(ax, ax)
+    
+        # Compute the Gaussian kernel using the meshgrid
+        kernel = np.exp(-(xx**2 + yy**2) / (2. * sigma**2))
+    
+        # Normalize the kernel so that it sums to 1
+        return kernel / kernel.sum()"
+				tabindex="0"
+				role="button"
+			>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-copy js-clipboard-copy-icon m-2"
+				>
+					<path
+						d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+					></path>
+					<path
+						d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+					></path>
+				</svg>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+				>
+					<path
+						d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+					></path>
+				</svg>
+			</clipboard-copy>
+		</div>
+	</div>
+	<p dir="auto">
+		Note: the normalization factor is applied when we divide the kernel by the
+		sum of the kernel. This ensures that the kernel integrates to 1.
+	</p>
+	<p dir="auto">Say we had a 3x3 kernel, xx,yy would be</p>
+	<p dir="auto">
+		<math-renderer
+			class="js-display-math"
+			style="display: block"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="31"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo space="4" class="mjx-n"
+						><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+					><mjx-mrow space="4"
+						><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+						><mjx-mtable style="min-width: 14.223em"
+							><mjx-table
+								><mjx-itable
+									><mjx-mtr
+										><mjx-mtd style="padding-right: 0.5em"
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-mtext class="mjx-n"
+												><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext
+											><mjx-mo space="3" class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mn space="3" class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-mtext class="mjx-n"
+												><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext
+											><mjx-mo space="3" class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mn space="3" class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable
+						><mjx-mo class="mjx-n"
+							><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-mrow></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>x</mi><mi>x</mi><mo>=</mo
+						><mrow data-mjx-texclass="INNER"
+							><mo data-mjx-texclass="OPEN">[</mo
+							><mtable rowspacing="4pt"
+								><mtr
+									><mtd><mo>−</mo><mn>1</mn></mtd
+									><mtd><mn>0</mn></mtd
+									><mtd><mn>1</mn><mtext>&nbsp;</mtext><mo>−</mo><mn>1</mn></mtd
+									><mtd><mn>0</mn></mtd
+									><mtd><mn>1</mn><mtext>&nbsp;</mtext><mo>−</mo><mn>1</mn></mtd
+									><mtd><mn>0</mn></mtd
+									><mtd><mn>1</mn></mtd></mtr
+								></mtable
+							><mo data-mjx-texclass="CLOSE">]</mo></mrow
+						></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+	</p>
+	<p dir="auto">
+		<math-renderer
+			class="js-display-math"
+			style="display: block"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="32"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo space="4" class="mjx-n"
+						><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+					><mjx-mrow space="4"
+						><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+						><mjx-mtable style="min-width: 13.334em"
+							><mjx-table
+								><mjx-itable
+									><mjx-mtr
+										><mjx-mtd style="padding-right: 0.5em"
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-mtext class="mjx-n"
+												><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+											><mjx-mtext class="mjx-n"
+												><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em"
+											><mjx-mn class="mjx-n"
+												><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+											><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable
+						><mjx-mo class="mjx-n"
+							><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-mrow></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>y</mi><mi>y</mi><mo>=</mo
+						><mrow data-mjx-texclass="INNER"
+							><mo data-mjx-texclass="OPEN">[</mo
+							><mtable rowspacing="4pt"
+								><mtr
+									><mtd><mo>−</mo><mn>1</mn></mtd
+									><mtd><mo>−</mo><mn>1</mn></mtd
+									><mtd><mo>−</mo><mn>1</mn><mtext>&nbsp;</mtext><mn>0</mn></mtd
+									><mtd><mn>0</mn></mtd
+									><mtd><mn>0</mn><mtext>&nbsp;</mtext><mn>1</mn></mtd
+									><mtd><mn>1</mn></mtd
+									><mtd><mn>1</mn></mtd></mtr
+								></mtable
+							><mo data-mjx-texclass="CLOSE">]</mo></mrow
+						></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+	</p>
+	<p dir="auto">
+		<math-renderer
+			class="js-display-math"
+			style="display: block"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="33"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D43A TEX-I"></mjx-c></mjx-mi
+					><mjx-mo space="4" class="mjx-n"
+						><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+					><mjx-mrow space="4"
+						><mjx-mo class="mjx-lop"
+							><mjx-c class="mjx-c5B TEX-S2"></mjx-c></mjx-mo
+						><mjx-mtable style="min-width: 41.776em"
+							><mjx-table
+								><mjx-itable
+									><mjx-mtr
+										><mjx-mtd style="padding-right: 0.5em"
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-mtext class="mjx-n"
+												><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-mtext class="mjx-n"
+												><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em; padding-right: 0.5em"
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-tstrut></mjx-tstrut></mjx-mtd
+										><mjx-mtd style="padding-left: 0.5em"
+											><mjx-msup
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.48em"
+													><mjx-texatom size="s"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mfrac
+															><mjx-frac
+																><mjx-num
+																	><mjx-nstrut></mjx-nstrut
+																	><mjx-mrow size="s"
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+																		><mjx-mo class="mjx-n"
+																			><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+																		><mjx-msup
+																			><mjx-mo class="mjx-n"
+																				><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+																			><mjx-script
+																				style="vertical-align: 0.363em"
+																				><mjx-mn class="mjx-n"
+																					><mjx-c
+																						class="mjx-c32"
+																					></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+																><mjx-dbox
+																	><mjx-dtable
+																		><mjx-line></mjx-line
+																		><mjx-row
+																			><mjx-den
+																				><mjx-dstrut></mjx-dstrut
+																				><mjx-mrow size="s"
+																					><mjx-mn class="mjx-n"
+																						><mjx-c
+																							class="mjx-c32"
+																						></mjx-c></mjx-mn
+																					><mjx-msup
+																						><mjx-mi class="mjx-i"
+																							><mjx-c
+																								class="mjx-c1D70E TEX-I"
+																							></mjx-c></mjx-mi
+																						><mjx-script
+																							style="vertical-align: 0.289em"
+																							><mjx-mn class="mjx-n"
+																								><mjx-c
+																									class="mjx-c32"
+																								></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup
+											><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable
+						><mjx-mo class="mjx-lop"
+							><mjx-c
+								class="mjx-c5D TEX-S2"
+							></mjx-c></mjx-mo></mjx-mrow></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>G</mi><mo>=</mo
+						><mrow data-mjx-texclass="INNER"
+							><mo data-mjx-texclass="OPEN">[</mo
+							><mtable rowspacing="4pt"
+								><mtr
+									><mtd
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mo>−</mo
+														><mn>1</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										></mtd
+									><mtd
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mn>0</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mo>−</mo
+														><mn>1</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										></mtd
+									><mtd
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mn>1</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mo>−</mo
+														><mn>1</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										><mtext>&nbsp;</mtext
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mn>0</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										></mtd
+									><mtd
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mn>0</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mn>0</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										></mtd
+									><mtd
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mn>1</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mn>0</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										><mtext>&nbsp;</mtext
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										></mtd
+									><mtd
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mn>0</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										></mtd
+									><mtd
+										><msup
+											><mi>e</mi
+											><mrow data-mjx-texclass="ORD"
+												><mo>−</mo
+												><mfrac
+													><mrow
+														><mo stretchy="false">(</mo><mn>1</mn
+														><msup><mo stretchy="false">)</mo><mn>2</mn></msup
+														><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn
+														><msup
+															><mo stretchy="false">)</mo><mn>2</mn></msup
+														></mrow
+													><mrow
+														><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+													></mfrac
+												></mrow
+											></msup
+										></mtd
+									></mtr
+								></mtable
+							><mo data-mjx-texclass="CLOSE">]</mo></mrow
+						></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+	</p>
+	<p dir="auto">
+		The Gaussian Kernel would then be normalized by dividing by the sum of the
+		kernel in the following line:
+	</p>
+	<div
+		class="highlight highlight-source-python notranslate position-relative overflow-auto"
+		dir="auto"
+	>
+		<pre><span class="pl-k">return</span> <span class="pl-s1">kernel</span> <span class="pl-c1">/</span> <span class="pl-s1">kernel</span>.<span class="pl-en">sum</span>()</pre>
+		<div class="zeroclipboard-container position-absolute right-0 top-0">
+			<clipboard-copy
+				aria-label="Copy"
+				class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+				data-copy-feedback="Copied!"
+				data-tooltip-direction="w"
+				value="return kernel / kernel.sum()"
+				tabindex="0"
+				role="button"
+			>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-copy js-clipboard-copy-icon m-2"
+				>
+					<path
+						d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+					></path>
+					<path
+						d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+					></path>
+				</svg>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+				>
+					<path
+						d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+					></path>
+				</svg>
+			</clipboard-copy>
+		</div>
+	</div>
+	<h4 dir="auto">
+		<a
+			id="user-content-convolution"
+			class="anchor"
+			aria-hidden="true"
+			href="#convolution"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Convolution
+	</h4>
+	<p dir="auto">
+		We know that to apply a Gaussian Blur we have to convolve the image with the
+		Gaussian kernel.
+	</p>
+	<p dir="auto">A 1D convolution is defined as:</p>
+	<p dir="auto">
+		<math-renderer
+			class="js-display-math"
+			style="display: block"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="34"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo
+					><mjx-mo space="3" class="mjx-n"
+						><mjx-c class="mjx-c2217"></mjx-c></mjx-mo
+					><mjx-mi space="3" class="mjx-i"
+						><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo
+					><mjx-mo space="4" class="mjx-n"
+						><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+					><mjx-munderover space="4"
+						><mjx-over style="padding-bottom: 0.192em; padding-left: 0.734em"
+							><mjx-texatom size="s"
+								><mjx-mi class="mjx-n"
+									><mjx-c
+										class="mjx-c221E"
+									></mjx-c></mjx-mi></mjx-texatom></mjx-over
+						><mjx-box
+							><mjx-munder
+								><mjx-row
+									><mjx-base style="padding-left: 0.366em"
+										><mjx-mo class="mjx-lop"
+											><mjx-c
+												class="mjx-c2211 TEX-S2"
+											></mjx-c></mjx-mo></mjx-base></mjx-row
+								><mjx-row
+									><mjx-under style="padding-top: 0.167em"
+										><mjx-texatom size="s"
+											><mjx-mi class="mjx-i"
+												><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mi class="mjx-n"
+												><mjx-c
+													class="mjx-c221E"
+												></mjx-c></mjx-mi></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover
+					><mjx-mi space="2" class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi
+					><mjx-mo space="3" class="mjx-n"
+						><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+					><mjx-mi space="3" class="mjx-i"
+						><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"
+						><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>x</mi><mo stretchy="false">[</mo><mi>n</mi
+						><mo stretchy="false">]</mo><mo>∗</mo><mi>h</mi
+						><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo
+						><mo>=</mo
+						><munderover
+							><mo data-mjx-texclass="OP">∑</mo
+							><mrow data-mjx-texclass="ORD"
+								><mi>k</mi><mo>=</mo><mo>−</mo
+								><mi mathvariant="normal">∞</mi></mrow
+							><mrow data-mjx-texclass="ORD"
+								><mi mathvariant="normal">∞</mi></mrow
+							></munderover
+						><mi>x</mi><mo stretchy="false">[</mo><mi>k</mi
+						><mo stretchy="false">]</mo><mi>h</mi><mo stretchy="false">[</mo
+						><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="false">]</mo></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+	</p>
+	<p dir="auto">
+		This can be extended to 2D convolution by applying the 1D convolution to
+		each row and column of the image.
+	</p>
+	<p dir="auto">
+		<math-renderer
+			class="js-display-math"
+			style="display: block"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="35"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo
+					><mjx-mi space="2" class="mjx-i"
+						><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo
+					><mjx-mo space="3" class="mjx-n"
+						><mjx-c class="mjx-c2217"></mjx-c></mjx-mo
+					><mjx-mi space="3" class="mjx-i"
+						><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo
+					><mjx-mi space="2" class="mjx-i"
+						><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo
+					><mjx-mo space="4" class="mjx-n"
+						><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+					><mjx-munderover space="4"
+						><mjx-over style="padding-bottom: 0.192em; padding-left: 0.696em"
+							><mjx-texatom size="s"
+								><mjx-mi class="mjx-n"
+									><mjx-c
+										class="mjx-c221E"
+									></mjx-c></mjx-mi></mjx-texatom></mjx-over
+						><mjx-box
+							><mjx-munder
+								><mjx-row
+									><mjx-base style="padding-left: 0.327em"
+										><mjx-mo class="mjx-lop"
+											><mjx-c
+												class="mjx-c2211 TEX-S2"
+											></mjx-c></mjx-mo></mjx-base></mjx-row
+								><mjx-row
+									><mjx-under style="padding-top: 0.167em"
+										><mjx-texatom size="s"
+											><mjx-mi class="mjx-i"
+												><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mi class="mjx-n"
+												><mjx-c
+													class="mjx-c221E"
+												></mjx-c></mjx-mi></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover
+					><mjx-munderover space="2"
+						><mjx-over style="padding-bottom: 0.192em; padding-left: 0.672em"
+							><mjx-texatom size="s"
+								><mjx-mi class="mjx-n"
+									><mjx-c
+										class="mjx-c221E"
+									></mjx-c></mjx-mi></mjx-texatom></mjx-over
+						><mjx-box
+							><mjx-munder
+								><mjx-row
+									><mjx-base style="padding-left: 0.304em"
+										><mjx-mo class="mjx-lop"
+											><mjx-c
+												class="mjx-c2211 TEX-S2"
+											></mjx-c></mjx-mo></mjx-base></mjx-row
+								><mjx-row
+									><mjx-under style="padding-top: 0.167em"
+										><mjx-texatom size="s"
+											><mjx-mi class="mjx-i"
+												><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+											><mjx-mo class="mjx-n"
+												><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+											><mjx-mi class="mjx-n"
+												><mjx-c
+													class="mjx-c221E"
+												></mjx-c></mjx-mi></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover
+					><mjx-mi space="2" class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo
+					><mjx-mi space="2" class="mjx-i"
+						><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi
+					><mjx-mo space="3" class="mjx-n"
+						><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+					><mjx-mi space="3" class="mjx-i"
+						><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo
+					><mjx-mi space="2" class="mjx-i"
+						><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi
+					><mjx-mo space="3" class="mjx-n"
+						><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+					><mjx-mi space="3" class="mjx-i"
+						><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"
+						><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>x</mi><mo stretchy="false">[</mo><mi>n</mi><mo>,</mo><mi>m</mi
+						><mo stretchy="false">]</mo><mo>∗</mo><mi>h</mi
+						><mo stretchy="false">[</mo><mi>n</mi><mo>,</mo><mi>m</mi
+						><mo stretchy="false">]</mo><mo>=</mo
+						><munderover
+							><mo data-mjx-texclass="OP">∑</mo
+							><mrow data-mjx-texclass="ORD"
+								><mi>j</mi><mo>=</mo><mo>−</mo
+								><mi mathvariant="normal">∞</mi></mrow
+							><mrow data-mjx-texclass="ORD"
+								><mi mathvariant="normal">∞</mi></mrow
+							></munderover
+						><munderover
+							><mo data-mjx-texclass="OP">∑</mo
+							><mrow data-mjx-texclass="ORD"
+								><mi>i</mi><mo>=</mo><mo>−</mo
+								><mi mathvariant="normal">∞</mi></mrow
+							><mrow data-mjx-texclass="ORD"
+								><mi mathvariant="normal">∞</mi></mrow
+							></munderover
+						><mi>x</mi><mo stretchy="false">[</mo><mi>j</mi><mo>,</mo><mi>i</mi
+						><mo stretchy="false">]</mo><mi>h</mi><mo stretchy="false">[</mo
+						><mi>n</mi><mo>−</mo><mi>j</mi><mo>,</mo><mi>m</mi><mo>−</mo
+						><mi>i</mi><mo stretchy="false">]</mo></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+	</p>
+	<p dir="auto">In code this is shown as:</p>
+	<div
+		class="highlight highlight-source-python notranslate position-relative overflow-auto"
+		dir="auto"
+	>
+		<pre><span class="pl-c"># Loop through the input image, applying the kernel at each pixel</span>
+    <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">height</span>):
+        <span class="pl-k">for</span> <span class="pl-s1">j</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">width</span>):
+            <span class="pl-c"># Multiply the kernel with the corresponding region in the padded image, and sum the result</span>
+            <span class="pl-s1">output</span>[<span class="pl-s1">i</span>, <span class="pl-s1">j</span>] <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">sum</span>(<span class="pl-s1">padded_image</span>[<span class="pl-s1">i</span>:<span class="pl-s1">i</span><span class="pl-c1">+</span><span class="pl-s1">ksize</span>, <span class="pl-s1">j</span>:<span class="pl-s1">j</span><span class="pl-c1">+</span><span class="pl-s1">ksize</span>] <span class="pl-c1">*</span> <span class="pl-s1">kernel</span>) <span class="pl-c"># This is the same as convolving the kernel with the image.</span></pre>
+		<div class="zeroclipboard-container position-absolute right-0 top-0">
+			<clipboard-copy
+				aria-label="Copy"
+				class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+				data-copy-feedback="Copied!"
+				data-tooltip-direction="w"
+				value="# Loop through the input image, applying the kernel at each pixel
+    for i in range(height):
+        for j in range(width):
+            # Multiply the kernel with the corresponding region in the padded image, and sum the result
+            output[i, j] = np.sum(padded_image[i:i+ksize, j:j+ksize] * kernel) # This is the same as convolving the kernel with the image."
+				tabindex="0"
+				role="button"
+			>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-copy js-clipboard-copy-icon m-2"
+				>
+					<path
+						d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+					></path>
+					<path
+						d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+					></path>
+				</svg>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+				>
+					<path
+						d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+					></path>
+				</svg>
+			</clipboard-copy>
+		</div>
+	</div>
+	<h4 dir="auto">
+		<a
+			id="user-content-padding"
+			class="anchor"
+			aria-hidden="true"
+			href="#padding"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Padding
+	</h4>
+	<p dir="auto">
+		Before we apply the convolution, we also have to pad the image with zeros.
+		The problem is that when we apply the convolution without the padding, the
+		kernel will go out of bounds of the image when applied to the edges of the
+		image. This will result in the output image being smaller than the input
+		image. To avoid this, we pad the image with zeros with a border size equal
+		to half the kernel size. This ensures that the output image is the same size
+		as the input image.
+	</p>
+	<div
+		class="highlight highlight-source-python notranslate position-relative overflow-auto"
+		dir="auto"
+	>
+		<pre><span class="pl-c"># Calculate the padding size (half of the kernel size)</span>
+    <span class="pl-s1">pad_size</span> <span class="pl-c1">=</span> <span class="pl-s1">ksize</span> <span class="pl-c1">//</span> <span class="pl-c1">2</span>
+    
+    <span class="pl-c"># Pad the input image with zeros around the border</span>
+    <span class="pl-s1">padded_image</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">pad</span>(<span class="pl-s1">image</span>, ((<span class="pl-s1">pad_size</span>, <span class="pl-s1">pad_size</span>), (<span class="pl-s1">pad_size</span>, <span class="pl-s1">pad_size</span>)), <span class="pl-s1">mode</span><span class="pl-c1">=</span><span class="pl-s">'constant'</span>)</pre>
+		<div class="zeroclipboard-container position-absolute right-0 top-0">
+			<clipboard-copy
+				aria-label="Copy"
+				class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+				data-copy-feedback="Copied!"
+				data-tooltip-direction="w"
+				value="# Calculate the padding size (half of the kernel size)
+    pad_size = ksize // 2
+    
+    # Pad the input image with zeros around the border
+    padded_image = np.pad(image, ((pad_size, pad_size), (pad_size, pad_size)), mode='constant')"
+				tabindex="0"
+				role="button"
+			>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-copy js-clipboard-copy-icon m-2"
+				>
+					<path
+						d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+					></path>
+					<path
+						d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+					></path>
+				</svg>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+				>
+					<path
+						d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+					></path>
+				</svg>
+			</clipboard-copy>
+		</div>
+	</div>
+	<h4 dir="auto">
+		<a
+			id="user-content-results"
+			class="anchor"
+			aria-hidden="true"
+			href="#results"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Results
+	</h4>
+	<p dir="auto">
+		We testing the algorithm by giving it an input image (shown below) and
+		applying the Gaussian Blur algorithm with a kernel size of 91 and a standard
+		deviation of 10. The results are shown below.
+	</p>
+	<h5 dir="auto">
+		<a
+			id="user-content-input-image"
+			class="anchor"
+			aria-hidden="true"
+			href="#input-image"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Input Image
+	</h5>
+	<p dir="auto">
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="/mattraghu/Spring2023/blob/master/CPE462/FinalProject/Media/MINIRAT.jpeg"
+			><img
+				src="/mattraghu/Spring2023/raw/master/CPE462/FinalProject/Media/MINIRAT.jpeg"
+				alt="Input Image"
+				style="max-width: 100%"
+		/></a>
+	</p>
+	<h5 dir="auto">
+		<a
+			id="user-content-output-image"
+			class="anchor"
+			aria-hidden="true"
+			href="#output-image"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Output Image
+	</h5>
+	<p dir="auto">
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="/mattraghu/Spring2023/blob/master/CPE462/FinalProject/Media/output.jpg"
+			><img
+				src="/mattraghu/Spring2023/raw/master/CPE462/FinalProject/Media/output.jpg"
+				alt="Output Image"
+				style="max-width: 100%"
+		/></a>
+	</p>
+	<p dir="auto">
+		We also tested it with the OpenCV Gaussian Blur function with the following
+		output:
+	</p>
+	<p dir="auto">
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="/mattraghu/Spring2023/blob/master/CPE462/FinalProject/Media/cv2_blurred_image.jpg"
+			><img
+				src="/mattraghu/Spring2023/raw/master/CPE462/FinalProject/Media/cv2_blurred_image.jpg"
+				alt="OpenCV Output Image"
+				style="max-width: 100%"
+		/></a>
+	</p>
+	<h4 dir="auto">
+		<a
+			id="user-content-comments"
+			class="anchor"
+			aria-hidden="true"
+			href="#comments"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Comments
+	</h4>
+	<p dir="auto">
+		We were able to effectively implement the Gaussian Blur algorithm. The
+		results are very similar to the OpenCV Gaussian Blur function. The only
+		difference is that the OpenCV function is much faster than our
+		implementation. This is because the OpenCV function is written in C++ and is
+		optimized for speed. Our implementation is written in Python and is not
+		optimized for speed.
+	</p>
+	<p dir="auto">
+		Because of the large image and kernel size, the algorithm took
+		<strong>41.6s</strong> to execute vs the OpenCV function which took
+		<strong>0.9s</strong> to execute.
+	</p>
+	<p dir="auto">
+		Additionally, the output images do not have color. This is because we only
+		apply this algorithm to the luminance channel of the image. If we applied it
+		to all three channels, the output image would be in color.
+	</p>
+	<h2 dir="auto">
+		<a
+			id="user-content-additive-white-gaussian-noise"
+			class="anchor"
+			aria-hidden="true"
+			href="#additive-white-gaussian-noise"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Additive White Gaussian Noise
+	</h2>
+	<h3 dir="auto">
+		<a
+			id="user-content-description-1"
+			class="anchor"
+			aria-hidden="true"
+			href="#description-1"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Description
+	</h3>
+	<h4 dir="auto">
+		<a
+			id="user-content-mathematical-description-1"
+			class="anchor"
+			aria-hidden="true"
+			href="#mathematical-description-1"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Mathematical Description
+	</h4>
+	<p dir="auto">
+		Additive White Gaussian Noise (AWGN) is a type of noise that is added to an
+		image. It is a random signal with a Gaussian distribution.
+	</p>
+	<p dir="auto">The Gaussian distribution is defined as:</p>
+	<p dir="auto">
+		<math-renderer
+			class="js-display-math"
+			style="display: block"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="36"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+					><mjx-mo space="4" class="mjx-n"
+						><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+					><mjx-mfrac space="4"
+						><mjx-frac
+							><mjx-num
+								><mjx-nstrut></mjx-nstrut
+								><mjx-mn class="mjx-n"
+									><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+							><mjx-dbox
+								><mjx-dtable
+									><mjx-line></mjx-line
+									><mjx-row
+										><mjx-den
+											><mjx-dstrut></mjx-dstrut
+											><mjx-mrow
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi
+												><mjx-msqrt
+													><mjx-sqrt
+														><mjx-surd
+															><mjx-mo class="mjx-n"
+																><mjx-c
+																	class="mjx-c221A"
+																></mjx-c></mjx-mo></mjx-surd
+														><mjx-box style="padding-top: 0.169em"
+															><mjx-mn class="mjx-n"
+																><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+															><mjx-mi class="mjx-i"
+																><mjx-c
+																	class="mjx-c1D70B TEX-I"
+																></mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+					><mjx-msup
+						><mjx-mi class="mjx-i"
+							><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi
+						><mjx-script style="vertical-align: 0.48em"
+							><mjx-texatom size="s"
+								><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+								><mjx-mfrac
+									><mjx-frac
+										><mjx-num
+											><mjx-nstrut></mjx-nstrut
+											><mjx-mrow size="s"
+												><mjx-mo class="mjx-n"
+													><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+												><mjx-mo class="mjx-n"
+													><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D707 TEX-I"></mjx-c></mjx-mi
+												><mjx-msup
+													><mjx-mo class="mjx-n"
+														><mjx-c class="mjx-c29"></mjx-c></mjx-mo
+													><mjx-script style="vertical-align: 0.363em"
+														><mjx-mn class="mjx-n"
+															><mjx-c
+																class="mjx-c32"
+															></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num
+										><mjx-dbox
+											><mjx-dtable
+												><mjx-line></mjx-line
+												><mjx-row
+													><mjx-den
+														><mjx-dstrut></mjx-dstrut
+														><mjx-mrow size="s"
+															><mjx-mn class="mjx-n"
+																><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+															><mjx-msup
+																><mjx-mi class="mjx-i"
+																	><mjx-c
+																		class="mjx-c1D70E TEX-I"
+																	></mjx-c></mjx-mi
+																><mjx-script style="vertical-align: 0.289em"
+																	><mjx-mn class="mjx-n"
+																		><mjx-c
+																			class="mjx-c32"
+																		></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi
+						><mo stretchy="false">)</mo><mo>=</mo
+						><mfrac
+							><mn>1</mn
+							><mrow
+								><mi>σ</mi><msqrt><mn>2</mn><mi>π</mi></msqrt></mrow
+							></mfrac
+						><msup
+							><mi>e</mi
+							><mrow data-mjx-texclass="ORD"
+								><mo>−</mo
+								><mfrac
+									><mrow
+										><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mi>μ</mi
+										><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow
+									><mrow
+										><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow
+									></mfrac
+								></mrow
+							></msup
+						></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+	</p>
+	<p dir="auto">
+		where
+		<math-renderer
+			class="js-inline-math"
+			style="display: inline"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="37"
+				><mjx-math aria-hidden="true" class="MJX-TEX"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D707 TEX-I"></mjx-c></mjx-mi></mjx-math
+				><mjx-assistive-mml display="inline" unselectable="on"
+					><math xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>μ</mi></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+		is the mean of the distribution and
+		<math-renderer
+			class="js-inline-math"
+			style="display: inline"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="38"
+				><mjx-math aria-hidden="true" class="MJX-TEX"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi></mjx-math
+				><mjx-assistive-mml display="inline" unselectable="on"
+					><math xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>σ</mi></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+		is the standard deviation of the distribution.
+	</p>
+	<p dir="auto">
+		A set of random variables with a Gaussian distribution can be generated by
+		generating a set of uniformly distributed random variables and applying the
+		following transformation:
+	</p>
+	<p dir="auto">
+		<math-renderer
+			class="js-display-math"
+			style="display: block"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				display="true"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="39"
+				><mjx-math
+					style="margin-left: 0px; margin-right: 0px"
+					aria-hidden="true"
+					class="MJX-TEX"
+					display="true"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo space="4" class="mjx-n"
+						><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+					><mjx-msqrt space="4"
+						><mjx-sqrt
+							><mjx-surd
+								><mjx-mo class="mjx-lop"
+									><mjx-c class="mjx-c221A TEX-S2"></mjx-c></mjx-mo></mjx-surd
+							><mjx-box style="padding-top: 0.455em"
+								><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+								><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+								><mjx-mi space="2" class="mjx-n"
+									><mjx-c class="mjx-c6C"></mjx-c
+									><mjx-c class="mjx-c6E"></mjx-c></mjx-mi
+								><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo
+								><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+								><mjx-mi class="mjx-i"
+									><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi
+								><mjx-mo class="mjx-n"
+									><mjx-c
+										class="mjx-c29"
+									></mjx-c></mjx-mo></mjx-box></mjx-sqrt></mjx-msqrt
+					><mjx-mi space="2" class="mjx-n"
+						><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c6F"></mjx-c
+						><mjx-c class="mjx-c73"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo
+					><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+					><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi
+					><mjx-mo class="mjx-n"
+						><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math
+				><mjx-assistive-mml display="block" unselectable="on"
+					><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>x</mi><mo>=</mo
+						><msqrt
+							><mo>−</mo><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">⁡</mo
+							><mo stretchy="false">(</mo><mi>u</mi
+							><mo stretchy="false">)</mo></msqrt
+						><mi>cos</mi><mo data-mjx-texclass="NONE">⁡</mo
+						><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><mi>v</mi
+						><mo stretchy="false">)</mo></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+	</p>
+	<p dir="auto">
+		where
+		<math-renderer
+			class="js-inline-math"
+			style="display: inline"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="40"
+				><mjx-math aria-hidden="true" class="MJX-TEX"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi></mjx-math
+				><mjx-assistive-mml display="inline" unselectable="on"
+					><math xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>u</mi></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+		and
+		<math-renderer
+			class="js-inline-math"
+			style="display: inline"
+			data-static-url="https://github.githubassets.com/static"
+			data-run-id="73637cb4109bc82a2ee33eaf426906a2"
+			data-catalyst=""
+			><mjx-container
+				style="position: relative"
+				jax="CHTML"
+				class="MathJax CtxtMenu_Attached_0"
+				tabindex="0"
+				ctxtmenu_counter="41"
+				><mjx-math aria-hidden="true" class="MJX-TEX"
+					><mjx-mi class="mjx-i"
+						><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi></mjx-math
+				><mjx-assistive-mml display="inline" unselectable="on"
+					><math xmlns="http://www.w3.org/1998/Math/MathML"
+						><mi>v</mi></math
+					></mjx-assistive-mml
+				></mjx-container
+			></math-renderer
+		>
+		are uniformly distributed random variables.
+	</p>
+	<p dir="auto">In code this can be represented as:</p>
+	<div
+		class="highlight highlight-source-python notranslate position-relative overflow-auto"
+		dir="auto"
+	>
+		<pre><span class="pl-c"># Get the dimensions of the input image</span>
+    <span class="pl-s1">height</span>, <span class="pl-s1">width</span> <span class="pl-c1">=</span> <span class="pl-s1">image</span>.<span class="pl-s1">shape</span>
+    
+    <span class="pl-c"># Generate uniform random variables</span>
+    <span class="pl-s1">u</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-s1">random</span>.<span class="pl-en">uniform</span>(<span class="pl-s1">size</span><span class="pl-c1">=</span>(<span class="pl-s1">height</span>, <span class="pl-s1">width</span>))
+    <span class="pl-c">#Transform the uniform variables into normal variables using the inverse transform method</span>
+    <span class="pl-s1">noise</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">sqrt</span>(<span class="pl-c1">-</span><span class="pl-c1">2</span> <span class="pl-c1">*</span> <span class="pl-s1">np</span>.<span class="pl-en">log</span>(<span class="pl-s1">u</span>)) <span class="pl-c1">*</span> <span class="pl-s1">np</span>.<span class="pl-en">cos</span>(<span class="pl-c1">2</span> <span class="pl-c1">*</span> <span class="pl-s1">np</span>.<span class="pl-s1">pi</span> <span class="pl-c1">*</span> <span class="pl-s1">u</span>)
+    <span class="pl-c"># Scale the noise to the specified noise level</span>
+    <span class="pl-s1">noise</span> <span class="pl-c1">*=</span> <span class="pl-s1">noise_level</span></pre>
+		<div class="zeroclipboard-container position-absolute right-0 top-0">
+			<clipboard-copy
+				aria-label="Copy"
+				class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+				data-copy-feedback="Copied!"
+				data-tooltip-direction="w"
+				value="# Get the dimensions of the input image
+    height, width = image.shape
+    
+    # Generate uniform random variables
+    u = np.random.uniform(size=(height, width))
+    #Transform the uniform variables into normal variables using the inverse transform method
+    noise = np.sqrt(-2 * np.log(u)) * np.cos(2 * np.pi * u)
+    # Scale the noise to the specified noise level
+    noise *= noise_level"
+				tabindex="0"
+				role="button"
+			>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-copy js-clipboard-copy-icon m-2"
+				>
+					<path
+						d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+					></path>
+					<path
+						d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+					></path>
+				</svg>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+				>
+					<path
+						d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+					></path>
+				</svg>
+			</clipboard-copy>
+		</div>
+	</div>
+	<p dir="auto">
+		The noise is then added to the original image to generate the noisy image.
+	</p>
+	<div
+		class="highlight highlight-source-python notranslate position-relative overflow-auto"
+		dir="auto"
+	>
+		<pre><span class="pl-c"># Add the noise to the input image</span>
+    <span class="pl-s1">noisy_image</span> <span class="pl-c1">=</span> <span class="pl-s1">image</span> <span class="pl-c1">+</span> <span class="pl-s1">noise</span>
+    
+    <span class="pl-c"># Clip the pixel values to ensure they are within the valid range of 0-255</span>
+    <span class="pl-s1">noisy_image</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">clip</span>(<span class="pl-s1">noisy_image</span>, <span class="pl-c1">0</span>, <span class="pl-c1">255</span>)</pre>
+		<div class="zeroclipboard-container position-absolute right-0 top-0">
+			<clipboard-copy
+				aria-label="Copy"
+				class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+				data-copy-feedback="Copied!"
+				data-tooltip-direction="w"
+				value="# Add the noise to the input image
+    noisy_image = image + noise
+    
+    # Clip the pixel values to ensure they are within the valid range of 0-255
+    noisy_image = np.clip(noisy_image, 0, 255)"
+				tabindex="0"
+				role="button"
+			>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-copy js-clipboard-copy-icon m-2"
+				>
+					<path
+						d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+					></path>
+					<path
+						d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+					></path>
+				</svg>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+				>
+					<path
+						d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+					></path>
+				</svg>
+			</clipboard-copy>
+		</div>
+	</div>
+	<h4 dir="auto">
+		<a
+			id="user-content-results-1"
+			class="anchor"
+			aria-hidden="true"
+			href="#results-1"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Results
+	</h4>
+	<p dir="auto">
+		We tested the algorithm by giving it an input image (shown below) and
+		applying the AWGN algorithm with a noise level of 200. The results are shown
+		below.
+	</p>
+	<h5 dir="auto">
+		<a
+			id="user-content-input-image-1"
+			class="anchor"
+			aria-hidden="true"
+			href="#input-image-1"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Input Image
+	</h5>
+	<p dir="auto">
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="/mattraghu/Spring2023/blob/master/CPE462/FinalProject/Media/MINIRAT.jpeg"
+			><img
+				src="/mattraghu/Spring2023/raw/master/CPE462/FinalProject/Media/MINIRAT.jpeg"
+				alt="Input Image"
+				style="max-width: 100%"
+		/></a>
+	</p>
+	<h5 dir="auto">
+		<a
+			id="user-content-output-image-1"
+			class="anchor"
+			aria-hidden="true"
+			href="#output-image-1"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Output Image
+	</h5>
+	<p dir="auto">
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="/mattraghu/Spring2023/blob/master/CPE462/FinalProject/Media/output_noisy.jpg"
+			><img
+				src="/mattraghu/Spring2023/raw/master/CPE462/FinalProject/Media/output_noisy.jpg"
+				alt="Output Image"
+				style="max-width: 100%"
+		/></a>
+	</p>
+	<h3 dir="auto">
+		<a
+			id="user-content-comments-1"
+			class="anchor"
+			aria-hidden="true"
+			href="#comments-1"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Comments
+	</h3>
+	<p dir="auto">
+		The algorithm was able to effectively add AWGN to the input image. At worse,
+		for this 2419&hairsp;×&hairsp;1814 image the algorithm took
+		<strong>0.2s</strong> to execute on its worst trial.
+	</p>
+	<h2 dir="auto">
+		<a
+			id="user-content-speckle-noise"
+			class="anchor"
+			aria-hidden="true"
+			href="#speckle-noise"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Speckle Noise
+	</h2>
+	<h3 dir="auto">
+		<a
+			id="user-content-description-2"
+			class="anchor"
+			aria-hidden="true"
+			href="#description-2"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Description
+	</h3>
+	<p dir="auto">
+		Speckle noise is similar to AWGN. It is a random signal with a Gaussian
+		distribution. However, the variance of the distribution is not constant.
+		Instead, it is proportional to the intensity of the image.
+	</p>
+	<p dir="auto">
+		To achieve this we will generate a log-normal distribution of random
+		variables and multiply it by the input image.:
+	</p>
+	<div
+		class="highlight highlight-source-python notranslate position-relative overflow-auto"
+		dir="auto"
+	>
+		<pre><span class="pl-s1">noise_multiplier</span> <span class="pl-c1">=</span> <span class="pl-s1">np</span>.<span class="pl-en">exp</span>(<span class="pl-s1">np</span>.<span class="pl-s1">random</span>.<span class="pl-en">normal</span>(<span class="pl-s1">mean</span>, <span class="pl-s1">np</span>.<span class="pl-en">sqrt</span>(<span class="pl-s1">variance</span>), <span class="pl-s1">size</span><span class="pl-c1">=</span><span class="pl-s1">image</span>.<span class="pl-s1">shape</span>))
+    
+    <span class="pl-c"># Multiply the input image by the noise multiplier to obtain the</span>
+    <span class="pl-c"># speckle-noisy image</span>
+    <span class="pl-s1">speckle_noisy_image</span> <span class="pl-c1">=</span> <span class="pl-s1">image</span> <span class="pl-c1">*</span> <span class="pl-s1">noise_multiplier</span></pre>
+		<div class="zeroclipboard-container position-absolute right-0 top-0">
+			<clipboard-copy
+				aria-label="Copy"
+				class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+				data-copy-feedback="Copied!"
+				data-tooltip-direction="w"
+				value="noise_multiplier = np.exp(np.random.normal(mean, np.sqrt(variance), size=image.shape))
+    
+    # Multiply the input image by the noise multiplier to obtain the
+    # speckle-noisy image
+    speckle_noisy_image = image * noise_multiplier"
+				tabindex="0"
+				role="button"
+			>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-copy js-clipboard-copy-icon m-2"
+				>
+					<path
+						d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+					></path>
+					<path
+						d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+					></path>
+				</svg>
+				<svg
+					aria-hidden="true"
+					height="16"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					data-view-component="true"
+					class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+				>
+					<path
+						d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+					></path>
+				</svg>
+			</clipboard-copy>
+		</div>
+	</div>
+	<p dir="auto">
+		The multiplication of the noise multiplier ensures that the variance of the
+		speckle noise is proportional to the intensity of the image.
+	</p>
+	<h4 dir="auto">
+		<a
+			id="user-content-results-2"
+			class="anchor"
+			aria-hidden="true"
+			href="#results-2"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Results
+	</h4>
+	<p dir="auto">
+		We tested the algorithm by giving it an input image (shown below) and
+		applying the Speckle Noise algorithm with a mean of .5 and a variance of 1.
+		The results are shown below.
+	</p>
+	<h5 dir="auto">
+		<a
+			id="user-content-input-image-2"
+			class="anchor"
+			aria-hidden="true"
+			href="#input-image-2"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Input Image
+	</h5>
+	<p dir="auto">
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="/mattraghu/Spring2023/blob/master/CPE462/FinalProject/Media/MINIRAT.jpeg"
+			><img
+				src="/mattraghu/Spring2023/raw/master/CPE462/FinalProject/Media/MINIRAT.jpeg"
+				alt="Input Image"
+				style="max-width: 100%"
+		/></a>
+	</p>
+	<h5 dir="auto">
+		<a
+			id="user-content-output-image-2"
+			class="anchor"
+			aria-hidden="true"
+			href="#output-image-2"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Output Image
+	</h5>
+	<p dir="auto">
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="/mattraghu/Spring2023/blob/master/CPE462/FinalProject/Media/output_speckle_noisy.jpg"
+			><img
+				src="/mattraghu/Spring2023/raw/master/CPE462/FinalProject/Media/output_speckle_noisy.jpg"
+				alt="Output Image"
+				style="max-width: 100%"
+		/></a>
+	</p>
+	<h3 dir="auto">
+		<a
+			id="user-content-comments-2"
+			class="anchor"
+			aria-hidden="true"
+			href="#comments-2"
+			><svg
+				class="octicon octicon-link"
+				viewBox="0 0 16 16"
+				version="1.1"
+				width="16"
+				height="16"
+				aria-hidden="true"
+			>
+				<path
+					d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+				></path></svg></a
+		>Comments
+	</h3>
+	<p dir="auto">
+		For the 2419&hairsp;×&hairsp;1814 image, the algorithm took less than
+		<strong>0.1s</strong> to execute. The algorithm was able to effectively add
+		speckle noise to the input image.
+	</p>
+</article>
