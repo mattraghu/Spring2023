@@ -1,0 +1,38 @@
+version 3
+run General-0-20230425-17:41:54-7688
+attr configname General
+attr datetime 20230425-17:41:54
+attr datetimef 20230425-174154
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MX1_Network
+attr processid 7688
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network MX1_Network
+config **.source.interArrivalTime exponential(1.0s)
+config **.source.numJobs 100000
+
+vector 0 MX1_Network.passiveQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+0	0	0	0
+0	5	1.69443489305	1
+0	6	1.795874504566	0
+vector 1 MX1_Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+1	7	1.795874504566	1
+1	10	2.795874504566	1.101439611516
+1	15	3.950365651097	1
+

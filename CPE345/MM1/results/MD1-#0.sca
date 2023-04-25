@@ -1,0 +1,143 @@
+version 3
+run MD1-0-20230425-17:42:50-7778
+attr configname MD1
+attr datetime 20230425-17:42:50
+attr datetimef 20230425-174250
+attr experiment MD1
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MX1_Network
+attr processid 7778
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network MX1_Network
+config **.server.serviceTime 0.75s
+config network MX1_Network
+config **.source.interArrivalTime exponential(1.0s)
+config **.source.numJobs 1000000
+
+par MX1_Network.server typename "\"org.omnetpp.queueing.Server\""
+par MX1_Network.server fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par MX1_Network.server serviceTime 0.75s
+attr unit s
+scalar MX1_Network.server busy:timeavg 0.74968491186665
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par MX1_Network.sink typename "\"My_Sink_ext\""
+par MX1_Network.sink keepJobs false
+scalar MX1_Network.sink generation:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the generation of the arrived jobs, mean"
+scalar MX1_Network.sink generation:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the generation of the arrived jobs, max"
+scalar MX1_Network.sink delaysVisited:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of delays visited by arrived jobs, mean"
+scalar MX1_Network.sink delaysVisited:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of delays visited by arrived jobs, max"
+scalar MX1_Network.sink queuesVisited:mean 1.499462
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of queues visited by arrived jobs, mean"
+scalar MX1_Network.sink queuesVisited:max 2
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of queues visited by arrived jobs, max"
+scalar MX1_Network.sink totalServiceTime:mean 0.75
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent  by arrived jobs, mean"
+attr unit s
+scalar MX1_Network.sink totalServiceTime:max 0.75
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent  by arrived jobs, max"
+attr unit s
+scalar MX1_Network.sink totalDelayTime:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in delay nodes by arrived jobs, mean"
+attr unit s
+scalar MX1_Network.sink totalDelayTime:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in delay nodes by arrived jobs, max"
+attr unit s
+scalar MX1_Network.sink totalQueueingTime:mean 1.1293868631473
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in queues by arrived jobs, mean"
+attr unit s
+scalar MX1_Network.sink totalQueueingTime:max 15.864798023417
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in queues by arrived jobs, max"
+attr unit s
+scalar MX1_Network.sink lifeTime:mean 1.8793868631473
+attr interpolationmode none
+attr recordingmode mean
+attr title "lifetime of arrived jobs, mean"
+attr unit s
+scalar MX1_Network.sink lifeTime:max 16.614798023417
+attr interpolationmode none
+attr recordingmode max
+attr title "lifetime of arrived jobs, max"
+attr unit s
+par MX1_Network.passiveQueue typename "\"org.omnetpp.queueing.PassiveQueue\""
+par MX1_Network.passiveQueue capacity -1
+par MX1_Network.passiveQueue fifo true
+par MX1_Network.passiveQueue sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar MX1_Network.passiveQueue queueingTime:mean 1.5063894425431
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar MX1_Network.passiveQueue queueingTime:max 15.864798023417
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar MX1_Network.passiveQueue queueLength:timeavg 1.1289123879492
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar MX1_Network.passiveQueue queueLength:max 22
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar MX1_Network.passiveQueue dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par MX1_Network.source typename "\"org.omnetpp.queueing.Source\""
+par MX1_Network.source numJobs 1000000
+par MX1_Network.source interArrivalTime exponential(1s)
+attr unit s
+par MX1_Network.source jobName "\"job\""
+par MX1_Network.source jobType 0
+par MX1_Network.source jobPriority 0
+par MX1_Network.source startTime 0.795875s
+attr unit s
+par MX1_Network.source stopTime -1s
+attr unit s
+scalar MX1_Network.source created:last 1000000
+attr interpolationmode none
+attr recordingmode last
+attr title "the number of jobs created, last"
+par MX1_Network typename "\"MX1_Network\""
+
