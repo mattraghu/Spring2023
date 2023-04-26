@@ -11,6 +11,7 @@ class CustomerRouter : public queueing::Router
 protected:
   virtual void initialize() override;
   virtual void handleMessage(cMessage *msg) override;
+  cHistogram histogram;
 };
 
 #endif

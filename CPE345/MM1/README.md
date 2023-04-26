@@ -80,7 +80,7 @@ network = MX1_Network
 
 #### Theoretical
 
-For a M/D/1 Queue we can use the following formula to calculate the long-run average time spent in system per customer
+For a M/G/1 Queue we can use the following formula to calculate the long-run average time spent in system per customer
 
 $$w \approx \frac{1}{\mu} + \frac{\lambda\left(\frac{1}{\mu^2} + \sigma^2\right)}{2\left(1-\rho\right)}$$
 
