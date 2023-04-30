@@ -1,5 +1,5 @@
-file 764 1682012716                                             
-version 3
+file 764 1682542306                                             
+version 2
 run General-0-20230420-13:45:05-60742
 attr configname General
 attr datetime 20230420-13:45:05
@@ -28,6 +28,4 @@ attr interpolationmode none
 attr recordingmode vector
 attr title "lifetime of arrived jobs"
 attr unit s
-0	747 8 5 5 1 1 1 0 0 0 0
-0	755 8 8 8 1 1 1 0 0 0 0
-
+0	747 17 5 8 1 1 2 0 0 0 0

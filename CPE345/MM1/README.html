@@ -1,0 +1,1754 @@
+<div
+	id="readme"
+	class="Box-body readme blob js-code-block-container p-5 p-xl-6 gist-border-0"
+>
+	<article class="markdown-body entry-content container-lg" itemprop="text">
+		<h1 dir="auto">
+			<a
+				id="user-content-simulation-of-queuing-networks-in-omnet"
+				class="anchor"
+				aria-hidden="true"
+				href="#simulation-of-queuing-networks-in-omnet"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>Simulation of Queuing Networks in OMNeT++
+		</h1>
+		<p dir="auto">
+			This program has the ability to simulate both MM1 and MD1 Queues depending
+			on which configuration is selected.
+		</p>
+		<h2 dir="auto">
+			<a
+				id="user-content-mx1_networkned"
+				class="anchor"
+				aria-hidden="true"
+				href="#mx1_networkned"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>MX1_Network.ned
+		</h2>
+		<div
+			class="highlight highlight-source-c++ notranslate position-relative overflow-auto"
+			dir="auto"
+		>
+			<pre>import org.omnetpp.queueing.PassiveQueue;
+import org.omnetpp.queueing.Server;
+import org.omnetpp.queueing.Sink;
+import org.omnetpp.queueing.Source;
+
+network MX1_Network
+{
+  submodules:
+      server: Server {
+          @<span class="pl-c1">display</span>(<span class="pl-s"><span class="pl-pds">"</span>p=213,148<span class="pl-pds">"</span></span>);
+      }
+      sink: My_Sink_ext {
+          @<span class="pl-c1">display</span>(<span class="pl-s"><span class="pl-pds">"</span>p=316,148<span class="pl-pds">"</span></span>);
+      }
+      passiveQueue: PassiveQueue {
+          @<span class="pl-c1">display</span>(<span class="pl-s"><span class="pl-pds">"</span>p=128,148<span class="pl-pds">"</span></span>);
+      }
+      source: Source {
+          @<span class="pl-c1">display</span>(<span class="pl-s"><span class="pl-pds">"</span>p=54,148<span class="pl-pds">"</span></span>);
+      }
+  connections:
+      passiveQueue.<span class="pl-smi">out</span>++ --&gt; server.<span class="pl-smi">in</span>++;
+      server.<span class="pl-smi">out</span> --&gt; sink.<span class="pl-smi">in</span>++;
+      source.<span class="pl-smi">out</span> --&gt; passiveQueue.<span class="pl-smi">in</span>++;
+}</pre>
+			<div class="zeroclipboard-container position-absolute right-0 top-0">
+				<clipboard-copy
+					aria-label="Copy"
+					class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+					data-copy-feedback="Copied!"
+					data-tooltip-direction="w"
+					value='import org.omnetpp.queueing.PassiveQueue;
+import org.omnetpp.queueing.Server;
+import org.omnetpp.queueing.Sink;
+import org.omnetpp.queueing.Source;
+
+network MX1_Network
+{
+  submodules:
+      server: Server {
+          @display("p=213,148");
+      }
+      sink: My_Sink_ext {
+          @display("p=316,148");
+      }
+      passiveQueue: PassiveQueue {
+          @display("p=128,148");
+      }
+      source: Source {
+          @display("p=54,148");
+      }
+  connections:
+      passiveQueue.out++ --> server.in++;
+      server.out --> sink.in++;
+      source.out --> passiveQueue.in++;
+}'
+					tabindex="0"
+					role="button"
+				>
+					<svg
+						aria-hidden="true"
+						height="16"
+						viewBox="0 0 16 16"
+						version="1.1"
+						width="16"
+						data-view-component="true"
+						class="octicon octicon-copy js-clipboard-copy-icon m-2"
+					>
+						<path
+							d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+						></path>
+						<path
+							d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+						></path>
+					</svg>
+					<svg
+						aria-hidden="true"
+						height="16"
+						viewBox="0 0 16 16"
+						version="1.1"
+						width="16"
+						data-view-component="true"
+						class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+					>
+						<path
+							d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+						></path>
+					</svg>
+				</clipboard-copy>
+			</div>
+		</div>
+		<p dir="auto">
+			Additionally, a custom sink module is defined to collect the long-run
+			average time spent in system per customer. Here is the
+			<strong>my_Sink_ext.cc</strong> file:
+		</p>
+		<div
+			class="highlight highlight-source-c++ notranslate position-relative overflow-auto"
+			dir="auto"
+		>
+			<pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">"</span>my_Sink_ext.h<span class="pl-pds">"</span></span>
+
+<span class="pl-en">Define_Module</span>(My_Sink_ext);
+
+<span class="pl-k">void</span> <span class="pl-en">My_Sink_ext::initialize</span>()
+{
+  <span class="pl-c1">Sink::initialize</span>();
+  histogram.<span class="pl-c1">setName</span>(<span class="pl-s"><span class="pl-pds">"</span>Histogram<span class="pl-pds">"</span></span>);
+}
+
+<span class="pl-k">void</span> <span class="pl-en">My_Sink_ext::handleMessage</span>(cMessage *msg)
+{
+  <span class="pl-c1">Sink::handleMessage</span>(msg);
+  <span class="pl-c1">simtime_t</span> delay = <span class="pl-c1">simTime</span>() - msg-&gt;<span class="pl-c1">getCreationTime</span>();
+  histogram.<span class="pl-c1">collect</span>(delay);
+}</pre>
+			<div class="zeroclipboard-container position-absolute right-0 top-0">
+				<clipboard-copy
+					aria-label="Copy"
+					class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+					data-copy-feedback="Copied!"
+					data-tooltip-direction="w"
+					value='#include "my_Sink_ext.h"
+
+Define_Module(My_Sink_ext);
+
+void My_Sink_ext::initialize()
+{
+  Sink::initialize();
+  histogram.setName("Histogram");
+}
+
+void My_Sink_ext::handleMessage(cMessage *msg)
+{
+  Sink::handleMessage(msg);
+  simtime_t delay = simTime() - msg->getCreationTime();
+  histogram.collect(delay);
+}'
+					tabindex="0"
+					role="button"
+				>
+					<svg
+						aria-hidden="true"
+						height="16"
+						viewBox="0 0 16 16"
+						version="1.1"
+						width="16"
+						data-view-component="true"
+						class="octicon octicon-copy js-clipboard-copy-icon m-2"
+					>
+						<path
+							d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+						></path>
+						<path
+							d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+						></path>
+					</svg>
+					<svg
+						aria-hidden="true"
+						height="16"
+						viewBox="0 0 16 16"
+						version="1.1"
+						width="16"
+						data-view-component="true"
+						class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+					>
+						<path
+							d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+						></path>
+					</svg>
+				</clipboard-copy>
+			</div>
+		</div>
+		<h2 dir="auto">
+			<a
+				id="user-content-omnetppini"
+				class="anchor"
+				aria-hidden="true"
+				href="#omnetppini"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>omnetpp.ini
+		</h2>
+		<div
+			class="highlight highlight-source-c++ notranslate position-relative overflow-auto"
+			dir="auto"
+		>
+			<pre>[General]
+network = MX1_Network
+**.source.interArrivalTime = exponential(<span class="pl-c1">1</span>.0s)
+**.source.numJobs = <span class="pl-c1">100000</span>
+
+[MD1]
+network = MX1_Network
+\*\*.server.serviceTime = <span class="pl-c1">0</span>.75s
+
+[MM1]
+network = MX1_Network
+\*\*.server.serviceTime = exponential(<span class="pl-c1">0</span>.75s)</pre>
+			<div class="zeroclipboard-container position-absolute right-0 top-0">
+				<clipboard-copy
+					aria-label="Copy"
+					class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+					data-copy-feedback="Copied!"
+					data-tooltip-direction="w"
+					value="[General]
+network = MX1_Network
+**.source.interArrivalTime = exponential(1.0s)
+**.source.numJobs = 100000
+
+[MD1]
+network = MX1_Network
+\*\*.server.serviceTime = 0.75s
+
+[MM1]
+network = MX1_Network
+\*\*.server.serviceTime = exponential(0.75s)"
+					tabindex="0"
+					role="button"
+				>
+					<svg
+						aria-hidden="true"
+						height="16"
+						viewBox="0 0 16 16"
+						version="1.1"
+						width="16"
+						data-view-component="true"
+						class="octicon octicon-copy js-clipboard-copy-icon m-2"
+					>
+						<path
+							d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+						></path>
+						<path
+							d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+						></path>
+					</svg>
+					<svg
+						aria-hidden="true"
+						height="16"
+						viewBox="0 0 16 16"
+						version="1.1"
+						width="16"
+						data-view-component="true"
+						class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2"
+					>
+						<path
+							d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+						></path>
+					</svg>
+				</clipboard-copy>
+			</div>
+		</div>
+		<h2 dir="auto">
+			<a
+				id="user-content-network-visualization"
+				class="anchor"
+				aria-hidden="true"
+				href="#network-visualization"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>Network Visualization
+		</h2>
+		<p dir="auto">
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="/mattraghu/Spring2023/blob/master/CPE345/MM1/Media/Structure.png"
+				><img
+					src="/mattraghu/Spring2023/raw/master/CPE345/MM1/Media/Structure.png"
+					alt="Network Visualization"
+					style="max-width: 100%"
+			/></a>
+		</p>
+		<h2 dir="auto">
+			<a
+				id="user-content-long-run-average-time-spent-in-system-per-customer"
+				class="anchor"
+				aria-hidden="true"
+				href="#long-run-average-time-spent-in-system-per-customer"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>Long-Run Average Time Spent in System per Customer
+		</h2>
+		<h3 dir="auto">
+			<a
+				id="user-content-mm1-queue"
+				class="anchor"
+				aria-hidden="true"
+				href="#mm1-queue"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>M/M/1 Queue
+		</h3>
+		<h4 dir="auto">
+			<a
+				id="user-content-theoretical"
+				class="anchor"
+				aria-hidden="true"
+				href="#theoretical"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>Theoretical
+		</h4>
+		<p dir="auto">
+			For a M/G/1 Queue we can use the following formula to calculate the
+			long-run average time spent in system per customer
+		</p>
+		<p dir="auto">
+			<math-renderer
+				class="js-display-math"
+				style="display: block"
+				data-static-url="https://github.githubassets.com/static"
+				data-run-id="0cc055efb518336fe089ef83e4007cc2"
+				data-catalyst=""
+				><mjx-container
+					style="position: relative"
+					display="true"
+					jax="CHTML"
+					class="MathJax CtxtMenu_Attached_0"
+					tabindex="0"
+					ctxtmenu_counter="13"
+					><mjx-math
+						style="margin-left: 0px; margin-right: 0px"
+						aria-hidden="true"
+						class="MJX-TEX"
+						display="true"
+						><mjx-mi class="mjx-i"
+							><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c2248"></mjx-c></mjx-mo
+						><mjx-mfrac space="4"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mi class="mjx-i"
+													><mjx-c
+														class="mjx-c1D707 TEX-I"
+													></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="3" class="mjx-n"
+							><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+						><mjx-mfrac space="3"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mrow
+										><mjx-mi class="mjx-i"
+											><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi
+										><mjx-mrow space="2"
+											><mjx-mo class="mjx-lop"
+												><mjx-c class="mjx-c28 TEX-S2"></mjx-c></mjx-mo
+											><mjx-mfrac
+												><mjx-frac
+													><mjx-num
+														><mjx-nstrut></mjx-nstrut
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+													><mjx-dbox
+														><mjx-dtable
+															><mjx-line></mjx-line
+															><mjx-row
+																><mjx-den
+																	><mjx-dstrut></mjx-dstrut
+																	><mjx-msup size="s"
+																		><mjx-mi class="mjx-i"
+																			><mjx-c
+																				class="mjx-c1D707 TEX-I"
+																			></mjx-c></mjx-mi
+																		><mjx-script style="vertical-align: 0.289em"
+																			><mjx-mn size="s" class="mjx-n"
+																				><mjx-c
+																					class="mjx-c32"
+																				></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+											><mjx-mo space="3" class="mjx-n"
+												><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+											><mjx-msup space="3"
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.363em"
+													><mjx-mn size="s" class="mjx-n"
+														><mjx-c
+															class="mjx-c32"
+														></mjx-c></mjx-mn></mjx-script></mjx-msup
+											><mjx-mo class="mjx-lop"
+												><mjx-c
+													class="mjx-c29 TEX-S2"
+												></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mrow
+													><mjx-mn class="mjx-n"
+														><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+													><mjx-mrow space="2"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+														><mjx-mn class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+														><mjx-mo space="3" class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mi space="3" class="mjx-i"
+															><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi
+														><mjx-mo class="mjx-n"
+															><mjx-c
+																class="mjx-c29"
+															></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math
+					><mjx-assistive-mml display="block" unselectable="on"
+						><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+							><mi>w</mi><mo>≈</mo><mfrac><mn>1</mn><mi>μ</mi></mfrac
+							><mo>+</mo
+							><mfrac
+								><mrow
+									><mi>λ</mi
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo
+										><mfrac
+											><mn>1</mn><msup><mi>μ</mi><mn>2</mn></msup></mfrac
+										><mo>+</mo><msup><mi>σ</mi><mn>2</mn></msup
+										><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								><mrow
+									><mn>2</mn
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo><mn>1</mn><mo>−</mo
+										><mi>ρ</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								></mfrac
+							></math
+						></mjx-assistive-mml
+					></mjx-container
+				></math-renderer
+			>
+		</p>
+		<p dir="auto">Where:</p>
+		<ul dir="auto">
+			<li>
+				<math-renderer
+					class="js-inline-math"
+					style="display: inline"
+					data-static-url="https://github.githubassets.com/static"
+					data-run-id="0cc055efb518336fe089ef83e4007cc2"
+					data-catalyst=""
+					><mjx-container
+						style="position: relative"
+						jax="CHTML"
+						class="MathJax CtxtMenu_Attached_0"
+						tabindex="0"
+						ctxtmenu_counter="14"
+						><mjx-math aria-hidden="true" class="MJX-TEX"
+							><mjx-mi class="mjx-i"
+								><mjx-c class="mjx-c1D707 TEX-I"></mjx-c></mjx-mi></mjx-math
+						><mjx-assistive-mml display="inline" unselectable="on"
+							><math xmlns="http://www.w3.org/1998/Math/MathML"
+								><mi>μ</mi></math
+							></mjx-assistive-mml
+						></mjx-container
+					></math-renderer
+				>
+				is the service rate
+			</li>
+			<li>
+				<math-renderer
+					class="js-inline-math"
+					style="display: inline"
+					data-static-url="https://github.githubassets.com/static"
+					data-run-id="0cc055efb518336fe089ef83e4007cc2"
+					data-catalyst=""
+					><mjx-container
+						style="position: relative"
+						jax="CHTML"
+						class="MathJax CtxtMenu_Attached_0"
+						tabindex="0"
+						ctxtmenu_counter="15"
+						><mjx-math aria-hidden="true" class="MJX-TEX"
+							><mjx-mi class="mjx-i"
+								><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi></mjx-math
+						><mjx-assistive-mml display="inline" unselectable="on"
+							><math xmlns="http://www.w3.org/1998/Math/MathML"
+								><mi>λ</mi></math
+							></mjx-assistive-mml
+						></mjx-container
+					></math-renderer
+				>
+				is the arrival rate
+			</li>
+			<li>
+				<math-renderer
+					class="js-inline-math"
+					style="display: inline"
+					data-static-url="https://github.githubassets.com/static"
+					data-run-id="0cc055efb518336fe089ef83e4007cc2"
+					data-catalyst=""
+					><mjx-container
+						style="position: relative"
+						jax="CHTML"
+						class="MathJax CtxtMenu_Attached_0"
+						tabindex="0"
+						ctxtmenu_counter="16"
+						><mjx-math aria-hidden="true" class="MJX-TEX"
+							><mjx-mi class="mjx-i"
+								><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi></mjx-math
+						><mjx-assistive-mml display="inline" unselectable="on"
+							><math xmlns="http://www.w3.org/1998/Math/MathML"
+								><mi>ρ</mi></math
+							></mjx-assistive-mml
+						></mjx-container
+					></math-renderer
+				>
+				is the utilization
+			</li>
+			<li>
+				<math-renderer
+					class="js-inline-math"
+					style="display: inline"
+					data-static-url="https://github.githubassets.com/static"
+					data-run-id="0cc055efb518336fe089ef83e4007cc2"
+					data-catalyst=""
+					><mjx-container
+						style="position: relative"
+						jax="CHTML"
+						class="MathJax CtxtMenu_Attached_0"
+						tabindex="0"
+						ctxtmenu_counter="17"
+						><mjx-math aria-hidden="true" class="MJX-TEX"
+							><mjx-msup
+								><mjx-mi class="mjx-i"
+									><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi
+								><mjx-script style="vertical-align: 0.363em"
+									><mjx-mn size="s" class="mjx-n"
+										><mjx-c
+											class="mjx-c32"
+										></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math
+						><mjx-assistive-mml display="inline" unselectable="on"
+							><math xmlns="http://www.w3.org/1998/Math/MathML"
+								><msup><mi>σ</mi><mn>2</mn></msup></math
+							></mjx-assistive-mml
+						></mjx-container
+					></math-renderer
+				>
+				is the variance of the service time
+			</li>
+		</ul>
+		<p dir="auto">
+			In this case, our service rate is 1/0.75 = 1.3333, our arrival rate is 1,
+			and our utilization is 1/1.3333 = 0.75.
+		</p>
+		<p dir="auto">For a deterministic service time, the variance is 0.</p>
+		<p dir="auto">
+			<math-renderer
+				class="js-display-math"
+				style="display: block"
+				data-static-url="https://github.githubassets.com/static"
+				data-run-id="0cc055efb518336fe089ef83e4007cc2"
+				data-catalyst=""
+				><mjx-container
+					style="position: relative"
+					display="true"
+					jax="CHTML"
+					class="MathJax CtxtMenu_Attached_0"
+					tabindex="0"
+					ctxtmenu_counter="18"
+					><mjx-math
+						style="margin-left: 0px; margin-right: 0px"
+						aria-hidden="true"
+						class="MJX-TEX"
+						display="true"
+						><mjx-mi class="mjx-i"
+							><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c2248"></mjx-c></mjx-mo
+						><mjx-mfrac space="4"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mn class="mjx-n"
+													><mjx-c class="mjx-c31"></mjx-c
+													><mjx-c class="mjx-c2E"></mjx-c
+													><mjx-c class="mjx-c33"></mjx-c
+													><mjx-c class="mjx-c33"></mjx-c
+													><mjx-c class="mjx-c33"></mjx-c
+													><mjx-c
+														class="mjx-c33"
+													></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="3" class="mjx-n"
+							><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+						><mjx-mfrac space="3"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mrow
+										><mjx-mn class="mjx-n"
+											><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+										><mjx-mrow space="2"
+											><mjx-mo class="mjx-lop"
+												><mjx-c class="mjx-c28 TEX-S2"></mjx-c></mjx-mo
+											><mjx-mfrac
+												><mjx-frac
+													><mjx-num
+														><mjx-nstrut></mjx-nstrut
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+													><mjx-dbox
+														><mjx-dtable
+															><mjx-line></mjx-line
+															><mjx-row
+																><mjx-den
+																	><mjx-dstrut></mjx-dstrut
+																	><mjx-msup size="s"
+																		><mjx-mn class="mjx-n"
+																			><mjx-c class="mjx-c31"></mjx-c
+																			><mjx-c class="mjx-c2E"></mjx-c
+																			><mjx-c class="mjx-c33"></mjx-c
+																			><mjx-c class="mjx-c33"></mjx-c
+																			><mjx-c class="mjx-c33"></mjx-c
+																			><mjx-c class="mjx-c33"></mjx-c></mjx-mn
+																		><mjx-script style="vertical-align: 0.393em"
+																			><mjx-mn size="s" class="mjx-n"
+																				><mjx-c
+																					class="mjx-c32"
+																				></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+											><mjx-mo space="3" class="mjx-n"
+												><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+											><mjx-mn space="3" class="mjx-n"
+												><mjx-c class="mjx-c30"></mjx-c></mjx-mn
+											><mjx-mo class="mjx-lop"
+												><mjx-c
+													class="mjx-c29 TEX-S2"
+												></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mrow
+													><mjx-mn class="mjx-n"
+														><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+													><mjx-mrow space="2"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+														><mjx-mn class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+														><mjx-mo space="3" class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mn space="3" class="mjx-n"
+															><mjx-c class="mjx-c30"></mjx-c
+															><mjx-c class="mjx-c2E"></mjx-c
+															><mjx-c class="mjx-c37"></mjx-c
+															><mjx-c class="mjx-c35"></mjx-c></mjx-mn
+														><mjx-mo class="mjx-n"
+															><mjx-c
+																class="mjx-c29"
+															></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c2248"></mjx-c></mjx-mo
+						><mjx-mn space="4" class="mjx-n"
+							><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c2E"></mjx-c
+							><mjx-c class="mjx-c38"></mjx-c><mjx-c class="mjx-c37"></mjx-c
+							><mjx-c class="mjx-c35"></mjx-c><mjx-c class="mjx-c30"></mjx-c
+							><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c
+							><mjx-c class="mjx-c30"></mjx-c
+							><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math
+					><mjx-assistive-mml display="block" unselectable="on"
+						><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+							><mi>w</mi><mo>≈</mo><mfrac><mn>1</mn><mn>1.3333</mn></mfrac
+							><mo>+</mo
+							><mfrac
+								><mrow
+									><mn>1</mn
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo
+										><mfrac
+											><mn>1</mn><msup><mn>1.3333</mn><mn>2</mn></msup></mfrac
+										><mo>+</mo><mn>0</mn
+										><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								><mrow
+									><mn>2</mn
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo><mn>1</mn><mo>−</mo
+										><mn>0.75</mn><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								></mfrac
+							><mo>≈</mo><mn>1.87500001</mn></math
+						></mjx-assistive-mml
+					></mjx-container
+				></math-renderer
+			>
+		</p>
+		<h4 dir="auto">
+			<a
+				id="user-content-simulation"
+				class="anchor"
+				aria-hidden="true"
+				href="#simulation"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>Simulation
+		</h4>
+		<p dir="auto">
+			The long run average time spent in system per customer is collected using
+			the <strong>cHistogram</strong> module. The following is the output of the
+			simulation:
+		</p>
+		<p dir="auto">
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="/mattraghu/Spring2023/blob/master/CPE345/MM1/Media/MD1_Histogram.png"
+				><img
+					src="/mattraghu/Spring2023/raw/master/CPE345/MM1/Media/MD1_Histogram.png"
+					alt="MD1Histogram"
+					style="max-width: 100%"
+			/></a>
+		</p>
+		<p dir="auto">with the following stats:</p>
+		<p dir="auto">
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="/mattraghu/Spring2023/blob/master/CPE345/MM1/Media/MD1_Stats.png"
+				><img
+					src="/mattraghu/Spring2023/raw/master/CPE345/MM1/Media/MD1_Stats.png"
+					alt="MD1Stats"
+					style="max-width: 100%"
+			/></a>
+		</p>
+		<p dir="auto">
+			The mean, <strong>1.87939</strong> is very close to the theoretical value
+			of <strong>1.87500001</strong>.
+		</p>
+		<h3 dir="auto">
+			<a
+				id="user-content-mm1-queue-1"
+				class="anchor"
+				aria-hidden="true"
+				href="#mm1-queue-1"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>M/M/1 Queue
+		</h3>
+		<h4 dir="auto">
+			<a
+				id="user-content-theoretical-1"
+				class="anchor"
+				aria-hidden="true"
+				href="#theoretical-1"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>Theoretical
+		</h4>
+		<p dir="auto">
+			The same formula can be used to calculate the long-run average time spent
+			in system per customer for a M/M/1 Queue.
+		</p>
+		<p dir="auto">
+			<math-renderer
+				class="js-display-math"
+				style="display: block"
+				data-static-url="https://github.githubassets.com/static"
+				data-run-id="0cc055efb518336fe089ef83e4007cc2"
+				data-catalyst=""
+				><mjx-container
+					style="position: relative"
+					display="true"
+					jax="CHTML"
+					class="MathJax CtxtMenu_Attached_0"
+					tabindex="0"
+					ctxtmenu_counter="19"
+					><mjx-math
+						style="margin-left: 0px; margin-right: 0px"
+						aria-hidden="true"
+						class="MJX-TEX"
+						display="true"
+						><mjx-mi class="mjx-i"
+							><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c2248"></mjx-c></mjx-mo
+						><mjx-mfrac space="4"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mi class="mjx-i"
+													><mjx-c
+														class="mjx-c1D707 TEX-I"
+													></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="3" class="mjx-n"
+							><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+						><mjx-mfrac space="3"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mrow
+										><mjx-mi class="mjx-i"
+											><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi
+										><mjx-mrow space="2"
+											><mjx-mo class="mjx-lop"
+												><mjx-c class="mjx-c28 TEX-S2"></mjx-c></mjx-mo
+											><mjx-mfrac
+												><mjx-frac
+													><mjx-num
+														><mjx-nstrut></mjx-nstrut
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+													><mjx-dbox
+														><mjx-dtable
+															><mjx-line></mjx-line
+															><mjx-row
+																><mjx-den
+																	><mjx-dstrut></mjx-dstrut
+																	><mjx-msup size="s"
+																		><mjx-mi class="mjx-i"
+																			><mjx-c
+																				class="mjx-c1D707 TEX-I"
+																			></mjx-c></mjx-mi
+																		><mjx-script style="vertical-align: 0.289em"
+																			><mjx-mn size="s" class="mjx-n"
+																				><mjx-c
+																					class="mjx-c32"
+																				></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+											><mjx-mo space="3" class="mjx-n"
+												><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+											><mjx-msup space="3"
+												><mjx-mi class="mjx-i"
+													><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi
+												><mjx-script style="vertical-align: 0.363em"
+													><mjx-mn size="s" class="mjx-n"
+														><mjx-c
+															class="mjx-c32"
+														></mjx-c></mjx-mn></mjx-script></mjx-msup
+											><mjx-mo class="mjx-lop"
+												><mjx-c
+													class="mjx-c29 TEX-S2"
+												></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mrow
+													><mjx-mn class="mjx-n"
+														><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+													><mjx-mrow space="2"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+														><mjx-mn class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+														><mjx-mo space="3" class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mi space="3" class="mjx-i"
+															><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi
+														><mjx-mo class="mjx-n"
+															><mjx-c
+																class="mjx-c29"
+															></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math
+					><mjx-assistive-mml display="block" unselectable="on"
+						><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+							><mi>w</mi><mo>≈</mo><mfrac><mn>1</mn><mi>μ</mi></mfrac
+							><mo>+</mo
+							><mfrac
+								><mrow
+									><mi>λ</mi
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo
+										><mfrac
+											><mn>1</mn><msup><mi>μ</mi><mn>2</mn></msup></mfrac
+										><mo>+</mo><msup><mi>σ</mi><mn>2</mn></msup
+										><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								><mrow
+									><mn>2</mn
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo><mn>1</mn><mo>−</mo
+										><mi>ρ</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								></mfrac
+							></math
+						></mjx-assistive-mml
+					></mjx-container
+				></math-renderer
+			>
+		</p>
+		<p dir="auto">
+			Except in this case, the service time is exponentially distributed, the
+			variance is equal to one over the square of the mean.
+		</p>
+		<p dir="auto">
+			<math-renderer
+				class="js-display-math"
+				style="display: block"
+				data-static-url="https://github.githubassets.com/static"
+				data-run-id="0cc055efb518336fe089ef83e4007cc2"
+				data-catalyst=""
+				><mjx-container
+					style="position: relative"
+					display="true"
+					jax="CHTML"
+					class="MathJax CtxtMenu_Attached_0"
+					tabindex="0"
+					ctxtmenu_counter="20"
+					><mjx-math
+						style="margin-left: 0px; margin-right: 0px"
+						aria-hidden="true"
+						class="MJX-TEX"
+						display="true"
+						><mjx-msup
+							><mjx-mi class="mjx-i"
+								><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi
+							><mjx-script style="vertical-align: 0.413em"
+								><mjx-mn size="s" class="mjx-n"
+									><mjx-c
+										class="mjx-c32"
+									></mjx-c></mjx-mn></mjx-script></mjx-msup
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+						><mjx-mfrac space="4"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-msup
+													><mjx-mi class="mjx-i"
+														><mjx-c class="mjx-c1D707 TEX-I"></mjx-c></mjx-mi
+													><mjx-script style="vertical-align: 0.289em"
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c
+																class="mjx-c32"
+															></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math
+					><mjx-assistive-mml display="block" unselectable="on"
+						><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+							><msup><mi>σ</mi><mn>2</mn></msup
+							><mo>=</mo
+							><mfrac
+								><mn>1</mn><msup><mi>μ</mi><mn>2</mn></msup></mfrac
+							></math
+						></mjx-assistive-mml
+					></mjx-container
+				></math-renderer
+			>
+		</p>
+		<p dir="auto">So the formula becomes:</p>
+		<p dir="auto">
+			<math-renderer
+				class="js-display-math"
+				style="display: block"
+				data-static-url="https://github.githubassets.com/static"
+				data-run-id="0cc055efb518336fe089ef83e4007cc2"
+				data-catalyst=""
+				><mjx-container
+					style="position: relative"
+					display="true"
+					jax="CHTML"
+					class="MathJax CtxtMenu_Attached_0"
+					tabindex="0"
+					ctxtmenu_counter="21"
+					><mjx-math
+						style="margin-left: 0px; margin-right: 0px"
+						aria-hidden="true"
+						class="MJX-TEX"
+						display="true"
+						><mjx-mi class="mjx-i"
+							><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c2248"></mjx-c></mjx-mo
+						><mjx-mfrac space="4"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mi class="mjx-i"
+													><mjx-c
+														class="mjx-c1D707 TEX-I"
+													></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="3" class="mjx-n"
+							><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+						><mjx-mfrac space="3"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mrow
+										><mjx-mi class="mjx-i"
+											><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi
+										><mjx-mrow space="2"
+											><mjx-mo class="mjx-lop"
+												><mjx-c class="mjx-c28 TEX-S2"></mjx-c></mjx-mo
+											><mjx-mfrac
+												><mjx-frac
+													><mjx-num
+														><mjx-nstrut></mjx-nstrut
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+													><mjx-dbox
+														><mjx-dtable
+															><mjx-line></mjx-line
+															><mjx-row
+																><mjx-den
+																	><mjx-dstrut></mjx-dstrut
+																	><mjx-msup size="s"
+																		><mjx-mi class="mjx-i"
+																			><mjx-c
+																				class="mjx-c1D707 TEX-I"
+																			></mjx-c></mjx-mi
+																		><mjx-script style="vertical-align: 0.289em"
+																			><mjx-mn size="s" class="mjx-n"
+																				><mjx-c
+																					class="mjx-c32"
+																				></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+											><mjx-mo space="3" class="mjx-n"
+												><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+											><mjx-mfrac space="3"
+												><mjx-frac
+													><mjx-num
+														><mjx-nstrut></mjx-nstrut
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+													><mjx-dbox
+														><mjx-dtable
+															><mjx-line></mjx-line
+															><mjx-row
+																><mjx-den
+																	><mjx-dstrut></mjx-dstrut
+																	><mjx-msup size="s"
+																		><mjx-mi class="mjx-i"
+																			><mjx-c
+																				class="mjx-c1D707 TEX-I"
+																			></mjx-c></mjx-mi
+																		><mjx-script style="vertical-align: 0.289em"
+																			><mjx-mn size="s" class="mjx-n"
+																				><mjx-c
+																					class="mjx-c32"
+																				></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+											><mjx-mo class="mjx-lop"
+												><mjx-c
+													class="mjx-c29 TEX-S2"
+												></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mrow
+													><mjx-mn class="mjx-n"
+														><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+													><mjx-mrow space="2"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+														><mjx-mn class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+														><mjx-mo space="3" class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mi space="3" class="mjx-i"
+															><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi
+														><mjx-mo class="mjx-n"
+															><mjx-c
+																class="mjx-c29"
+															></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+						><mjx-mfrac space="4"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mi class="mjx-i"
+													><mjx-c
+														class="mjx-c1D707 TEX-I"
+													></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="3" class="mjx-n"
+							><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+						><mjx-mfrac space="3"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mrow
+										><mjx-mi class="mjx-i"
+											><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi
+										><mjx-mrow space="2"
+											><mjx-mo class="mjx-lop"
+												><mjx-c class="mjx-c28 TEX-S2"></mjx-c></mjx-mo
+											><mjx-mfrac
+												><mjx-frac
+													><mjx-num
+														><mjx-nstrut></mjx-nstrut
+														><mjx-mn size="s" class="mjx-n"
+															><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-num
+													><mjx-dbox
+														><mjx-dtable
+															><mjx-line></mjx-line
+															><mjx-row
+																><mjx-den
+																	><mjx-dstrut></mjx-dstrut
+																	><mjx-msup size="s"
+																		><mjx-mi class="mjx-i"
+																			><mjx-c
+																				class="mjx-c1D707 TEX-I"
+																			></mjx-c></mjx-mi
+																		><mjx-script style="vertical-align: 0.289em"
+																			><mjx-mn size="s" class="mjx-n"
+																				><mjx-c
+																					class="mjx-c32"
+																				></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+											><mjx-mo class="mjx-lop"
+												><mjx-c
+													class="mjx-c29 TEX-S2"
+												></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mrow
+													><mjx-mn class="mjx-n"
+														><mjx-c class="mjx-c32"></mjx-c></mjx-mn
+													><mjx-mrow space="2"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+														><mjx-mn class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+														><mjx-mo space="3" class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mi space="3" class="mjx-i"
+															><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi
+														><mjx-mo class="mjx-n"
+															><mjx-c
+																class="mjx-c29"
+															></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+						><mjx-mfrac space="4"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mi class="mjx-i"
+													><mjx-c
+														class="mjx-c1D707 TEX-I"
+													></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="3" class="mjx-n"
+							><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+						><mjx-mfrac space="3"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mi class="mjx-i"
+										><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mrow
+													><mjx-msup
+														><mjx-mi class="mjx-i"
+															><mjx-c class="mjx-c1D707 TEX-I"></mjx-c></mjx-mi
+														><mjx-script style="vertical-align: 0.289em"
+															><mjx-mn size="s" class="mjx-n"
+																><mjx-c
+																	class="mjx-c32"
+																></mjx-c></mjx-mn></mjx-script></mjx-msup
+													><mjx-mrow space="2"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+														><mjx-mn class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+														><mjx-mo space="3" class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mi space="3" class="mjx-i"
+															><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi
+														><mjx-mo class="mjx-n"
+															><mjx-c
+																class="mjx-c29"
+															></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math
+					><mjx-assistive-mml display="block" unselectable="on"
+						><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+							><mi>w</mi><mo>≈</mo><mfrac><mn>1</mn><mi>μ</mi></mfrac
+							><mo>+</mo
+							><mfrac
+								><mrow
+									><mi>λ</mi
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo
+										><mfrac
+											><mn>1</mn><msup><mi>μ</mi><mn>2</mn></msup></mfrac
+										><mo>+</mo
+										><mfrac
+											><mn>1</mn><msup><mi>μ</mi><mn>2</mn></msup></mfrac
+										><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								><mrow
+									><mn>2</mn
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo><mn>1</mn><mo>−</mo
+										><mi>ρ</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								></mfrac
+							><mo>=</mo><mfrac><mn>1</mn><mi>μ</mi></mfrac
+							><mo>+</mo
+							><mfrac
+								><mrow
+									><mi>λ</mi
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo
+										><mfrac
+											><mn>2</mn><msup><mi>μ</mi><mn>2</mn></msup></mfrac
+										><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								><mrow
+									><mn>2</mn
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo><mn>1</mn><mo>−</mo
+										><mi>ρ</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								></mfrac
+							><mo>=</mo><mfrac><mn>1</mn><mi>μ</mi></mfrac
+							><mo>+</mo
+							><mfrac
+								><mi>λ</mi
+								><mrow
+									><msup><mi>μ</mi><mn>2</mn></msup
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo><mn>1</mn><mo>−</mo
+										><mi>ρ</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								></mfrac
+							></math
+						></mjx-assistive-mml
+					></mjx-container
+				></math-renderer
+			>
+		</p>
+		<p dir="auto">Where:</p>
+		<ul dir="auto">
+			<li>
+				<math-renderer
+					class="js-inline-math"
+					style="display: inline"
+					data-static-url="https://github.githubassets.com/static"
+					data-run-id="0cc055efb518336fe089ef83e4007cc2"
+					data-catalyst=""
+					><mjx-container
+						style="position: relative"
+						jax="CHTML"
+						class="MathJax CtxtMenu_Attached_0"
+						tabindex="0"
+						ctxtmenu_counter="22"
+						><mjx-math aria-hidden="true" class="MJX-TEX"
+							><mjx-mi class="mjx-i"
+								><mjx-c class="mjx-c1D707 TEX-I"></mjx-c></mjx-mi
+							><mjx-mo space="4" class="mjx-n"
+								><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+							><mjx-mfrac space="4"
+								><mjx-frac
+									><mjx-num
+										><mjx-nstrut></mjx-nstrut
+										><mjx-mn size="s" class="mjx-n"
+											><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+									><mjx-dbox
+										><mjx-dtable
+											><mjx-line></mjx-line
+											><mjx-row
+												><mjx-den
+													><mjx-dstrut></mjx-dstrut
+													><mjx-mn size="s" class="mjx-n"
+														><mjx-c class="mjx-c30"></mjx-c
+														><mjx-c class="mjx-c2E"></mjx-c
+														><mjx-c class="mjx-c37"></mjx-c
+														><mjx-c
+															class="mjx-c35"
+														></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+							><mjx-mo space="4" class="mjx-n"
+								><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+							><mjx-mn space="4" class="mjx-n"
+								><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c2E"></mjx-c
+								><mjx-c class="mjx-c33"></mjx-c><mjx-c class="mjx-c33"></mjx-c
+								><mjx-c class="mjx-c33"></mjx-c
+								><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-math
+						><mjx-assistive-mml display="inline" unselectable="on"
+							><math xmlns="http://www.w3.org/1998/Math/MathML"
+								><mi>μ</mi><mo>=</mo><mfrac><mn>1</mn><mn>0.75</mn></mfrac
+								><mo>=</mo><mn>1.3333</mn></math
+							></mjx-assistive-mml
+						></mjx-container
+					></math-renderer
+				>
+			</li>
+			<li>
+				<math-renderer
+					class="js-inline-math"
+					style="display: inline"
+					data-static-url="https://github.githubassets.com/static"
+					data-run-id="0cc055efb518336fe089ef83e4007cc2"
+					data-catalyst=""
+					><mjx-container
+						style="position: relative"
+						jax="CHTML"
+						class="MathJax CtxtMenu_Attached_0"
+						tabindex="0"
+						ctxtmenu_counter="23"
+						><mjx-math aria-hidden="true" class="MJX-TEX"
+							><mjx-mi class="mjx-i"
+								><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi
+							><mjx-mo space="4" class="mjx-n"
+								><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+							><mjx-mn space="4" class="mjx-n"
+								><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math
+						><mjx-assistive-mml display="inline" unselectable="on"
+							><math xmlns="http://www.w3.org/1998/Math/MathML"
+								><mi>λ</mi><mo>=</mo><mn>1</mn></math
+							></mjx-assistive-mml
+						></mjx-container
+					></math-renderer
+				>
+			</li>
+			<li>
+				<math-renderer
+					class="js-inline-math"
+					style="display: inline"
+					data-static-url="https://github.githubassets.com/static"
+					data-run-id="0cc055efb518336fe089ef83e4007cc2"
+					data-catalyst=""
+					><mjx-container
+						style="position: relative"
+						jax="CHTML"
+						class="MathJax CtxtMenu_Attached_0"
+						tabindex="0"
+						ctxtmenu_counter="24"
+						><mjx-math aria-hidden="true" class="MJX-TEX"
+							><mjx-mi class="mjx-i"
+								><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi
+							><mjx-mo space="4" class="mjx-n"
+								><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+							><mjx-mfrac space="4"
+								><mjx-frac
+									><mjx-num
+										><mjx-nstrut></mjx-nstrut
+										><mjx-mi size="s" class="mjx-i"
+											><mjx-c
+												class="mjx-c1D706 TEX-I"
+											></mjx-c></mjx-mi></mjx-num
+									><mjx-dbox
+										><mjx-dtable
+											><mjx-line></mjx-line
+											><mjx-row
+												><mjx-den
+													><mjx-dstrut></mjx-dstrut
+													><mjx-mi size="s" class="mjx-i"
+														><mjx-c
+															class="mjx-c1D707 TEX-I"
+														></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+							><mjx-mo space="4" class="mjx-n"
+								><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+							><mjx-mfrac space="4"
+								><mjx-frac
+									><mjx-num
+										><mjx-nstrut></mjx-nstrut
+										><mjx-mn size="s" class="mjx-n"
+											><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+									><mjx-dbox
+										><mjx-dtable
+											><mjx-line></mjx-line
+											><mjx-row
+												><mjx-den
+													><mjx-dstrut></mjx-dstrut
+													><mjx-mn size="s" class="mjx-n"
+														><mjx-c class="mjx-c31"></mjx-c
+														><mjx-c class="mjx-c2E"></mjx-c
+														><mjx-c class="mjx-c33"></mjx-c
+														><mjx-c class="mjx-c33"></mjx-c
+														><mjx-c class="mjx-c33"></mjx-c
+														><mjx-c
+															class="mjx-c33"
+														></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+							><mjx-mo space="4" class="mjx-n"
+								><mjx-c class="mjx-c3D"></mjx-c></mjx-mo
+							><mjx-mn space="4" class="mjx-n"
+								><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c2E"></mjx-c
+								><mjx-c class="mjx-c37"></mjx-c
+								><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-math
+						><mjx-assistive-mml display="inline" unselectable="on"
+							><math xmlns="http://www.w3.org/1998/Math/MathML"
+								><mi>ρ</mi><mo>=</mo><mfrac><mi>λ</mi><mi>μ</mi></mfrac
+								><mo>=</mo><mfrac><mn>1</mn><mn>1.3333</mn></mfrac
+								><mo>=</mo><mn>0.75</mn></math
+							></mjx-assistive-mml
+						></mjx-container
+					></math-renderer
+				>
+			</li>
+		</ul>
+		<p dir="auto">
+			<math-renderer
+				class="js-display-math"
+				style="display: block"
+				data-static-url="https://github.githubassets.com/static"
+				data-run-id="0cc055efb518336fe089ef83e4007cc2"
+				data-catalyst=""
+				><mjx-container
+					style="position: relative"
+					display="true"
+					jax="CHTML"
+					class="MathJax CtxtMenu_Attached_0"
+					tabindex="0"
+					ctxtmenu_counter="25"
+					><mjx-math
+						style="margin-left: 0px; margin-right: 0px"
+						aria-hidden="true"
+						class="MJX-TEX"
+						display="true"
+						><mjx-mi class="mjx-i"
+							><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c2248"></mjx-c></mjx-mo
+						><mjx-mfrac space="4"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mn class="mjx-n"
+													><mjx-c class="mjx-c31"></mjx-c
+													><mjx-c class="mjx-c2E"></mjx-c
+													><mjx-c class="mjx-c33"></mjx-c
+													><mjx-c class="mjx-c33"></mjx-c
+													><mjx-c class="mjx-c33"></mjx-c
+													><mjx-c
+														class="mjx-c33"
+													></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="3" class="mjx-n"
+							><mjx-c class="mjx-c2B"></mjx-c></mjx-mo
+						><mjx-mfrac space="3"
+							><mjx-frac
+								><mjx-num
+									><mjx-nstrut></mjx-nstrut
+									><mjx-mn class="mjx-n"
+										><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num
+								><mjx-dbox
+									><mjx-dtable
+										><mjx-line></mjx-line
+										><mjx-row
+											><mjx-den
+												><mjx-dstrut></mjx-dstrut
+												><mjx-mrow
+													><mjx-msup
+														><mjx-mn class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c
+															><mjx-c class="mjx-c2E"></mjx-c
+															><mjx-c class="mjx-c33"></mjx-c
+															><mjx-c class="mjx-c33"></mjx-c
+															><mjx-c class="mjx-c33"></mjx-c
+															><mjx-c class="mjx-c33"></mjx-c></mjx-mn
+														><mjx-script style="vertical-align: 0.393em"
+															><mjx-mn size="s" class="mjx-n"
+																><mjx-c
+																	class="mjx-c32"
+																></mjx-c></mjx-mn></mjx-script></mjx-msup
+													><mjx-mrow space="2"
+														><mjx-mo class="mjx-n"
+															><mjx-c class="mjx-c28"></mjx-c></mjx-mo
+														><mjx-mn class="mjx-n"
+															><mjx-c class="mjx-c31"></mjx-c></mjx-mn
+														><mjx-mo space="3" class="mjx-n"
+															><mjx-c class="mjx-c2212"></mjx-c></mjx-mo
+														><mjx-mn space="3" class="mjx-n"
+															><mjx-c class="mjx-c30"></mjx-c
+															><mjx-c class="mjx-c2E"></mjx-c
+															><mjx-c class="mjx-c37"></mjx-c
+															><mjx-c class="mjx-c35"></mjx-c></mjx-mn
+														><mjx-mo class="mjx-n"
+															><mjx-c
+																class="mjx-c29"
+															></mjx-c></mjx-mo></mjx-mrow></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac
+						><mjx-mo space="4" class="mjx-n"
+							><mjx-c class="mjx-c2248"></mjx-c></mjx-mo
+						><mjx-mn space="4" class="mjx-n"
+							><mjx-c class="mjx-c33"></mjx-c><mjx-c class="mjx-c2E"></mjx-c
+							><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c
+							><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c
+							><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c
+							><mjx-c class="mjx-c35"></mjx-c
+							><mjx-c class="mjx-c37"></mjx-c></mjx-mn></mjx-math
+					><mjx-assistive-mml display="block" unselectable="on"
+						><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+							><mi>w</mi><mo>≈</mo><mfrac><mn>1</mn><mn>1.3333</mn></mfrac
+							><mo>+</mo
+							><mfrac
+								><mn>1</mn
+								><mrow
+									><msup><mn>1.3333</mn><mn>2</mn></msup
+									><mrow data-mjx-texclass="INNER"
+										><mo data-mjx-texclass="OPEN">(</mo><mn>1</mn><mo>−</mo
+										><mn>0.75</mn><mo data-mjx-texclass="CLOSE">)</mo></mrow
+									></mrow
+								></mfrac
+							><mo>≈</mo><mn>3.00000057</mn></math
+						></mjx-assistive-mml
+					></mjx-container
+				></math-renderer
+			>
+		</p>
+		<h4 dir="auto">
+			<a
+				id="user-content-simulation-1"
+				class="anchor"
+				aria-hidden="true"
+				href="#simulation-1"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>Simulation
+		</h4>
+		<p dir="auto">
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="/mattraghu/Spring2023/blob/master/CPE345/MM1/Media/MM1_Histogram.png"
+				><img
+					src="/mattraghu/Spring2023/raw/master/CPE345/MM1/Media/MM1_Histogram.png"
+					alt="MM1Histogram"
+					style="max-width: 100%"
+			/></a>
+		</p>
+		<p dir="auto">
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="/mattraghu/Spring2023/blob/master/CPE345/MM1/Media/MM1_Stats.png"
+				><img
+					src="/mattraghu/Spring2023/raw/master/CPE345/MM1/Media/MM1_Stats.png"
+					alt="MM1Stats"
+					style="max-width: 100%"
+			/></a>
+		</p>
+		<p dir="auto">
+			The mean, <strong>3.00487</strong> is very close to the theoretical value
+			of <strong>3.00000057</strong>, so I consider this simulation a success.
+		</p>
+		<h2 dir="auto">
+			<a id="user-content-code" class="anchor" aria-hidden="true" href="#code"
+				><svg
+					class="octicon octicon-link"
+					viewBox="0 0 16 16"
+					version="1.1"
+					width="16"
+					height="16"
+					aria-hidden="true"
+				>
+					<path
+						d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+					></path></svg></a
+			>Code
+		</h2>
+		<p dir="auto">
+			You can access the code at
+			<a href="https://github.com/mattraghu/Spring2023/tree/master/CPE345/MM1"
+				>my github repository</a
+			>
+		</p>
+	</article>
+</div>
