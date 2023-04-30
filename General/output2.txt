@@ -1,73 +1,82 @@
-- Beethoven steeped in Enlightenment ideals
-- Absorbed music of Haydn and Mozart
-- Affected by French Revolution
-- Idealized, then disillusioned by Napoleon
-- Endured occupation and economic privation during Napoleon Wars
-- Lived last dozen years under political repression
-- Promising piano virtuoso and composer
-- Forced to cease performing due to deafness 
-- First musician to make a living almost exclusively as a composer 
-- Three periods of Beethoven's career: 
-    - First, from birth to about 1802, Beethoven found personal voice while mastering musical language and genres
-    - Second, through 1814, developed style achieving new level of drama and expression, gaining popularity 
-    - Third, from 1815 until his death in 1827, music became more introspective, more difficult for performers and listeners
-- Trained by father and other local musicians in Bonn
-- Entered service of elector of Cologne, Maximilian Franz, and attracted notice as pianist and improviser
-- Haydn praised Beethoven's music and urged elector to send him to Vienna for further study
-- Beethoven took lessons with Haydn, interrupted when Haydn left for London in 1794
-- Studied counterpoint for a year with Johann Georg Albrechtsberger 
-- Studied how to set Italian poetry with Antonio Salieri 
-- Beethoven sought to place himself beside Haydn in the minds of the public 
-- Wrote largest group of works during first decade in Vienna: sonatas, variations, and shorter works for piano 
-- Relatively difficult passages or movements appeared next to easier ones, perhaps to challenge the player 
-- Beethoven often used strong contrasts of style or topic to delineate the form and broaden the expressive range
-- Used frequent octaves, thick textures, and abrupt changes of dynamics 
-- "Sonate pathétique" depicted suffering and a tragic mode of expression- The sonata is in C minor with stormy outer movements and a calm slow movement in A major
-- The first movement has a dramatic slow introduction of grief that is recalled multiple times throughout the movement
-- The main themes of the movement are energetic and determined with the motive of the introduction transformed and assimilated into the character of the Allegro
-- The sonata-rondo finale is serious and intense
-- Beethoven's personality shows through in the individuality of every movement, character of his themes, unexpected turns of phrase, unconventional modulations, and subtleties of form
-- The slow movement of No. 1 was inspired by the burial vault scene of Romeo and Juliet and is striking and operatic
-- Beethoven's Symphony No. 1 in C Major shows his allegiance to the model of Haydn's and Mozart's late symphonies but with distinctive differences 
-- Around 1803, Beethoven began composing in a new, more ambitious style due to his reputation, support of patrons and publishers, and his growing loss of hearing
-- Beethoven had generous patrons, including important noble families in Vienna who provided him with a lifetime annuity to stay in Vienna
-- The financial support Beethoven received freed him to compose largely as he wished, although he often failed to meet deadlines
-- Beethoven composed with great deliberation.- In 1802, Beethoven realized he was going deaf and was in despair, but resolved to continue composing for the sake of his art
-- His compositions reflected his struggle and experiences, often portraying a protagonist who overcomes great odds
-- Beethoven expanded traditional forms and themes to achieve great variety and dramatic conflict in his music
-- His Symphony No. 3 in E-flat Major, named Sinfonia Eroica, exemplifies his new approach and reflects his understanding of heroism from ancient Greek and Roman literature
-- One possible interpretation suggests the first movement encapsulates a story of challenge, struggle, and final victory
-- The movement uses a fast triple meter and a traditional deutsche melody, but the chromatic descent and unique presentation suggest the protagonist is of common rather than noble origin.- The heroic content lies in the transformation of the opening motive over the course of the movement
-- The motive undergoes several transformations, including being treated in sequence with a rising chromatic tail, disguised as a new theme in minor, and striving upward before tumbling back down
-- The motive achieves a new form by the end of the movement
-- The principal antagonist is a leaping figure with strong accents on weak beats, creating a forceful duple meter against the main motive's serene triple meter
-- The development builds to a terrifying, dissonant climax, with the main motive gradually struggling to reassert itself
-- The piece showcases economy of material, expansion of form, and a sense of struggle, achievement, and progressive change
-- The second movement has strong links to the French Republic, with thirty-second-note upbeats imitating the roll of muffled drums used in Revolutionary processions and a C-major section with the character of a Revolutionary hymn
-- Beethoven originally named the symphony "Bonaparte" in honor of Napoleon, but tore up the title page when he crowned himself emperor
-- Beethoven wavered in his opinion of Napoleon, conducting the symphony during French Occupation and considering dedicating his Mass in C, Op. 86, to the emperor- Beethoven's music attracted a broad and devoted public more than his predecessors'
-- Middle to late eighteenth century instrumental music was rooted in the galant style, relying on familiar schemata
-- Beethoven's music grew out of the same stylistic tradition, but each piece had individual internal logic
-- The Eroica and Beethoven's later symphonies became the center of the symphonic tradition that could rivet a first-time listener
-- Fidelio glorified heroism and humanitarian ideals of the Revolution
-- Beethoven's string quartets tested the limits of amateur players
-- Concertos of his middle period were composed on a grander scale 
-- Beethoven expanded music's expressive range and dimensions
-- Solos were coequal with the orchestra, playing the part of a hero in a drama
-- Beethoven's Fifth Symphony embodied the experience of the sublime
-- The symphony had a rhythmic figure that recurred in various guises in other movements
-- Beethoven's deafness made him become morbidly suspicious and retreat into himself
-- Financial problems and ill health plagued Beethoven, making it difficult to continue composing
-- Final defeat of Napoleon and postwar depression made it difficult to produce large-scale public works
-- Beethoven sympathized with republican government ideals and was spied on by government security forces- Beethoven's late works were not politically linked like Fidelio or the Eroica Symphony
-- The musical language became more introspective and aimed at a smaller audience
-- Classical forms remained but were recognizable under new contours
-- A key element of Beethoven's late style was high contrast, with extremes meeting in pieces like the Missa solemnis and Ninth Symphony
-- Contrasts of topic became exaggerated, involving style, figuration, character, meter, and tempo
-- Beethoven emphasized continuity while balancing contrasts
-- An die ferne Geliebte inaugurated the song cycle genre
-- Beethoven used variation technique to reexamine the substance of themes
-- New sonorities were introduced including pizzicatos and sul ponticello effects
-- Beethoven used familiar styles and genres for expressive purposes and to reflect on tradition
-- Imitative counterpoint, especially fugue, was characteristic of Beethoven's late works
-- Beethoven reconceived the number and arrangement of movements while seeking to integrate them closer through motivic and key relationships
+- Beethoven was steeped in Enlightenment ideals and was affected by the French Revolution
+- He absorbed the music of Haydn and Mozart in his youth
+- Beethoven idealized and then became disillusioned by Napoleon
+- He endured occupation and economic privation during the Napoleonic Wars
+- Beethoven lived his last dozen years under political repression
+- He was a promising piano virtuoso and composer in his youth but had to cease performing because of deafness
+- Beethoven was the first musician to make a living almost exclusively as a composer
+- Beethoven's musical career had three periods: mastering musical language, achieving enormous popularity, and becoming more introspective
+- He initially mastered the genres of his time and found a personal voice
+- In the second period, his style achieved a new level of drama and expression
+- In the third period, his music became more introspective and difficult for performers and listeners
+- Beethoven attracted notice as a pianist and improviser while in the service of Maximilian Franz, elector of Cologne
+- Haydn praised Beethoven’s music and urged the elector to send him to Vienna
+- Beethoven took lessons with Haydn and later studied counterpoint and Italian poetry with other composers
+- Beethoven's sonatas, variations, and shorter works for piano comprise the largest group of works he wrote during his first decade in Vienna
+- Beethoven's early sonatas already make increasing demands on the performer
+- He often used strong contrasts of style or topic to delineate the form and broaden the expressive range, like Mozart
+- Beethoven frequently used octaves, thick textures, and abrupt changes of dynamics in his music
+- The Sonate pathétique (Sonata with Pathos) announced that the work would depict suffering and a tragic mode of expression.- The sonata is in C minor and has stormy outer movements and a calm slow movement in A major.
+- The first movement has a dramatic slow introduction and energetic and determined main themes. The main motive of the introduction is transformed in the development.
+- The sonata-rondo finale is serious and intense, with individuality in every movement and unexpected turns of phrase.
+- The slow movement is inspired by the burial vault scene of Romeo and Juliet and is considered a dramatic and operatic movement for string quartet.
+- Beethoven's Symphony No. 1 in C Major shows allegiance to the models of Haydn and Mozart but with distinct elements such as a slow introduction without a definitive tonic cadence, dynamic shadings, and unusual prominence for the woodwinds.
+- Around 1803, Beethoven entered a new and ambitious style of composition that marked a pivotal point in his career due to his reputation, patronage, and predicament of growing hearing loss.
+- Beethoven had financial support and patronage from noble families, including an unparalleled lifetime annuity provided by Prince Franz Joseph von Lobkowitz, Prince Kinsky, and Archduke Rudolph just to stay in Vienna.
+- Beethoven could afford to take his time and revise a work until it suited him due to his financial, social, and creative support.
+- Beethoven composed with great deliberation.- In 1802, Beethoven discovered that his hearing loss was permanent and would worsen over time
+- Initially considered suicide, but resolved to continue composing for the sake of his art
+- Played less in public but continued to compose and occasionally conduct
+- Beethoven's music reflects the struggle of his own life, becoming like narratives or dramas
+- His music conveys his own experiences and feelings rather than just representing the emotions of a text or operatic character
+- Often, the thematic material assumes the character of a protagonist who struggles against great odds and emerges triumphant
+- Beethoven's works are expansive, dynamic, and with unusual features, creating the sense of dramatic conflict, climax, and catharsis more than any previous instrumental music
+- His music builds on the models of Haydn and Mozart in most respects, but forms are often expanded or reworked in novel ways
+- Beethoven achieves great variety through ingenious transformations of his themes
+- Symphony No. 3, Sinfonia Eroica, exemplifies Beethoven's new approach
+- The title suggests that the symphony expresses the ideal of heroic greatness
+- The symphony reflects Beethoven's understanding of heroism as portrayed in ancient Greek and Roman literature
+- The first movement encapsulates the story of challenge, struggle, and final victory
+- The first movement is in the fast triple meter of the deutsche, a German peasant dance
+- The first three measures of the triadic motive are identical to a traditional deutsche melody Beethoven may have known
+- The motive is first presented in a low register, in the cello, at a soft dynamic, followed by a chromatic descent to a surprising C
+- None of these characteristics suggest heroism, and the associations with a peasant dance imply that the protagonist is of common rather than noble origin.- The heroic content of the movement lies in its transformations
+- The opening motive undergoes multiple transformations throughout the movement
+- Victory requires an opponent, the leaping figure serves as the antagonist
+- The development builds to a dissonant climax, but the main motive reasserts itself
+- The piece showcases economy of material, great variety of gestures, and expansion of form
+- The second movement has strong links to France during the Republic, with drum roll imitations and a Revolutionary hymn character
+- Beethoven originally named the symphony "Bonaparte" in honor of Napoleon, but later scratched out the title when Napoleon declared himself emperor
+- Beethoven wavered in his opinion of Napoleon, but the strong links to music of the French Republic may explain his attachment to the title "Bonaparte."- Beethoven's music attracted a broad and devoted public 
+- His music had individual internal logic and a drama that could be understood on its own terms 
+- The Eroica and later symphonies became the center of the symphonic tradition 
+- Fidelio glorified heroism and the humanitarian ideals of the Revolution 
+- Beethoven tested the limits of amateur players, especially with his string quartets 
+- His concertos were composed on a grander scale 
+- Beethoven greatly expanded the music's expressive range and dimensions 
+- His Fifth Symphony symbolizes his struggle for victory and embodies an experience of the sublime 
+- Beethoven's deafness led to him becoming moody and suspicious 
+- He faced financial vulnerability and family problems 
+- A postwar depression and government repression made it difficult to produce large-scale public works- Beethoven did not write politically linked works in his late years and the heroic style became inappropriate
+- His music became more introspective and aimed at a smaller, more select audience
+- Classical forms remained recognizable but with new contours 
+- A key element of Beethoven's late style is high contrast, with extremes meeting in his pieces 
+- Contrasts of topics became exaggerated, involving style, figuration, character, meter, and tempo 
+- Beethoven balanced the contrasts with an emphasis on continuity 
+- An die ferne Geliebte inaugurated the song cycle genre 
+- Beethoven's use of variation technique epitomized his late style and went beyond preserving the structure of the theme 
+- Beethoven frequently used familiar styles and genres for expressive purposes 
+- Imitative counterpoint, especially fugue, was characteristic of his late works 
+- Beethoven reconceived the number and arrangement of movements while seeking to integrate them more closely.- Relationships between themes are subtle yet audible
+- Themes help to draw all five movements together as a unified whole
+- Piece is for connoisseurs
+- Piece is dramatic and emotionally rich
+- Piece ranges from prayer to lightheartedness and from puckish humor to passion
+- Piece appeals to audiences on many levels
+- Only those "in the know" are likely to notice and appreciate the complex relationships between the whole and the individual parts
+- Crafty combination of tradition and innovation
+- Old and new are inextricably intertwined
+- Music asks us to interpret it
+- Piece calls for analysis of its structure and motivic development
+- Piece calls for analysis of its meanings and topical references
+- Piece draws us into its world.
