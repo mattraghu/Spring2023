@@ -2,13 +2,13 @@
 
 ## Introduction
 
-For this lab, I decided to take it as an oppertunity to learn something new. I always wanted to learn how to make complex neural networks, and I thought this would be a good oppertunity to do so.
+For this lab, I decided to take it as an opportunity to learn something new. I always wanted to learn how to make complex neural networks, and I thought this would be a good chance. You don't have to read the entire thing, I just documented so I could remember what I did.
 
 Andrej Karpathy is the (now former) director of AI at **Tesla**. He has a youtube channel where he teaches about neural networks and machine learning. I previously watched his video on [The spelled-out intro to neural networks and backpropagation: building micrograd](https://www.youtube.com/watch?v=VMj-3S1tku0&t=4s), and I decided to continue learning by creating a neural network based on his video: [The spelled-out intro to language modeling: building makemore](https://www.youtube.com/watch?v=PaCmpygFfXo)
 
 For this project, I'm provided with a list of names (see **index.txt**) and I'm supposed to create a neural network that can generate new names based on the names in the list.
 
-# Basic Bigram Model
+# Method 1: Basic Bigram Model
 
 ## Introduction
 
@@ -60,10 +60,10 @@ for w in words[:]:
 Ex. if the only word in the data set was "bob", then the tensor would look like this:
 
 |     | .   | b   | o   |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | .   | 0   | 1   | 0   |
-| b   | 0   | 0   | 1   |
-| o   | 0   | 0   | 0   | A   |
+| b   | 1   | 0   | 1   |
+| o   | 0   | 1   | 0   |
 
 ---
 
@@ -154,8 +154,8 @@ Note: As Kapathy says, the Bigram model is really terrible because it only has t
 For example if I were to change the p to a uniform distribution (all letters have the same probability of occuring with the following line:
 
 ```python
-        #Test- Create a uniform distribution
-        p = torch.ones(len(chars)) / len(chars)
+#Test- Create a uniform distribution
+p = torch.ones(len(chars)) / len(chars)
 ```
 
 Then the output would be:
@@ -247,7 +247,11 @@ log_likelihood /= -n
 print(f'Log Likelihood: {log_likelihood:.4f}')
 ```
 
-### Neural Network
+# Method 2: Neural Network
+
+Now I am going to replicate the bigram model using a neural network.
+
+## Introduction
 
 Essentially, a neural network is a function that takes in some input and produces some output.
 
@@ -267,6 +271,10 @@ Essentially, a neural network is a function that takes in some input and produce
     - $n$ is the number of inputs
 - The goal of training a neural network is to find the weights and biases that minimize the loss function.
 
+## Explanation
+
+### Defining the Inputs and Targets
+
 For our code, I start defining the inputs and targets for our neural network.
 
 ```python
@@ -275,7 +283,7 @@ xs, ys = [], [] #xs are the inputs and ys are the targets
 for w in words[:1]:
     chs = ['.'] + list(w) + ['.']
     #We want to get chars 1,2 then 2,3 then 3,4 ...
-    for ch1, ch2 in zip(chs, chs[1:]):
+    for ch1, ch2 in zip(chs, chs[:]):
         # print(ch1, ch2)
         # b = (ch1, ch2)
         #Convert to numbers
@@ -287,6 +295,8 @@ for w in words[:1]:
 xs = torch.tensor(xs)
 ys = torch.tensor(ys)
 ```
+
+### One Hot Encoding
 
 Then I encode the inputs by using one hot encoding.
 
@@ -302,13 +312,15 @@ plt.show()
 This creates a tensor that has a 1 in the column of the letter and 0's everywhere else shown below:
 
 ![One Hot Encoding](./Media/xs.png)
-This particular tensor is for the name, "Bob"
+This particular tensor is for the name, ".bob."
+
+### Calculating the probabilities
 
 As mentioned before, you can calculate the output for a single neuron by multiplying the inputs by the weights and adding the bias.
 
 We can achieve a similar result by multiplying the inputs by a matrix of weights and adding a vector of biases.
 
-Say I have this matrix of inputs with a vocabulary size of 3 **(.,b,o)** and a batch size of 3:
+Say I have this matrix of inputs with a vocabulary size of 3 **(.,b,o)** for the word "bob":
 
 $$
 x =
@@ -316,23 +328,19 @@ x =
     1 & 0 & 0 \\
     0 & 1 & 0 \\
     0 & 0 & 1 \\
-
+    0 & 1 & 0 \\
 \end{bmatrix}
 $$
 
-This would be the one hot encoding of the word ".bo"
-
-And I have this matrix of weights with a vocabulary size of 3 **(.,b,o)** by 1
+And I have this matrix of weights with a vocabulary size of 3 **(.,b,o)**
 
 $$
 w =
 \begin{bmatrix}
-    1 \\
-    2 \\
-    3 \\
+    w_{..} & w_{.b} & w_{.o} \\
+    w_{b.} & w_{bb} & w_{bo} \\
+    w_{o.} & w_{ob} & w_{oo} \\
 \end{bmatrix}
-
-
 $$
 
 Then I can calculate the output by multiplying the inputs by the weights:
@@ -343,35 +351,42 @@ xw =
     1 & 0 & 0 \\
     0 & 1 & 0 \\
     0 & 0 & 1 \\
+    0 & 1 & 0 \\
 \end{bmatrix}
 \begin{bmatrix}
-    1 \\
-    2 \\
-    3 \\
+    w_{..} & w_{.b} & w_{.o} \\
+    w_{b.} & w_{bb} & w_{bo} \\
+    w_{o.} & w_{ob} & w_{oo} \\
 \end{bmatrix}
+
 =
 \begin{bmatrix}
-    1 \\
-    2 \\
-    3 \\
+    w_{..} & w_{.b} & w_{.o} \\
+    w_{b.} & w_{bb} & w_{bo} \\
+    w_{o.} & w_{ob} & w_{oo} \\
+    w_{b.} & w_{bb} & w_{bo} \\
 \end{bmatrix}
-$$
 
-The calculation for each output index is shown below:
 
 $$
-xw[0] = x[0][0]w[0] + x[0][1]w[1] + x[0][2]w[2] = 1*1 + 0*2 + 0*3 = 1
-$$
+
+The calculation for some of the output indexes are shown below:
 
 $$
-xw[1] = x[1][0]w[0] + x[1][1]w[1] + x[1][2]w[2] = 0*1 + 1*2 + 0*3 = 2
+xw[0][0] = w_{..} * 1 + w_{b.} * 0 + w_{o.} * 0 = w_{..}
 $$
 
 $$
-xw[2] = x[2][0]w[0] + x[2][1]w[1] + x[2][2]w[2] = 0*1 + 0*2 + 1*3 = 3
+xw[0][1] = w_{.b} * 1 + w_{bb} * 0 + w_{ob} * 0 = w_{.b}
 $$
 
-As you can see, each letter produces an output equal to the sum of weights multiplied onto it. In this case, the only weight that will effect the output is the weight at the index of the letter. This is because the input is one hot encoded (all other values are 0).
+$$
+xw[0][2] = w_{.o} * 1 + w_{bo} * 0 + w_{oo} * 0 = w_{.o}
+$$
+
+- It can be seen that each output corresponds to the weight that the column character follows the row character.
+
+- For the first row, the character is "." and the first output is the weight that the next char will be ".", the next is the weight it'll be "b" and the last is "o".
 
 A method called the **softmax** function is used to convert the outputs into probabilities.
 
@@ -387,43 +402,217 @@ Where:
 - $j$ is the index of the output
 - $K$ is the number of outputs
 
-In otherwords, I exponentiate each output and divide it by the sum of all the exponentiated outputs.
-
-The output above is kinda misleading cause it only features the output as if there was only one possible letter to follow "., b, and o" but in reality, there are 3 possible letters to follow each of those letters. So let's add more neurons for each letter.
+In otherwords, I exponentiate each output and divide it by the sum of all the exponentiated outputs for that row.
 
 $$
-
-xw =
-\begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1 \\
-\end{bmatrix}
-\begin{bmatrix}
-    1 & 4 & 7 \\
-    2 & 5 & 8 \\
-    3 & 6 & 9 \\
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 4 & 7 \\
-2 & 5 & 8 \\
-3 & 6 & 9 \\
-\end{bmatrix} \
-$$
-
-The output for the example above is shown below:
-
-$$
-
 \sigma(xw) =
+
 \begin{bmatrix}
-\frac{e^1}{e^1 + e^4 + e^7} & \frac{e^4}{e^1 + e^4 + e^7} & \frac{e^7}{e^1 + e^4 + e^7} \\
-\frac{e^2}{e^2 + e^5 + e^8} & \frac{e^5}{e^2 + e^5 + e^8} & \frac{e^8}{e^2 + e^5 + e^8} \\
-\frac{e^3}{e^3 + e^6 + e^9} & \frac{e^6}{e^3 + e^6 + e^9} & \frac{e^9}{e^3 + e^6 + e^9} \\
+\frac{e^{w_{..}}}{e^{w_{..}} + e^{w_{.b}} + e^{w_{.o}}} & \frac{e^{w_{.b}}}{e^{w_{..}} + e^{w_{.b}} + e^{w_{.o}}} & \frac{e^{w_{.o}}}{e^{w_{..}} + e^{w_{.b}} + e^{w_{.o}}} \\
+
+\frac{e^{w_{b.}}}{e^{w_{b.}} + e^{w_{bb}} + e^{w_{bo}}} & \frac{e^{w_{bb}}}{e^{w_{b.}} + e^{w_{bb}} + e^{w_{bo}}} & \frac{e^{w_{bo}}}{e^{w_{b.}} + e^{w_{bb}} + e^{w_{bo}}} \\
+
+\frac{e^{w_{o.}}}{e^{w_{o.}} + e^{w_{ob}} + e^{w_{oo}}} & \frac{e^{w_{ob}}}{e^{w_{o.}} + e^{w_{ob}} + e^{w_{oo}}} & \frac{e^{w_{oo}}}{e^{w_{o.}} + e^{w_{ob}} + e^{w_{oo}}} \\
 \end{bmatrix}
 $$
 
-The sum of the outputs for each character in the word is 1 indicating that the output is the probability of a letter being the next letter in the word.
+For the entire data set, the code that will calculate this is
 
-Like for the first letter "B" the probability of "O" being the next letters is $\frac{e^4}{e^1 + e^4 + e^7} = 0.0473$ according to this neural network. Because our dataset is only "Bob" for this example we would expect the probability of "O" being the next letter to be 0.5, as the only other option is "." and so we want to tweak the parameters of the neural network so that the probability of "O" being the next letter is 0.5.
+```python
+W = torch.randn(len(chars), len(chars), requires_grad=True, generator=g) #Initialize the weights randomly
+
+logits = x_enc @ W #Log Counts
+
+#Softmax - Convert to probabilities
+counts = torch.exp(logits) #Counts
+probs = counts / counts.sum(dim=1, keepdim=True) #Probabilities
+```
+
+## Loss Function
+
+The loss function is the same as above and thus can be calculating by taking the negative log of the probabilities of the correct characters (a low probability of the correct character will result in a high loss).
+
+This is for a single example (".bob."):
+
+```python
+#For the first character "." what is the probability of the next character being the correct character ("b")
+
+#Get correct character
+ch = ys[0].item()
+print("Correct Character: ", idx_to_char[ch])
+
+#Get probability of the correct character
+prob = probs[0, ch]
+print("Probability of Correct Character: ", prob.item())
+
+#Right now it's really low because we haven't trained the model yet.
+
+#Let's calculate loss for this example
+loss = -torch.log(prob)
+print("Loss: ", loss.item())
+```
+
+Output:
+
+```
+Correct Character:  b
+Probability of Correct Character:  0.012314035557210445
+Loss:  4.397015571594238
+```
+
+## Training
+
+Torch keeps track of each operation that is performed on a tensor. This is called the **computation graph**.
+
+We can use this feature to calculate the gradients of the loss function with respect to the weights.
+
+$$
+\frac{\partial L}{\partial w_{ij}} = \frac{\partial L}{\partial \sigma(z)_j} \frac{\partial \sigma(z)_j}{\partial z_j} \frac{\partial z_j}{\partial w_{ij}}
+$$
+
+Where:
+
+- $L$ is the loss function
+- $w_{ij}$ is the weight at row $i$ and column $j$
+- $z_j$ is the input to the softmax function at index $j$
+- $\sigma(z)_j$ is the output of the softmax function at index $j$
+
+Luckily we don't have to calculate this by hand. We can use the `backward()` method to calculate the gradients for us.
+
+```python
+#Backward Pass
+W.grad = None #Sets the gradient to zero
+loss.backward() #Calculates the gradients
+```
+
+Now each weight has a gradient associated with the way it affects the loss function.
+
+If the gradient for a param is negative, then increasing the param will decrease the loss function and vice versa.
+
+We want to decrease loss so go in the opposite direction of the gradient.
+
+```python
+#Update the weights based on the gradients
+W.data -= 0.3 * W.grad.data
+```
+
+Running this should decrease loss, which it does
+
+## Final Result
+
+The entire thing is put into a loop. The final program is:
+
+```python
+#Get the inputs and targets
+#Ex. for ".bob.", x[0] = ".", y[0] = "b" b/c we want to predict the next character
+
+xs, ys = [], [] #xs are the inputs and ys are the targets
+
+for w in words[:]:
+# for w in ["bob"]:
+    chs = ['.'] + list(w) + ['.']
+    #We want to get chars 1,2 then 2,3 then 3,4 ...
+    for ch1, ch2 in zip(chs, chs[1:]):
+        # print(ch1, ch2)
+        # b = (ch1, ch2)
+        #Convert to numbers
+        b = (char_to_idx[ch1], char_to_idx[ch2])
+
+        xs.append(b[0])
+        ys.append(b[1])
+
+xs = torch.tensor(xs)
+ys = torch.tensor(ys)
+
+#Encode the data
+x_enc = F.one_hot(xs, num_classes=len(chars)).float()
+
+#Initialize the weights randomly
+g = torch.Generator().manual_seed(2147483647)
+W = torch.randn(len(chars), len(chars), requires_grad=True, generator=g)
+
+#Gradient Descent
+for i in range(1000):
+    #Forward Pass
+    logits = x_enc @ W #Log Counts
+    probs = torch.exp(logits) / torch.exp(logits).sum(dim=1, keepdim=True) #Probabilities
+    loss = -torch.log(probs[torch.arange(len(xs)), ys]).mean() #Calculate loss
+
+    #Backward Pass
+    W.grad = None #Sets the gradient to zero
+    loss.backward() #Calculates the gradients
+
+    #Update the weights based on the gradients
+    W.data -= 20 * W.grad.data
+
+    if i % 100 == 0:
+        print(f'Loss: {loss:.4f}')
+```
+
+What we've essentially done is replicate the behavior of the Basic Bigram Model after running the program till the loss get close to the loss of the Basic Bigram Model (it cant get any better)
+
+If I print out the prob of b following . for both models I get similar results:
+
+```python
+#Get the prob of .b
+NN_Prob = torch.exp(W[0,1]) / torch.exp(W[0]).sum() #Prob of .b from the neural network
+Basic_Prob = freq_tensor[0,1] / freq_tensor[0].sum() #Prob of .b from the basic model
+print("Neural Network Prob: ", prob.item())
+print("Basic Prob: ", Basic_Prob.item())
+```
+
+Output:
+
+```
+Neural Network Prob:  0.13766393065452576
+Basic Prob:  0.13767053186893463
+```
+
+---
+
+I can get the some random names now by tweaking the script from the previous section:
+
+```python
+g = torch.Generator().manual_seed(2147483647)
+
+for i in range(20):
+    ix = 0
+    out = []
+    while True:
+        #Get the probabilities of the next letter based on the previous letter
+        p = torch.exp(W[ix]) / torch.exp(W[ix]).sum()
+
+        #Generate a random letter based on the probabilities in p and a first letter
+        ix = torch.multinomial(p, 1, replacement=True, generator=g).item()
+        #Get the letter
+        out.append(idx_to_char[ix])
+        if idx_to_char[ix] == '.':
+            break
+
+    print(''.join(out[:-1]))
+```
+
+Which produces the same result (b/c its the same seed):
+
+```
+cexze
+momasurailezitynn
+konimittain
+llayn
+ka
+da
+staiyaubrtthrigotai
+moliellavo
+ke
+teda
+ka
+emimmsade
+enkaviyny
+fobspihinivenvorhlasu
+dsor
+br
+jol
+pen
+aisan
+ja
+```
