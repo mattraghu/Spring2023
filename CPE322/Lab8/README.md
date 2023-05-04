@@ -320,6 +320,8 @@ x =
 \end{bmatrix}
 $$
 
+This would be the one hot encoding of the word ".bo"
+
 And I have this matrix of weights with a vocabulary size of 3 **(.,b,o)** by 1
 
 $$
@@ -387,7 +389,7 @@ Where:
 
 In otherwords, I exponentiate each output and divide it by the sum of all the exponentiated outputs.
 
-The output above is kinda misleading cause it only features the output as if there was only one possible letter. In reality, vocab size is 3 and there are 3 possible letters so you would need 3 neurons:
+The output above is kinda misleading cause it only features the output as if there was only one possible letter to follow "., b, and o" but in reality, there are 3 possible letters to follow each of those letters. So let's add more neurons for each letter.
 
 $$
 
