@@ -14,6 +14,8 @@ For this project, I'm provided with a list of names (see **index.txt**) and I'm 
 
 Essentially a bigram will predict the next letter based on the previous letter. Its a very simple model, but its a good starting point for learning how to make neural networks.
 
+This method will not use a neural network.
+
 ## Explanation
 
 ---
