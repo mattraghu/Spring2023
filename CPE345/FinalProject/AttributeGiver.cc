@@ -16,11 +16,7 @@ void AttributeGiver::handleMessage(cMessage *msg)
        } while (abandonmentTime <= 0);
 
        // Create a parameter object and set its value
-       cPar *abandonmentTimePar = new cPar("abandonmentTime");
-       abandonmentTimePar->setDoubleValue(abandonmentTime);
-
-       // Add the parameter to the message
-       msg->addPar(abandonmentTimePar);
+       msg->addPar("abandonmentTime").setDoubleValue(abandonmentTime);
 
        // Call the parent class's handleMessage() function
        Router::handleMessage(msg);
