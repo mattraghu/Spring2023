@@ -3,10 +3,11 @@
 CPE 322 Labs
 </h1>
 </center>
+
 ---
 
 <center>
-Welcome to my CPE 322 labs! This repository contains the labs for the course.
+Welcome to my CPE 322 lab page! This repository contains the labs for the course.
 </center>
 
 ##
