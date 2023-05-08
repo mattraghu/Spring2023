@@ -1,0 +1,9 @@
+#ignore files that are changed with builds and tests
+
+Makefile
+
+/out/
+
+/results/
+
+FinalProject
