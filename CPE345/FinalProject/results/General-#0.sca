@@ -1,8 +1,8 @@
 version 3
-run General-0-20230430-19:55:25-42341
+run General-0-20230508-17:05:31-76689
 attr configname General
-attr datetime 20230430-19:55:25
-attr datetimef 20230430-195525
+attr datetime 20230508-17:05:31
+attr datetimef 20230508-170531
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Design1
-attr processid 42341
+attr processid 76689
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -25,12 +25,12 @@ par Design1.customRouter typename "\"CustomRouter\""
 par Design1.customRouter routingAlgorithm "\"random\""
 attr enum random,roundRobin,shortestQueue,minDelay
 par Design1.customRouter randomGateIndex "intuniform(0, sizeof(out)-1)"
-par Design1.server typename "\"org.omnetpp.queueing.Server\""
+par Design1.server typename "\"CustomServer\""
 par Design1.server fetchingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,longestQueue
 par Design1.server serviceTime 3s
 attr unit s
-scalar Design1.server busy:timeavg 0.23076923076923
+scalar Design1.server busy:timeavg 0.2
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "server busy state, timeavg"
@@ -63,66 +63,66 @@ attr recordingmode count
 attr title "drop event, count"
 par Design1.sink typename "\"org.omnetpp.queueing.Sink\""
 par Design1.sink keepJobs false
-scalar Design1.sink generation:mean nan
+scalar Design1.sink generation:mean 0
 attr interpolationmode none
 attr recordingmode mean
 attr title "the generation of the arrived jobs, mean"
-scalar Design1.sink generation:max nan
+scalar Design1.sink generation:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the generation of the arrived jobs, max"
-scalar Design1.sink delaysVisited:mean nan
+scalar Design1.sink delaysVisited:mean 0
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total number of delays visited by arrived jobs, mean"
-scalar Design1.sink delaysVisited:max nan
+scalar Design1.sink delaysVisited:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total number of delays visited by arrived jobs, max"
-scalar Design1.sink queuesVisited:mean nan
+scalar Design1.sink queuesVisited:mean 0
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total number of queues visited by arrived jobs, mean"
-scalar Design1.sink queuesVisited:max nan
+scalar Design1.sink queuesVisited:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total number of queues visited by arrived jobs, max"
-scalar Design1.sink totalServiceTime:mean nan
+scalar Design1.sink totalServiceTime:mean 3
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent  by arrived jobs, mean"
 attr unit s
-scalar Design1.sink totalServiceTime:max nan
+scalar Design1.sink totalServiceTime:max 3
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent  by arrived jobs, max"
 attr unit s
-scalar Design1.sink totalDelayTime:mean nan
+scalar Design1.sink totalDelayTime:mean 0
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent in delay nodes by arrived jobs, mean"
 attr unit s
-scalar Design1.sink totalDelayTime:max nan
+scalar Design1.sink totalDelayTime:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in delay nodes by arrived jobs, max"
 attr unit s
-scalar Design1.sink totalQueueingTime:mean nan
+scalar Design1.sink totalQueueingTime:mean 0
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent in queues by arrived jobs, mean"
 attr unit s
-scalar Design1.sink totalQueueingTime:max nan
+scalar Design1.sink totalQueueingTime:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in queues by arrived jobs, max"
 attr unit s
-scalar Design1.sink lifeTime:mean nan
+scalar Design1.sink lifeTime:mean 3
 attr interpolationmode none
 attr recordingmode mean
 attr title "lifetime of arrived jobs, mean"
 attr unit s
-scalar Design1.sink lifeTime:max nan
+scalar Design1.sink lifeTime:max 3
 attr interpolationmode none
 attr recordingmode max
 attr title "lifetime of arrived jobs, max"
@@ -138,7 +138,7 @@ par Design1.source startTime 10s
 attr unit s
 par Design1.source stopTime -1s
 attr unit s
-scalar Design1.source created:last 1
+scalar Design1.source created:last 3
 attr interpolationmode none
 attr recordingmode last
 attr title "the number of jobs created, last"

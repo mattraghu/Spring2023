@@ -10,7 +10,7 @@ network Design1
         customRouter: CustomRouter {
             @display("p=222,96");
         }
-        server: Server {
+        server: CustomServer {
             @display("p=466,66");
         }
         customQueue: CustomQueue {

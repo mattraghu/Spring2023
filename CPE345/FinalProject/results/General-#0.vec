@@ -1,8 +1,8 @@
 version 3
-run General-0-20230430-19:55:25-42341
+run General-0-20230508-17:05:31-76689
 attr configname General
-attr datetime 20230430-19:55:25
-attr datetimef 20230430-195525
+attr datetime 20230508-17:05:31
+attr datetimef 20230508-170531
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Design1
-attr processid 42341
+attr processid 76689
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -26,4 +26,11 @@ attr interpolationmode sample-hold
 attr recordingmode vector
 attr title "queue length"
 0	0	0	0
+vector 1 Design1.sink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+1	7	13	3
+1	14	23	3
 
