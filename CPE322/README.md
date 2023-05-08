@@ -1,11 +1,24 @@
-# CPE 322 Labs
+<center>
+<h1>
+CPE 322 Labs
+</h1>
+</center>
+---
 
-Welcome to the CPE 322 labs! This repository contains the labs for the course.
+<center>
+Welcome to my CPE 322 labs! This repository contains the labs for the course.
+</center>
+
+##
+
+<center>
+    <img src="GAMBLING_RAT.png" alt="RAT" width="400"/>
+
+</center>
 
 ## Labs
 
 - [Lab 0: Introduction to Markdown](https://github.com/mattraghu/Spring2023/tree/master/CPE322/Lab0) - Covers the basics of Markdown, and how to use it to format text, lists, images, headers, quotes, code, and extras.
-
 - [Lab 1: GHDL and GTKWave](https://github.com/mattraghu/Spring2023/tree/master/CPE322/Lab1) - Covers how to simulate VHDL code using GHDL and GTKWave and create basic programs.
 
 - [Lab 2: Command Line Basics and Chat GPT Explanation](https://github.com/mattraghu/Spring2023/tree/master/CPE322/Lab2) - Covers basic command line commands and using Chat GPT API to explain them.
