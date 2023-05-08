@@ -1,8 +1,8 @@
 version 3
-run General-0-20230508-17:05:31-76689
+run General-0-20230508-19:05:58-80709
 attr configname General
-attr datetime 20230508-17:05:31
-attr datetimef 20230508-170531
+attr datetime 20230508-19:05:58
+attr datetimef 20230508-190558
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Design1
-attr processid 76689
+attr processid 80709
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -30,7 +30,7 @@ par Design1.server fetchingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,longestQueue
 par Design1.server serviceTime 3s
 attr unit s
-scalar Design1.server busy:timeavg 0.2
+scalar Design1.server busy:timeavg 0
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "server busy state, timeavg"
@@ -87,12 +87,12 @@ scalar Design1.sink queuesVisited:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total number of queues visited by arrived jobs, max"
-scalar Design1.sink totalServiceTime:mean 3
+scalar Design1.sink totalServiceTime:mean 0
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent  by arrived jobs, mean"
 attr unit s
-scalar Design1.sink totalServiceTime:max 3
+scalar Design1.sink totalServiceTime:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent  by arrived jobs, max"
@@ -117,12 +117,12 @@ attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in queues by arrived jobs, max"
 attr unit s
-scalar Design1.sink lifeTime:mean 3
+scalar Design1.sink lifeTime:mean 0
 attr interpolationmode none
 attr recordingmode mean
 attr title "lifetime of arrived jobs, mean"
 attr unit s
-scalar Design1.sink lifeTime:max 3
+scalar Design1.sink lifeTime:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "lifetime of arrived jobs, max"
@@ -138,7 +138,7 @@ par Design1.source startTime 10s
 attr unit s
 par Design1.source stopTime -1s
 attr unit s
-scalar Design1.source created:last 3
+scalar Design1.source created:last 5
 attr interpolationmode none
 attr recordingmode last
 attr title "the number of jobs created, last"

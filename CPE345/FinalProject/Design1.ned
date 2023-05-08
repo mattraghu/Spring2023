@@ -11,7 +11,7 @@ network Design1
             @display("p=222,96");
         }
         server: CustomServer {
-            @display("p=466,66");
+            @display("p=517,66");
         }
         customQueue: CustomQueue {
             @display("p=390,66");
