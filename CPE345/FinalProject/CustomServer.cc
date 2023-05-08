@@ -16,7 +16,6 @@ void CustomServer::handleMessage(cMessage *msg)
         // msg->par("abandonmentTime").setDoubleValue(-1);
 
         simtime_t currentTime = simTime();
-        EV << msg->addPar("abandonmentTime").setDoubleValue(-1) << endl;
         simtime_t abandonmentTime = msg->getCreationTime() + msg->par("abandonmentTime").doubleValue();
 
         if (abandonmentTime <= currentTime)
