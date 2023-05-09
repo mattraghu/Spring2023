@@ -1,8 +1,8 @@
 version 3
-run General-0-20230508-19:24:51-81421
+run General-0-20230508-22:11:16-84249
 attr configname General
-attr datetime 20230508-19:24:51
-attr datetimef 20230508-192451
+attr datetime 20230508-22:11:16
+attr datetimef 20230508-221116
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,14 +10,14 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Design1
-attr processid 81421
+attr processid 84249
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
 config network Design1
-config **.source.interArrivalTime 10s
+config **.source.interArrivalTime exponential(7.2s)
 config **.source.numJobs 10000
 config **.server1.serviceTime 3s
 config **.server2.serviceTime 3s
@@ -43,7 +43,5 @@ attr interpolationmode none
 attr recordingmode vector
 attr title "lifetime of arrived jobs"
 attr unit s
-3	7	13	3
-3	14	23	3
-3	21	33	3
-3	28	43	3
+3	6	5.730296432874	0
+

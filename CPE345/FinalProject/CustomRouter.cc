@@ -9,32 +9,23 @@ void CustomRouter::initialize()
 
 void CustomRouter::handleMessage(cMessage *msg)
 {
-    // Add the "ProblemType" parameter if it's not already present
-    if (!msg->hasPar("ProblemType"))
-    {
-        int randomProblemType = intuniform(1, 3);
-        msg->addPar("ProblemType");
-        msg->par("ProblemType").setLongValue(randomProblemType);
-        EV << "Added ProblemType parameter with value " << randomProblemType << " to message" << endl;
-    }
 
-    int problemType = msg->par("ProblemType");
+    int complexity = msg->par("difficulty");
+    complexity = 11;
 
-    if (problemType == 1)
+    EV << "Message `" << msg->getName() << "' has complexity " << complexity << endl;
+
+    // Route the message to the appropriate problem queue
+    if (complexity <= 3)
     {
-        send(msg, "Problem1");
+        send(msg, "Complexity1");
     }
-    else if (problemType == 2)
+    else if (complexity <= 6)
     {
-        send(msg, "Problem2");
-    }
-    else if (problemType == 3)
-    {
-        send(msg, "Problem3");
+        send(msg, "Complexity2");
     }
     else
     {
-        EV << "Unknown problem type: " << problemType << endl;
-        delete msg;
+        send(msg, "Complexity3");
     }
 }

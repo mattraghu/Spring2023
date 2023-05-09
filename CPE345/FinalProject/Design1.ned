@@ -12,6 +12,7 @@ network Design1
         }
         server1: CustomServer {
             @display("p=470,66");
+            expertise = 3;
         }
         customQueue1: CustomQueue {
             @display("p=390,66");
@@ -30,23 +31,25 @@ network Design1
         }
         server2: CustomServer {
             @display("p=470,149");
+            expertise = 6;
         }
         customQueue3: CustomQueue {
             @display("p=390,223");
         }
         server3: CustomServer {
             @display("p=470,223");
+            expertise = 10;
         }
     connections:
         customQueue1.out++ --> server1.in++;
         server1.out --> sink.in++;
         source.out --> attributeGiver.in++;
         attributeGiver.out++ --> customRouter.in++;
-        customRouter.Problem1 --> customQueue1.in++;
         customQueue2.out++ --> server2.in++;
         customQueue3.out++ --> server3.in++;
-        customRouter.Problem2 --> customQueue2.in++;
-        customRouter.Problem3 --> customQueue3.in++;
         server2.out --> sink.in++;
         server3.out --> sink.in++;
+        customRouter.Complexity1 --> customQueue1.in++;
+        customRouter.Complexity2 --> customQueue2.in++;
+        customRouter.Complexity3 --> customQueue3.in++;
 }

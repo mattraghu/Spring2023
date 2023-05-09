@@ -10,6 +10,7 @@ class CustomServer : public queueing::Server
 {
 protected:
   virtual void handleMessage(cMessage *msg) override;
+  virtual void initialize() override;
 };
 
 #endif
