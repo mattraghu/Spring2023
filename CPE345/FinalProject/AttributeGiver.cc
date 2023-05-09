@@ -9,7 +9,11 @@ void AttributeGiver::handleMessage(cMessage *msg)
 
     long difficulty = uniform(1,10);
 
+    //set difficulty between 1 and 10
     msg->addPar("difficulty").setLongValue(difficulty);
+
+    //default abandoned to false for later use
+    msg->addPar("abandoned").setBoolValue(false);
 
     // Generate a random value with a normal distribution with mean 7 minutes, std of 3 minutes
        double abandonmentTime;
