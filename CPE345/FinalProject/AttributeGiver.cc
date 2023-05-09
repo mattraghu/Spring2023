@@ -7,6 +7,10 @@ void AttributeGiver::handleMessage(cMessage *msg)
     EV << "Handling message `" << msg->getName() << "'\n";
 
 
+    long difficulty = uniform(1,10);
+
+    msg->addPar("difficulty").setLongValue(difficulty);
+
     // Generate a random value with a normal distribution with mean 7 minutes, std of 3 minutes
        double abandonmentTime;
     // Ensure the abandonment time isn't negative or 0
