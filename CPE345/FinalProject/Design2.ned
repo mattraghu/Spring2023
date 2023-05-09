@@ -4,7 +4,7 @@ import org.omnetpp.queueing.Sink;
 import org.omnetpp.queueing.Source;
 
 
-network Design1
+network Design2
 {
     submodules:
         customRouter: CustomRouter {
@@ -15,7 +15,7 @@ network Design1
             expertise = 3;
         }
         customQueue1: CustomQueue {
-            @display("p=390,66");
+            @display("p=336,96");
             priorityEffected = false;
         }
         customSink: CustomSink {
@@ -27,17 +27,9 @@ network Design1
         attributeGiver: AttributeGiver {
             @display("p=139,96");
         }
-        customQueue2: CustomQueue {
-            @display("p=390,149");
-            priorityEffected = false;
-        }
         server2: CustomServer {
             @display("p=470,149");
             expertise = 6;
-        }
-        customQueue3: CustomQueue {
-            @display("p=390,223");
-            priorityEffected = false;
         }
         server3: CustomServer {
             @display("p=470,223");
@@ -48,11 +40,9 @@ network Design1
         server1.out --> customSink.in++;
         source.out --> attributeGiver.in++;
         attributeGiver.out++ --> customRouter.in++;
-        customQueue2.out++ --> server2.in++;
-        customQueue3.out++ --> server3.in++;
         server2.out --> customSink.in++;
         server3.out --> customSink.in++;
         customRouter.Complexity1 --> customQueue1.in++;
-        customRouter.Complexity2 --> customQueue2.in++;
-        customRouter.Complexity3 --> customQueue3.in++;
+        customQueue1.out++ --> server2.in++;
+        customQueue1.out++ --> server3.in++;
 }
