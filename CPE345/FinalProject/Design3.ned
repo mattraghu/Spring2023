@@ -11,7 +11,7 @@ network Design3
         }
         server1: CustomServer {
             @display("p=470,66");
-            expertise = 10;
+            expertise = 3;
         }
         customQueue1: CustomQueue {
             @display("p=336,96");
@@ -28,7 +28,7 @@ network Design3
         }
         server2: CustomServer {
             @display("p=470,149");
-            expertise = 10;
+            expertise = 6;
         }
         server3: CustomServer {
             @display("p=470,223");
