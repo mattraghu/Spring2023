@@ -39,16 +39,19 @@ void CustomServer::handleMessage(cMessage *msg)
                 int difficulty = msg->par("difficulty");
                 int serverExpertise = par("expertise");
 
-                if (difficulty > serverExpertise)
-                {
-                    EV << "Message `" << msg->getName() << "' has been abandoned because it is out of range for the server's expertise\n";
-                    msg->par("abandoned").setBoolValue(true);
-                    send(msg, "out");
+                // if (difficulty > serverExpertise)
+                // {
+                //     EV << "Message `" << msg->getName() << "' has been abandoned because it is out of range for the server's expertise\n";
+                //     msg->par("abandoned").setBoolValue(true);
+                //     send(msg, "out");
 
-                    allocated = false;
-                    emit(busySignal, false);
-                    return;
-                }
+                //     allocated = false;
+                //     emit(busySignal, false);
+                //     return;
+                // }
+
+                // Set the server speed multiplier based on the difficulty and the server's expertise
+                msg->addPar("speedMultiplier").setDoubleValue((double)serverExpertise / difficulty);
             }
             Server::handleMessage(msg);
         }
