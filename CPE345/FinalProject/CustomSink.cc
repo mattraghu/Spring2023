@@ -13,25 +13,22 @@ void CustomSink::initialize()
 void CustomSink::handleMessage(cMessage *msg)
 {
 
-    Sink::handleMessage(msg);
     simtime_t delay = simTime() - msg->getCreationTime();
     histogram.collect(delay);
 
     numTotal++;
 
-//    if (msg->par("abandoned").boolValue()){
-//            numAbandoned++;
-//    }
+    if (msg->par("abandoned").boolValue())
+    {
+        numAbandoned++;
+    }
+    Sink::handleMessage(msg);
 }
 
 void CustomSink::finish()
 {
     recordScalar("numTotal", numTotal);
     recordScalar("numAbandoned", numAbandoned);
-    recordScalar("Abandonment Rate", (double)numAbandoned/numTotal);
+    recordScalar("Abandonment Rate", (double)numAbandoned / numTotal);
     Sink::finish();
 }
-
-
-
-
