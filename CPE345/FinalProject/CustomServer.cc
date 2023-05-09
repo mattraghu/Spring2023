@@ -1,4 +1,6 @@
 #include "CustomServer.h"
+#include "SelectionStrategies.h"
+#include "IPassiveQueue.h"
 
 Define_Module(CustomServer);
 
@@ -27,9 +29,16 @@ void CustomServer::handleMessage(cMessage *msg)
             EV << "Message `" << msg->getName() << "' has been abandoned\n";
             msg->par("abandoned").setBoolValue(true);
             send(msg, "out");
-
             allocated = false;
             emit(busySignal, false);
+            // examine all input queues, and request a new job from a non empty queue
+            int k = selectionStrategy->select();
+            if (k >= 0)
+            {
+                EV << "requesting job from queue " << k << endl;
+                cGate *gate = selectionStrategy->selectableGate(k);
+                check_and_cast<queueing::IPassiveQueue *>(gate->getOwnerModule())->request(gate->getIndex());
+            }
         }
         else
         {
@@ -39,16 +48,16 @@ void CustomServer::handleMessage(cMessage *msg)
                 int difficulty = msg->par("difficulty");
                 int serverExpertise = par("expertise");
 
-                // if (difficulty > serverExpertise)
-                // {
-                //     EV << "Message `" << msg->getName() << "' has been abandoned because it is out of range for the server's expertise\n";
-                //     msg->par("abandoned").setBoolValue(true);
-                //     send(msg, "out");
+                if (difficulty > serverExpertise)
+                {
+                    EV << "Message `" << msg->getName() << "' has been abandoned because it is out of range for the server's expertise\n";
+                    msg->par("abandoned").setBoolValue(true);
+                    send(msg, "out");
 
-                //     allocated = false;
-                //     emit(busySignal, false);
-                //     return;
-                // }
+                    allocated = false;
+                    emit(busySignal, false);
+                    return;
+                }
 
                 // Set the server speed multiplier based on the difficulty and the server's expertise
                 msg->addPar("speedMultiplier").setDoubleValue((double)serverExpertise / difficulty);
