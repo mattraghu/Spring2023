@@ -18,7 +18,6 @@ void CustomSink::handleMessage(cMessage *msg)
     histogram.collect(delay);
 
     numTotal++;
-    EV_INFO << "NumTotal = " << numTotal << endl;
 
 //    if (msg->par("abandoned").boolValue()){
 //            numAbandoned++;

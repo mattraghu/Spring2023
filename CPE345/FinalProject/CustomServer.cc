@@ -14,7 +14,7 @@ void CustomServer::handleMessage(cMessage *msg)
     // {
     //     msg->addPar("abandonmentTime").setDoubleValue(-1);
     // }
-
+    EV_INFO << "Message difficulty: " << msg->par("difficulty") << endl;
     if (msg->hasPar("abandonmentTime"))
     {
         // msg->par("abandonmentTime").setDoubleValue(-1);

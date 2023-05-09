@@ -19,13 +19,14 @@ void AttributeGiver::handleMessage(cMessage *msg)
        double abandonmentTime;
     // Ensure the abandonment time isn't negative or 0
        do {
-           abandonmentTime = normal(7.0*60, 3.0*60);
+           abandonmentTime = normal(7, 3);
 
        } while (abandonmentTime <= 0);
 
        // Create a parameter object and set its value
        msg->addPar("abandonmentTime").setDoubleValue(abandonmentTime);
 
+       EV << "Abandonment Time: " << msg->par("abandonmentTime") << "'\n";
        // Call the parent class's handleMessage() function
        Router::handleMessage(msg);
 }
