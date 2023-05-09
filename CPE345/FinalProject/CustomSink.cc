@@ -30,5 +30,6 @@ void CustomSink::finish()
     recordScalar("numTotal", numTotal);
     recordScalar("numAbandoned", numAbandoned);
     recordScalar("Abandonment Rate", (double)numAbandoned / numTotal);
+    EV << "Abandonment Rate: " << (double)numAbandoned / numTotal << endl;
     Sink::finish();
 }
