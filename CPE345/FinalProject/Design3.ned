@@ -44,4 +44,6 @@ network Design3
         customRouter.Complexity1 --> customQueue1.in++;
         customQueue1.out++ --> server2.in++;
         customQueue1.out++ --> server3.in++;
+        customRouter.Complexity2 --> customQueue1.in++;
+        customRouter.Complexity3 --> customQueue1.in++;
 }
