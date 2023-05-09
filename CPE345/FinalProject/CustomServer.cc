@@ -25,7 +25,7 @@ void CustomServer::handleMessage(cMessage *msg)
         if (abandonmentTime <= currentTime)
         {
             EV << "Message `" << msg->getName() << "' has been abandoned\n";
-            msg->par("abandonded").setBoolValue(true);
+            msg->par("abandoned").setBoolValue(true);
             send(msg, "out");
 
             allocated = false;
