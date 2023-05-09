@@ -16,7 +16,7 @@ network Design2
         }
         customQueue1: CustomQueue {
             @display("p=336,96");
-            priorityEffected = false;
+            priorityEffected = true;
         }
         customSink: CustomSink {
             @display("p=636,96");
@@ -45,4 +45,6 @@ network Design2
         customRouter.Complexity1 --> customQueue1.in++;
         customQueue1.out++ --> server2.in++;
         customQueue1.out++ --> server3.in++;
+        customRouter.Complexity2 --> customQueue1.in++;
+        customRouter.Complexity3 --> customQueue1.in++;
 }
