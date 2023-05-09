@@ -1,9 +1,9 @@
-file 457182 1683611169                                          
+file 558364 1683640705                                          
 version 3
-run General-0-20230509-01:46:03-93183
+run General-0-20230509-09:57:35-95742
 attr configname General
-attr datetime 20230509-01:46:03
-attr datetimef 20230509-014603
+attr datetime 20230509-09:57:35
+attr datetimef 20230509-095735
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Design1
-attr processid 93183
+attr processid 95742
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -20,9 +20,9 @@ attr seedset 0
 config network Design1
 config **.source.interArrivalTime exponential(7.2s)
 config **.source.numJobs 10000
-config **.server1.serviceTime 3s
-config **.server2.serviceTime 3s
-config **.server3.serviceTime 3s
+config **.server1.serviceTime 6s
+config **.server2.serviceTime 6s
+config **.server3.serviceTime 6s
 
 vector 0 Design1.customQueue1 queueLength:vector ETV
 attr interpolationmode sample-hold
@@ -39,14 +39,16 @@ attr title "queue length"
 0	1033 8 0 0 0 0 1 0 0 0 0
 1	1041 8 0 0 0 0 1 0 0 0 0
 2	1049 8 0 0 0 0 1 0 0 0 0
+2	1057 22 9 9 12.199931229958 12.199931229958 1 1 1 1 1
+2	1079 23 10 10 14.301725004303 14.301725004303 1 0 0 0 0
 vector 3 Design1.customSink lifeTime:vector ETV
 attr interpolationmode none
 attr recordingmode vector
 attr title "lifetime of arrived jobs"
 attr unit s
-3	1209 35 7 7 10.016010718588 10.016010718588 1 4.285714285714 4.285714285714 4.285714285714 18.367346938773
-0	1244 46348 51 69723 83.496630752379 71344.449785020634 1622 0 4 1121 1511
-1	47592 33933 140 69602 162.255740874461 71246.878429303888 1184 0 2 712 832
-2	81525 32990 182 69660 210.467471478303 71301.671025616141 1156 0 4 732 946
-3	114515 342666 14 69742 15.949931229958 71375.138448675166 9999 0.527633985002 18.077410205058 47934.965152537 277902.69960018
+3	1254 36 11 11 14.301725004303 14.301725004303 1 8.571428571429 8.571428571429 8.571428571429 73.469387755109
+0	1290 79590 51 68697 83.496630752379 71353.722948640761 2784 0 6 2348 3744
+1	80880 62356 130 68678 159.527214731626 71340.385419576355 2176 0 4 1590 2256
+2	143236 59272 63 68633 98.95858345785 71305.004358949475 2074 0 5 1521 2225
+3	202508 355855 24 68708 21.801725004303 71379.638448675166 9999 0.648989941068 30.05197338975 95531.431633235 1073450.4945417
 
