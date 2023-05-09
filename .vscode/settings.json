@@ -5,6 +5,9 @@
 		"iostream": "cpp",
 		"istream": "cpp",
 		"locale": "cpp",
-		"streambuf": "cpp"
+		"streambuf": "cpp",
+		"functional": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp"
 	}
 }

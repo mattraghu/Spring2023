@@ -10,6 +10,9 @@ class CustomQueue : public queueing::PassiveQueue
 protected:
   // virtual void initialize() override;
   virtual void handleMessage(cMessage *msg) override;
+
+public:
+  cMessage *frontOfQueue = nullptr;
 };
 
 #endif
