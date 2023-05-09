@@ -7,9 +7,9 @@
 using namespace omnetpp;
 class CustomQueue : public queueing::PassiveQueue
 {
-  // protected:
+protected:
   // virtual void initialize() override;
-  // virtual void handleMessage(cMessage *msg) override;
+  virtual void handleMessage(cMessage *msg) override;
 };
 
 #endif

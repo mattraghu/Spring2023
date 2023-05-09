@@ -11,7 +11,6 @@ void CustomRouter::handleMessage(cMessage *msg)
 {
 
     int complexity = msg->par("difficulty");
-    complexity = 11;
 
     EV << "Message `" << msg->getName() << "' has complexity " << complexity << endl;
 

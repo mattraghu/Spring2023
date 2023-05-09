@@ -39,6 +39,7 @@ OBJS = \
     $O/CustomQueue.o \
     $O/CustomRouter.o \
     $O/CustomServer.o \
+    $O/CustomSink.o \
     $O/CustomSource.o
 
 # Message files
