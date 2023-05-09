@@ -1,0 +1,78 @@
+                                                                
+version 3
+run General-0-20230509-15:40:48-97895
+attr configname General
+attr datetime 20230509-15:40:48
+attr datetimef 20230509-154048
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network FinalExam
+attr processid 97895
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network FinalExam
+config **.source1.interArrivalTime exponential(0.5s)
+config **.source1.numJobs 10000
+config **.source2.interArrivalTime exponential(0.3333s)
+config **.source2.numJobs 10000
+config **.source3.interArrivalTime exponential(0.3333s)
+config **.source3.numJobs 10000
+config **.server1.serviceTime exponential(0.1s)
+config **.server2.serviceTime exponential(0.1s)
+config **.server3.serviceTime exponential(0.1s)
+
+vector 0 FinalExam.passiveQueue1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 FinalExam.passiveQueue2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 FinalExam.passiveQueue3 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 3 FinalExam.passiveQueue4 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+0	1412 8 0 0 0 0 1 0 0 0 0
+1	1420 8 0 0 0 0 1 0 0 0 0
+2	1428 8 0 0 0 0 1 0 0 0 0
+3	1436 8 0 0 0 0 1 0 0 0 0
+2	1444 22 12 12 0.418601721657 0.418601721657 1 1 1 1 1
+2	1466 21 15 15 0.45304210095 0.45304210095 1 2 2 2 4
+2	1487 22 16 16 0.470532604627 0.470532604627 1 1 1 1 1
+vector 4 FinalExam.customSink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+4	1663 35 21 21 0.470532604627 0.470532604627 1 0.171042427145 0.171042427145 0.171042427145 0.029255511883653
+2	1698 22 22 22 0.519045420999 0.519045420999 1 0 0 0 0
+4	1720 35 27 27 0.519045420999 0.519045420999 1 0.100443699342 0.100443699342 0.100443699342 0.010088936737506
+4	1755 35 32 32 0.576597340687 0.576597340687 1 0.178660088404 0.178660088404 0.178660088404 0.031919427188525
+2	1790 22 37 37 0.861945904649 0.861945904649 1 1 1 1 1
+2	1812 22 39 39 0.881405514858 0.881405514858 1 2 2 2 4
+2	1834 22 43 43 0.966590405778 0.966590405778 1 1 1 1 1
+4	1856 35 48 48 0.966590405778 0.966590405778 1 0.222352442204 0.222352442204 0.222352442204 0.049440608554083
+2	1891 22 51 51 0.967656471861 0.967656471861 1 2 2 2 4
+2	1913 22 55 55 1.031535040603 1.031535040603 1 1 1 1 1
+4	1935 35 60 60 1.031535040603 1.031535040603 1 0.169589135954 0.169589135954 0.169589135954 0.028760475033624
+2	1970 22 61 61 1.096923297325 1.096923297325 1 0 0 0 0
+4	1992 35 66 66 1.096923297325 1.096923297325 1 0.215517782467 0.215517782467 0.215517782467 0.046447914559493
+4	2027 35 75 75 1.180866582615 1.180866582615 1 0.261570321249 0.261570321249 0.261570321249 0.068419032958305
+1	2062 22 81 81 1.344787814931 1.344787814931 1 1 1 1 1
+1	2084 22 82 82 1.360497183025 1.360497183025 1 0 0 0 0
+4	2106 35 87 87 1.360497183025 1.360497183025 1 0.335092819916 0.335092819916 0.335092819916 0.11228719795926
+4	2141 35 92 92 1.369613285637 1.369613285637 1 0.032194006253 0.032194006253 0.032194006253 0.0010364540386182
+4	2176 36 104 104 1.763543681361 1.763543681361 1 0.180791325184 0.180791325184 0.180791325184 0.032685503261787
+2	2212 23 112 112 2.036671021285 2.036671021285 1 1 1 1 1

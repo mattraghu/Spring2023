@@ -1,0 +1,77 @@
+version 3
+run General-0-20230509-15:40:48-97895
+attr configname General
+attr datetime 20230509-15:40:48
+attr datetimef 20230509-154048
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network FinalExam
+attr processid 97895
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network FinalExam
+config **.source1.interArrivalTime exponential(0.5s)
+config **.source1.numJobs 10000
+config **.source2.interArrivalTime exponential(0.3333s)
+config **.source2.numJobs 10000
+config **.source3.interArrivalTime exponential(0.3333s)
+config **.source3.numJobs 10000
+config **.server1.serviceTime exponential(0.1s)
+config **.server2.serviceTime exponential(0.1s)
+config **.server3.serviceTime exponential(0.1s)
+
+vector 0 FinalExam.passiveQueue1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 FinalExam.passiveQueue2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 FinalExam.passiveQueue3 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 3 FinalExam.passiveQueue4 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+0	0	0	0
+1	0	0	0
+2	0	0	0
+3	0	0	0
+2	12	0.418601721657	1
+2	15	0.45304210095	2
+2	16	0.470532604627	1
+vector 4 FinalExam.customSink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+4	21	0.470532604627	0.171042427145
+2	22	0.519045420999	0
+4	27	0.519045420999	0.100443699342
+4	32	0.576597340687	0.178660088404
+2	37	0.861945904649	1
+2	39	0.881405514858	2
+2	43	0.966590405778	1
+4	48	0.966590405778	0.222352442204
+2	51	0.967656471861	2
+2	55	1.031535040603	1
+4	60	1.031535040603	0.169589135954
+2	61	1.096923297325	0
+4	66	1.096923297325	0.215517782467
+4	75	1.180866582615	0.261570321249
+1	81	1.344787814931	1
+1	82	1.360497183025	0
+4	87	1.360497183025	0.335092819916
+4	92	1.369613285637	0.032194006253
+4	104	1.763543681361	0.180791325184
+2	112	2.036671021285	1
