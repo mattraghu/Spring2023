@@ -25,7 +25,7 @@ I pledge my Honor that I have abided by the Stevens Honor System.
 
 ## Abstract
 
-This project explores various method of image enhancement. Specifically, three algorithms: Gaussian Blur, Additive White Gaussian Noise, and Speckle Noise are implemented and tested. It also features the development of a GUI that allows the user to apply these algorithms in a user-friendly way. The results show that the algorithms are effective in enhancing images, with various execution times and efficiency.
+This project explores various method of image enhancement. Specifically, three algorithms: Gaussian Blur, Additive White Gaussian Noise, and Speckle Noise are implemented and tested in python. It also features the development of a GUI that allows the user to apply these algorithms in a user-friendly way. The results show that the algorithms are effective in enhancing images, with various execution times and efficiency.
 
 ## Background
 
@@ -434,6 +434,42 @@ class ImageProcessorApp(tk.Tk):
 
 The result of this code is a GUI that looks like this:
 ![GUI](Media/GUI.png)
+
+# How to Run
+
+## Option 1: Executable
+
+I used the pyinstaller library to create an executable file that can be run on any machine.
+
+Run it by opening the **Project** file. This will open the GUI. From there, you can select an image and apply the different filters.
+
+## Option 2: Python
+
+You can install python with the following command on macOS:
+
+```bash
+brew install python
+```
+
+or alternatively on Windows:
+
+```bash
+choco install python
+```
+
+If you don't have brew or chocolatey installed, you can install python from the [python website](https://www.python.org/downloads/).
+
+Once you have python installed, you can install the required libraries with the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+Once you have the required libraries installed, you can run the GUI with the following command:
+
+```bash
+python Project.py
+```
 
 # Conclusion
 
