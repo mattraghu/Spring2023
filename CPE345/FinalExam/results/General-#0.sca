@@ -1,8 +1,8 @@
 version 3
-run General-0-20230509-15:40:48-97895
+run General-0-20230511-19:09:23-7211
 attr configname General
-attr datetime 20230509-15:40:48
-attr datetimef 20230509-154048
+attr datetime 20230511-19:09:23
+attr datetimef 20230511-190923
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network FinalExam
-attr processid 97895
+attr processid 7211
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -18,35 +18,36 @@ attr runnumber 0
 attr seedset 0
 config network FinalExam
 config **.source1.interArrivalTime exponential(0.5s)
-config **.source1.numJobs 10000
+config **.source1.numJobs 100000
 config **.source2.interArrivalTime exponential(0.3333s)
-config **.source2.numJobs 10000
+config **.source2.numJobs 100000
 config **.source3.interArrivalTime exponential(0.3333s)
-config **.source3.numJobs 10000
+config **.source3.numJobs 100000
 config **.server1.serviceTime exponential(0.1s)
 config **.server2.serviceTime exponential(0.1s)
 config **.server3.serviceTime exponential(0.1s)
+config **.server4.serviceTime exponential(0.1s)
 
 par FinalExam.passiveQueue1 typename "\"org.omnetpp.queueing.PassiveQueue\""
 par FinalExam.passiveQueue1 capacity -1
 par FinalExam.passiveQueue1 fifo true
 par FinalExam.passiveQueue1 sendingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,minDelay
-scalar FinalExam.passiveQueue1 queueingTime:mean nan
+scalar FinalExam.passiveQueue1 queueingTime:mean 0.19484003127127
 attr interpolationmode none
 attr recordingmode mean
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar FinalExam.passiveQueue1 queueingTime:max nan
+scalar FinalExam.passiveQueue1 queueingTime:max 2.111004413834
 attr interpolationmode none
 attr recordingmode max
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar FinalExam.passiveQueue1 queueLength:timeavg 0
+scalar FinalExam.passiveQueue1 queueLength:timeavg 0.3536801994631
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "queue length, timeavg"
-scalar FinalExam.passiveQueue1 queueLength:max 0
+scalar FinalExam.passiveQueue1 queueLength:max 14
 attr interpolationmode sample-hold
 attr recordingmode max
 attr title "queue length, max"
@@ -59,7 +60,7 @@ par FinalExam.server1 fetchingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,longestQueue
 par FinalExam.server1 serviceTime exponential(0.1s)
 attr unit s
-scalar FinalExam.server1 busy:timeavg 0.20708348630826
+scalar FinalExam.server1 busy:timeavg 0.40084622970153
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "server busy state, timeavg"
@@ -68,21 +69,21 @@ par FinalExam.passiveQueue2 capacity -1
 par FinalExam.passiveQueue2 fifo true
 par FinalExam.passiveQueue2 sendingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,minDelay
-scalar FinalExam.passiveQueue2 queueingTime:mean 0.015709368094
+scalar FinalExam.passiveQueue2 queueingTime:mean 0.12950145399701
 attr interpolationmode none
 attr recordingmode mean
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar FinalExam.passiveQueue2 queueingTime:max 0.015709368094
+scalar FinalExam.passiveQueue2 queueingTime:max 1.341047274023
 attr interpolationmode none
 attr recordingmode max
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar FinalExam.passiveQueue2 queueLength:timeavg 0.0075471376915072
+scalar FinalExam.passiveQueue2 queueLength:timeavg 0.058483604374739
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "queue length, timeavg"
-scalar FinalExam.passiveQueue2 queueLength:max 1
+scalar FinalExam.passiveQueue2 queueLength:max 7
 attr interpolationmode sample-hold
 attr recordingmode max
 attr title "queue length, max"
@@ -95,7 +96,7 @@ par FinalExam.server2 fetchingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,longestQueue
 par FinalExam.server2 serviceTime exponential(0.1s)
 attr unit s
-scalar FinalExam.server2 busy:timeavg 0.21508059060895
+scalar FinalExam.server2 busy:timeavg 0.2010369653922
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "server busy state, timeavg"
@@ -104,21 +105,21 @@ par FinalExam.passiveQueue3 capacity -1
 par FinalExam.passiveQueue3 fifo true
 par FinalExam.passiveQueue3 sendingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,minDelay
-scalar FinalExam.passiveQueue3 queueingTime:mean 0.1003950110714
+scalar FinalExam.passiveQueue3 queueingTime:mean 0.22205894271053
 attr interpolationmode none
 attr recordingmode mean
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar FinalExam.passiveQueue3 queueingTime:max 0.150129525745
+scalar FinalExam.passiveQueue3 queueingTime:max 2.131724542198
 attr interpolationmode none
 attr recordingmode max
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar FinalExam.passiveQueue3 queueLength:timeavg 0.26269715623488
+scalar FinalExam.passiveQueue3 queueLength:timeavg 0.45650087577513
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "queue length, timeavg"
-scalar FinalExam.passiveQueue3 queueLength:max 2
+scalar FinalExam.passiveQueue3 queueLength:max 19
 attr interpolationmode sample-hold
 attr recordingmode max
 attr title "queue length, max"
@@ -131,7 +132,7 @@ par FinalExam.server3 fetchingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,longestQueue
 par FinalExam.server3 serviceTime exponential(0.1s)
 attr unit s
-scalar FinalExam.server3 busy:timeavg 0.34429391173569
+scalar FinalExam.server3 busy:timeavg 0.40063580340935
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "server busy state, timeavg"
@@ -140,21 +141,21 @@ par FinalExam.passiveQueue4 capacity -1
 par FinalExam.passiveQueue4 fifo true
 par FinalExam.passiveQueue4 sendingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,minDelay
-scalar FinalExam.passiveQueue4 queueingTime:mean nan
+scalar FinalExam.passiveQueue4 queueingTime:mean 0.49255372594643
 attr interpolationmode none
 attr recordingmode mean
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar FinalExam.passiveQueue4 queueingTime:max nan
+scalar FinalExam.passiveQueue4 queueingTime:max 4.597203871079
 attr interpolationmode none
 attr recordingmode max
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar FinalExam.passiveQueue4 queueLength:timeavg 0
+scalar FinalExam.passiveQueue4 queueLength:timeavg 2.1752932189551
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "queue length, timeavg"
-scalar FinalExam.passiveQueue4 queueLength:max 0
+scalar FinalExam.passiveQueue4 queueLength:max 49
 attr interpolationmode sample-hold
 attr recordingmode max
 attr title "queue length, max"
@@ -165,14 +166,14 @@ attr title "drop event, count"
 par FinalExam.server4 typename "\"org.omnetpp.queueing.Server\""
 par FinalExam.server4 fetchingAlgorithm "\"priority\""
 attr enum priority,random,roundRobin,longestQueue
-par FinalExam.server4 serviceTime 0s
+par FinalExam.server4 serviceTime exponential(0.1s)
 attr unit s
-scalar FinalExam.server4 busy:timeavg 0
+scalar FinalExam.server4 busy:timeavg 0.60148539164677
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "server busy state, timeavg"
 par FinalExam.source1 typename "\"org.omnetpp.queueing.Source\""
-par FinalExam.source1 numJobs 10000
+par FinalExam.source1 numJobs 100000
 par FinalExam.source1 interArrivalTime exponential(0.5s)
 attr unit s
 par FinalExam.source1 jobName "\"job\""
@@ -182,12 +183,12 @@ par FinalExam.source1 startTime 0.397937s
 attr unit s
 par FinalExam.source1 stopTime -1s
 attr unit s
-scalar FinalExam.source1 created:last 2
+scalar FinalExam.source1 created:last 100000
 attr interpolationmode none
 attr recordingmode last
 attr title "the number of jobs created, last"
 par FinalExam.source2 typename "\"org.omnetpp.queueing.Source\""
-par FinalExam.source2 numJobs 10000
+par FinalExam.source2 numJobs 100000
 par FinalExam.source2 interArrivalTime exponential(0.3333s)
 attr unit s
 par FinalExam.source2 jobName "\"job\""
@@ -197,12 +198,12 @@ par FinalExam.source2 startTime 0.29949s
 attr unit s
 par FinalExam.source2 stopTime -1s
 attr unit s
-scalar FinalExam.source2 created:last 5
+scalar FinalExam.source2 created:last 100000
 attr interpolationmode none
 attr recordingmode last
 attr title "the number of jobs created, last"
 par FinalExam.source3 typename "\"org.omnetpp.queueing.Source\""
-par FinalExam.source3 numJobs 10000
+par FinalExam.source3 numJobs 100000
 par FinalExam.source3 interArrivalTime exponential(0.3333s)
 attr unit s
 par FinalExam.source3 jobName "\"job\""
@@ -212,7 +213,7 @@ par FinalExam.source3 startTime 0.418602s
 attr unit s
 par FinalExam.source3 stopTime -1s
 attr unit s
-scalar FinalExam.source3 created:last 6
+scalar FinalExam.source3 created:last 100000
 attr interpolationmode none
 attr recordingmode last
 attr title "the number of jobs created, last"
@@ -239,20 +240,20 @@ scalar FinalExam.customSink delaysVisited:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total number of delays visited by arrived jobs, max"
-scalar FinalExam.customSink queuesVisited:mean 1.2
+scalar FinalExam.customSink queuesVisited:mean 2.9094666666667
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total number of queues visited by arrived jobs, mean"
-scalar FinalExam.customSink queuesVisited:max 2
+scalar FinalExam.customSink queuesVisited:max 6
 attr interpolationmode none
 attr recordingmode max
 attr title "the total number of queues visited by arrived jobs, max"
-scalar FinalExam.customSink totalServiceTime:mean 0.1349569624667
+scalar FinalExam.customSink totalServiceTime:mean 0.26701098678393
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent  by arrived jobs, mean"
 attr unit s
-scalar FinalExam.customSink totalServiceTime:max 0.335092819916
+scalar FinalExam.customSink totalServiceTime:max 1.647777588441
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent  by arrived jobs, max"
@@ -267,22 +268,22 @@ attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in delay nodes by arrived jobs, max"
 attr unit s
-scalar FinalExam.customSink totalQueueingTime:mean 0.0517684423451
+scalar FinalExam.customSink totalQueueingTime:mean 0.50671320304149
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent in queues by arrived jobs, mean"
 attr unit s
-scalar FinalExam.customSink totalQueueingTime:max 0.150129525745
+scalar FinalExam.customSink totalQueueingTime:max 4.946277262273
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in queues by arrived jobs, max"
 attr unit s
-scalar FinalExam.customSink lifeTime:mean 0.1867254048118
+scalar FinalExam.customSink lifeTime:mean 0.77372418982541
 attr interpolationmode none
 attr recordingmode mean
 attr title "lifetime of arrived jobs, mean"
 attr unit s
-scalar FinalExam.customSink lifeTime:max 0.335092819916
+scalar FinalExam.customSink lifeTime:max 5.470275735651
 attr interpolationmode none
 attr recordingmode max
 attr title "lifetime of arrived jobs, max"
