@@ -56,6 +56,22 @@ b1 = torch.randn(hidden_size, generator=g)
 
 Plotting the distribution of the hidden layer output, we see that many of the values are close to 1 or -1.
 
+```python
+#Mini-batch
+ix = torch.randint(len(X_train), (batch_size,))
+
+emb = C[X_train[ix]]
+emb = emb.view(len(X_train[ix]), -1) #len(X_train) x (block_size*2)
+h = emb @ W1 #+ b1 #len(X_train) x hidden_size
+h = torch.tanh(h) #Apply activation function
+
+#Plot histogram of h values
+h = h.detach().numpy().flatten()
+
+fig = go.Figure(data=[go.Histogram(x=h)])
+fig.show()
+```
+
 ![PreOp HiddenLayer](./Media/PreOp_h.png)
 
 We can fix this by initilizing the weights and biases of the hidden layer to be close to zero.
