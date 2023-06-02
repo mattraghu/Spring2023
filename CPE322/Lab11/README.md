@@ -470,3 +470,194 @@ for i in range(max_steps):
 ```
 
 ## Debugging
+
+### Tanh Output
+
+The output and grad for each tanh layer is graphed on a histogram (frequency on the y). The mean and standard deviation are also printed out. The percentage of values that are saturated (1 or -1) is also printed out.
+
+#### Out
+
+```python
+import matplotlib.pyplot as plt
+
+# visualize histograms
+plt.figure(figsize=(20, 4)) # width and height of the plot
+legends = []
+for i, layer in enumerate(layers[:-1]): # note: exclude the output layer
+  if isinstance(layer, Tanh):
+    t = layer.out
+    print('layer %d (%10s): mean %+.2f, std %.2f, saturated: %.2f%%' % (i, layer.__class__.__name__, t.mean(), t.std(), (t.abs() > 0.97).float().mean()*100))
+    hy, hx = torch.histogram(t, density=True)
+    plt.plot(hx[:-1].detach(), hy.detach())
+    legends.append(f'layer {i} ({layer.__class__.__name__}')
+plt.legend(legends);
+plt.title('activation distribution')
+```
+
+#### Grad
+
+```python
+# visualize histograms
+plt.figure(figsize=(20, 4)) # width and height of the plot
+legends = []
+for i, layer in enumerate(layers[:-1]): # note: exclude the output layer
+  if isinstance(layer, Tanh):
+    t = layer.out.grad
+    print('layer %d (%10s): mean %+f, std %e' % (i, layer.__class__.__name__, t.mean(), t.std()))
+    hy, hx = torch.histogram(t, density=True)
+    plt.plot(hx[:-1].detach(), hy.detach())
+    legends.append(f'layer {i} ({layer.__class__.__name__}')
+plt.legend(legends);
+plt.title('gradient distribution')
+```
+
+#### Gain
+
+A gain is applied with the following code:
+
+```python
+#Apply Kaiming Initialization to all other layers
+for l in layers[:-1]:
+    if isinstance(l, Linear):
+        l.weight *= 5/3
+```
+
+##### Tanh Output: 5/3 Gain, No Batch Normalization
+
+###### Out
+
+![Tanh Output: 5/3 Gain, No Batch Normalization](Media/tanh_5_3_no_bn.png)
+
+```
+layer 1 (      Tanh): mean -0.00, std 0.74, saturated: 19.03%
+layer 3 (      Tanh): mean -0.05, std 0.69, saturated: 9.22%
+layer 5 (      Tanh): mean -0.03, std 0.67, saturated: 6.94%
+layer 7 (      Tanh): mean -0.03, std 0.66, saturated: 5.59%
+```
+
+###### Grad
+
+![Tanh Grad Output: 5/3 Gain, No Batch Normalization](Media/tanh_grad_5_3_no_bn.png)
+
+```
+layer 1 (      Tanh): mean +0.000001, std 3.488777e-04
+layer 3 (      Tanh): mean +0.000002, std 3.579742e-04
+layer 5 (      Tanh): mean -0.000005, std 3.316249e-04
+layer 7 (      Tanh): mean +0.000000, std 2.963401e-04
+```
+
+##### Tanh Output: 0.5 Gain, No Batch Normalization
+
+###### Out
+
+![Tanh Output: 0.5 Gain, No Batch Normalization](Media/tanh_1_2_no_bn.png)
+
+```
+layer 1 (      Tanh): mean +0.05, std 0.40, saturated: 0.00%
+layer 3 (      Tanh): mean +0.01, std 0.19, saturated: 0.00%
+layer 5 (      Tanh): mean -0.00, std 0.10, saturated: 0.00%
+layer 7 (      Tanh): mean +0.00, std 0.05, saturated: 0.00%
+```
+
+###### Grad
+
+![Tanh Grad Output: 0.5 Gain, No Batch Normalization](Media/tanh_grad_1_2_no_bn.png)
+
+```
+layer 1 (      Tanh): mean -0.000000, std 3.727418e-05
+layer 3 (      Tanh): mean +0.000001, std 7.740447e-05
+layer 5 (      Tanh): mean -0.000008, std 1.540832e-04
+layer 7 (      Tanh): mean +0.000008, std 2.976167e-04
+```
+
+##### Tanh Output: 3 Gain, No Batch Normalization
+
+###### Out
+
+![Tanh Output: 3 Gain, No Batch Normalization](Media/tanh_3_no_bn.png)
+
+```
+layer 1 (      Tanh): mean +0.01, std 0.86, saturated: 47.66%
+layer 3 (      Tanh): mean +0.00, std 0.85, saturated: 44.25%
+layer 5 (      Tanh): mean +0.04, std 0.83, saturated: 40.66%
+layer 7 (      Tanh): mean -0.00, std 0.84, saturated: 40.25%
+```
+
+###### Grad
+
+![Tanh Grad Output: 3 Gain, No Batch Normalization](Media/tanh_grad_3_no_bn.png)
+
+```
+layer 1 (      Tanh): mean -0.000024, std 7.842590e-04
+layer 3 (      Tanh): mean -0.000015, std 5.738824e-04
+layer 5 (      Tanh): mean +0.000002, std 4.035204e-04
+layer 7 (      Tanh): mean -0.000006, std 3.012999e-04
+```
+
+##### Analysis
+
+When we have a sandwich of linear layers with no batch normalization, it is clear that a gain that is too high (3) results in an output that is too saturated (i.e most values on the tail end of the tanh function). A gain that is too low (1) results in an output that is not saturated enough (i.e most values are near the center of the tanh function). A gain of 5/3 seems to be a good middle ground.
+
+We want this middle ground because we want the output of the tanh function to be saturated enough to be able to backpropagate gradients through the network, but not so saturated that the gradients are too small to be useful.
+
+### Update to Gradient:Data Ratio
+
+```python
+with torch.no_grad():
+    ud.append([((lr*p.grad).std() / p.data.std()).log10().item() for p in parameters]) #Track the ratio of the gradient norm to the parameter norm
+```
+
+- So for every step in training, we take the standard deviation of the update that will be applied, dividing it by the standard deviation of the parameter itself. Standard deviation is used b/c it is scale invariant (i.e. it doesn't matter if the parameter is 1 or 100, the standard deviation will be the same). We then take the log10 of this ratio to make it easier to visualize.
+
+- So this is basically giving us the percent that the parameter will change in this step.
+
+We can plot this with
+
+```python
+plt.figure(figsize=(20, 4))
+legends = []
+for i,p in enumerate(parameters):
+  if p.ndim == 2:
+    plt.plot([ud[j][i] for j in range(len(ud))])
+    legends.append('param %d' % i)
+plt.plot([0, len(ud)], [-3, -3], 'k') # these ratios should be ~1e-3, indicate on plot
+plt.legend(legends);
+```
+
+![Update Grad Ratio](Media/update_grad_ratio.png)
+
+- The ratio should be around 1e-3. Meaning, the updates to each parameter is no more than 1/1000th of the parameter itself.
+
+- This is a good sanity check to make sure that the updates are not too large.
+
+If we made our learning rate lower:
+
+![Update Grad Ratio](Media/update_grad_ratio_lowlr.png)
+
+You can see that the ratio is now around 1e-5 which is too small. This means that the updates are too small and the model will take a long time to train.
+
+### Batch Normalization
+
+We can see the difference in the output of the tanh function when we add batch normalization:
+
+#### Tanh Output: 5/3 Gain, Batch Normalization
+
+![Tanh Output: 5/3 Gain, Batch Normalization](Media/tanh_5_3_bn.png)
+
+```
+layer 2 (      Tanh): mean +0.00, std 0.63, saturated: 2.94%
+layer 5 (      Tanh): mean -0.01, std 0.64, saturated: 2.97%
+layer 8 (      Tanh): mean +0.01, std 0.66, saturated: 2.50%
+layer 11 (      Tanh): mean +0.00, std 0.65, saturated: 2.09%
+```
+
+#### Tanh Output: 5/3 Gain, No Batch Normalization
+
+![Tanh Output: 5/3 Gain, No Batch Normalization](Media/tanh_5_3_no_bn.png)
+
+```
+layer 1 (      Tanh): mean -0.00, std 0.74, saturated: 19.03%
+layer 3 (      Tanh): mean -0.05, std 0.69, saturated: 9.22%
+layer 5 (      Tanh): mean -0.03, std 0.67, saturated: 6.94%
+layer 7 (      Tanh): mean -0.03, std 0.66, saturated: 5.59%
+```
