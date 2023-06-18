@@ -661,7 +661,3 @@ layer 3 (      Tanh): mean -0.05, std 0.69, saturated: 9.22%
 layer 5 (      Tanh): mean -0.03, std 0.67, saturated: 6.94%
 layer 7 (      Tanh): mean -0.03, std 0.66, saturated: 5.59%
 ```
-
----
-
-# Makemore Part 5 - Wavebet
