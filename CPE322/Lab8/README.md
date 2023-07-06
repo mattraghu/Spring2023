@@ -618,3 +618,34 @@ pen
 aisan
 ja
 ```
+
+---
+
+# GPT Development
+
+A script is developed using a similar model to the one above. However, it includes far more complex features such as layer normalization, self attention, and positional encoding.
+
+## Recieving information from past characters
+
+In order to feed information about past characters in generating the next character, we started by taking the average of all the channel layers (vocab size) like this:
+
+```python
+xbow = torch.zeros((B,T,C))
+for batch in range(B):
+    for context in range(T):
+        xprev = x[batch, :context+1]
+        xbow[batch, context] = xprev.mean(dim=0)
+```
+
+This can be done alternatively with this:
+
+```python
+tril = torch.tril(torch.ones((T,T)))
+wei = torch.zeros((T,T))
+wei = wei.masked_fill(tril==0, float('-inf')) # Make the 0s -inf
+wei = F.softmax(wei, dim=1) # Will equal wei from the prev part (Because softmax will exponentiate the -inf to 0 and 0s to 1 and then normalize)
+xbow3 = wei @ x
+torch.allclose(xbow, xbow3)
+```
+
+## Self Attention
