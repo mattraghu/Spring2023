@@ -1,23 +1,15 @@
 ```python
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-
 torch.manual_seed(1337)
-B, T, C = 1, 3, 4  # batch size, sequence length, vocab size
-x = torch.randn(B, T, C)
-
-# model definition
-head_size = 16
-key = nn.Linear(C, head_size, bias=False)
-query = nn.Linear(C, head_size, bias=False)
+B,T,C = 1,3,4 # batch size, sequence length, embedding size
+x = [[[1,2,3,4],[5,6,7,8],[9,10,11,12]]]
+x = torch.tensor(x, dtype=torch.float32)
 
 wei_0 = torch.tril(torch.ones(T, T))
-wei_0[wei_0 == 0] = float('-inf')
-wei_0[wei_0 == 1] = 0
+wei_0[wei_0==0] = float('-inf')
+wei_0[wei_0==1] = 0
 wei = F.softmax(wei_0, dim=1)
 
-print(wei.shape)
+out = torch.matmul(wei, x)
 ```
 
 Given a **B,T,C** of 1,3,4.
@@ -67,3 +59,41 @@ $$
                  \end{bmatrix}
                \end{bmatrix}
 $$
+
+Instead of just using fixed normalized weights in wei, we want the network to be able to learn the weights.
+
+The softmax will still be used to normalize the weights and increase the importance of the greater weights.
+
+```python
+torch.manual_seed(1337)
+B,T,C = 1,3,4 # batch size, sequence length, embedding size
+# x = torch.randn(B,T,C)
+x = [[[1,2,3,4],[5,6,7,8],[9,10,11,12]]]
+x = torch.tensor(x, dtype=torch.float32)
+
+# model definition
+head_size = 16
+key = nn.Linear(C, head_size, bias=False)
+query = nn.Linear(C, head_size, bias=False)
+value = nn.Linear(C, head_size, bias=False)
+
+k = key(x) #B,T,head_size
+q = query(x) #B,T,head_size
+v = value(x) #B,T,head_size
+
+
+tril = torch.tril(torch.ones(T, T))
+wei = torch.matmul(q, k.transpose(-2,-1)) / (head_size ** 0.5) # B,T,T
+wei = wei.masked_fill(tril == 0, float('-inf')) #Make the future weights -inf because they should not be used
+wei = F.softmax(wei_0, dim=1) # Normalize and increase the importance of the greater weights
+
+out = torch.matmul(wei, v) #B,T,head_size
+```
+
+In this case we expand the channel size to a head size to get a better representation of the data.
+
+Before the wei is normalized, we want to make the variance of the weights to be 1 so that the softmax will not be too extreme (one hot ish)
+
+Thus we divide the weights by the square root of the head size.
+
+We can now create a Head class to convert x (B,T,C) into a (B,T,head_size) representation where values in the last channel give an understanding of what the next character should be based on the previous characters.
